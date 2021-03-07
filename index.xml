@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Website of Jane Doe</title>
-    <link>http://xiangli2pro.github.io/</link>
+    <link>https://xiangli2pro.github.io/</link>
     <description>Recent content on Website of Jane Doe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 06 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>http://xiangli2pro.github.io/about/</link>
+      <link>https://xiangli2pro.github.io/about/</link>
       <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://xiangli2pro.github.io/about/</guid>
+      <guid>https://xiangli2pro.github.io/about/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Test</title>
-      <link>http://xiangli2pro.github.io/post/test/</link>
+      <link>https://xiangli2pro.github.io/post/test/</link>
       <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://xiangli2pro.github.io/post/test/</guid>
+      <guid>https://xiangli2pro.github.io/post/test/</guid>
       <description>This is a test file.</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>http://xiangli2pro.github.io/contact/</link>
+      <link>https://xiangli2pro.github.io/contact/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://xiangli2pro.github.io/contact/</guid>
+      <guid>https://xiangli2pro.github.io/contact/</guid>
       <description></description>
     </item>
     
