@@ -6,7 +6,16 @@
     <description>Recent content on Website of Xiang Li</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 06 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Troubleshooting List (Updating...)</title>
+      <link>https://xiangli2pro.github.io/post/troubleshooting/</link>
+      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/post/troubleshooting/</guid>
+      <description>1. conda not found This error occurs when running conda command on terminal after upgrading MacOS to Catalina.</description>
+    </item>
+    
     <item>
       <title>About</title>
       <link>https://xiangli2pro.github.io/about/</link>
@@ -18,10 +27,10 @@
     
     <item>
       <title>Hello</title>
-      <link>https://xiangli2pro.github.io/post/test/</link>
+      <link>https://xiangli2pro.github.io/post/hello/</link>
       <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/post/test/</guid>
+      <guid>https://xiangli2pro.github.io/post/hello/</guid>
       <description>Hello</description>
     </item>
     
