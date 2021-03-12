@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme=""><head>
-    <title> Xiang Li | Website of Xiang Li </title>
+    <title> Xiang Li | Math Typesetting </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -29,10 +29,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="https://xiangli2pro.github.io/">
+    <link rel="canonical" href="https://xiangli2pro.github.io/template/math-typesetting/">
 
     
-    <link rel="alternate" type="application/rss+xml" href="https://xiangli2pro.github.io/index.xml" title="Website of Xiang Li" />
     
     
     
@@ -53,15 +52,17 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
 
-<meta name="twitter:title" content="Website of Xiang Li"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Math Typesetting"/>
+<meta name="twitter:description" content="A brief guide to setup KaTeX"/>
 
 
     
-    <meta property="og:title" content="Website of Xiang Li" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://xiangli2pro.github.io/" /><meta property="og:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/><meta property="og:site_name" content="Xiang Li" />
+    <meta property="og:title" content="Math Typesetting" />
+<meta property="og:description" content="A brief guide to setup KaTeX" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xiangli2pro.github.io/template/math-typesetting/" /><meta property="og:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/><meta property="article:section" content="template" />
+<meta property="article:published_time" content="2019-03-08T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-03-08T00:00:00&#43;00:00" /><meta property="og:site_name" content="Xiang Li" />
 
 
 </head>
@@ -111,7 +112,7 @@
         
         
             
-            <li><a class="current"
+            <li><a 
                    href="/"
                         
                    title="">Home</a></li>
@@ -147,67 +148,46 @@
 
     <div class="autopagerize_page_element">
         <div class="content">
-
     <div class="post  animated fadeInDown ">
-        
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Math Typesetting</h3>
+                
+            </div>
+
+            <p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.</p>
+<p>In this example we will be using <a href="https://katex.org/">KaTeX</a></p>
+<ul>
+<li>Create a partial under <code>/layouts/partials/math.html</code></li>
+<li>Within this partial reference the <a href="https://katex.org/docs/autorender.html">Auto-render Extension</a> or host these scripts locally.</li>
+<li>Include the partial in your templates like so:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{{</span> <span class="k">if</span> or .Params.math .Site.Params.math <span class="o">}}</span>
+<span class="o">{{</span> partial <span class="s2">&#34;math.html&#34;</span> . <span class="o">}}</span>
+<span class="o">{{</span> end <span class="o">}}</span>
+</code></pre></div><ul>
+<li>To enable KaTex globally set the parameter <code>math</code> to <code>true</code> in a project&rsquo;s configuration</li>
+<li>To enable KaTex on a per page basis include the parameter <code>math: true</code> in content files</li>
+</ul>
+<p><strong>Note:</strong> Use the online reference of <a href="https://katex.org/docs/supported.html">Supported TeX Functions</a></p>
+
+<h3 id="examples">Examples</h3>
+<p>Inline math: \(\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…\)</p>
+<p>Block math:
+$$
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+$$</p></div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
         
     </div>
 
-    
-    
-
-        <div class="post  animated fadeInDown ">
-            
-            <div class="post-title">
-                <h3><a href="/post/troubleshooting/">Troubleshooting List (Updating...)</a>
-                </h3>
-            </div>
-            <div class="post-content">
-                <div class="p_part"><p>1. conda not found This error occurs when running conda command on terminal after upgrading MacOS to Catalina.</p></div>
-            </div>
-            <div class="post-footer">
-                <div class="meta">
-                    <div class="info">
-                        <em class="fas fa-calendar-day"></em>
-                            <span class="date"> Thu, Mar 11, 2021 
-                                             </span>
-                        <span class="separator"><a class="category" href="/categories/troubleshooting/">troubleshooting</a><a class="category" href="/categories/coding/">coding</a></span>
-
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-
-        <div class="post  animated fadeInDown ">
-            
-            <div class="post-title">
-                <h3><a href="/post/websitetheme/">Website Theme (Updating...)</a>
-                </h3>
-            </div>
-            <div class="post-content">
-                <div class="p_part"><p>The website is powered by Hugo, employing the theme Anatole.</p></div>
-            </div>
-            <div class="post-footer">
-                <div class="meta">
-                    <div class="info">
-                        <em class="fas fa-calendar-day"></em>
-                            <span class="date"> Thu, Mar 11, 2021 
-                                             </span>
-                        <span class="separator"><a class="category" href="/categories/website/">website</a></span>
-
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    <div class="pagination">
-        
-
-
-    </div>
 
         </div>
     </div>
