@@ -9,19 +9,19 @@
     <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Troubleshooting List (Updating...)</title>
-      <link>https://xiangli2pro.github.io/post/troubleshooting/</link>
+      <link>https://xiangli2pro.github.io/tech/troubleshooting/</link>
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/post/troubleshooting/</guid>
+      <guid>https://xiangli2pro.github.io/tech/troubleshooting/</guid>
       <description>1. conda not found This error occurs when running conda command on terminal after upgrading MacOS to Catalina.</description>
     </item>
     
     <item>
       <title>Website Theme (Updating...)</title>
-      <link>https://xiangli2pro.github.io/post/websitetheme/</link>
+      <link>https://xiangli2pro.github.io/tech/websitetheme/</link>
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/post/websitetheme/</guid>
+      <guid>https://xiangli2pro.github.io/tech/websitetheme/</guid>
       <description>The website is powered by Hugo, employing the theme Anatole.</description>
     </item>
     
