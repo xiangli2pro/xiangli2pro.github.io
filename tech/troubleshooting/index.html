@@ -4,7 +4,7 @@
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta name="description" content="">
+    <meta name="description" content="Issues Encountered in Coding">
     
     <link rel="stylesheet"
           href="https://xiangli2pro.github.io/css/style.min.257fd93fd6f7eb803bc56601fec1a67b881c64eb2fe565ee825cf8ce167b87c0.css"
@@ -57,13 +57,6 @@
 
 
     
-    <meta property="og:title" content="Troubleshooting List (Updating...)" />
-<meta property="og:description" content="Issues Encountered in Coding" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://xiangli2pro.github.io/tech/troubleshooting/" /><meta property="og:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/><meta property="article:section" content="tech" />
-<meta property="article:published_time" content="2021-03-11T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-03-11T00:00:00&#43;00:00" /><meta property="og:site_name" content="Xiang Li" />
-
 
 </head>
 <body><div class="sidebar animated fadeInDown ">
@@ -156,11 +149,16 @@
                 
             </div>
 
-            <h4 id="1--conda-not-found">1.  <code>conda not found</code></h4>
+            <h4 id="1--conda-not-found-anaconda">1.  <code>conda not found</code> (Anaconda)</h4>
 <p>This error occurs when running <code>conda</code> command on terminal after upgrading MacOS to Catalina. Anaconda <a href="https://www.anaconda.com/blog/how-to-restore-anaconda-after-macos-catalina-update">website</a> offers two options to reinstall the old anaconda configurations that is supposed to be in the filepath <code>Desktop/Relocated Items</code>. For me I do not need to recover the previous setup or environment, so the solution is simple, re-download Anaconda (at the moment it&rsquo;s Anaconda Individual Edition), then <strong>restart</strong> terminal and type <code>conda list</code>, if the screen displays packages information, then mission accomplished!</p>
 <p>Another useful reference <a href="https://towardsdatascience.com/how-to-successfully-install-anaconda-on-a-mac-and-actually-get-it-to-work-53ce18025f97">https://towardsdatascience.com/how-to-successfully-install-anaconda-on-a-mac-and-actually-get-it-to-work-53ce18025f97</a></p>
-<h4 id="2--permission-denied-publickey">2.  <code>permission denied (publickey)</code></h4>
+<h4 id="2--permission-denied-publickey-github">2.  <code>permission denied (publickey)</code> (Github)</h4>
 <p>When <code>push</code> a new commit to the remote Github repository, especially the first time, the error occurs. In my case, the problem is solved by following the instructions on the Github <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">webstie</a>.</p>
+<h4 id="3--unable-to-load-shared-object--systemfontsso-r">3.  <code>unable to load shared object ... systemfonts.so</code> (R)</h4>
+<p>After updating MacOS to Catalina and updating R packages and R studio (3.6.1) to the latest version, I run into the below error when I try to call the package <code>KableExtra</code> in the .Rmd file.</p>
+<p><em>Error: package or namespace load failed for ‘kableExtra’ in dyn.load(file, DLLpath = DLLpath, &hellip;): unable to load shared object &lsquo;/Library/Frameworks/R.framework/Versions/3.6/Resources/library/systemfonts/libs/systemfonts.so&rsquo;: dlopen(/Library/Frameworks/R.framework/Versions/3.6/Resources/library/systemfonts/libs/systemfonts.so, 6): Library not loaded: /opt/X11/lib/libfreetype.6.dylib Referenced from: /Library/Frameworks/R.framework/Versions/3.6/Resources/library/systemfonts/libs/systemfonts.so Reason: image not found</em></p>
+<p>Solution: refer to this <a href="https://github.com/yixuan/showtext/issues/13">Github issue</a>, download and install
+<a href="https://www.xquartz.org/"><code>XQuartz</code></a>, then restart Mac.</p>
 </div>
         <div class="post-footer">
             <div class="info">

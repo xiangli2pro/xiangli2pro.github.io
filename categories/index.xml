@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Website of Xiang Li</title>
+    <link>https://xiangli2pro.github.io/categories/</link>
+    <description>Recent content in Categories on Website of Xiang Li</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>coding</title>
+      <link>https://xiangli2pro.github.io/categories/coding/</link>
+      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/categories/coding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>troubleshooting</title>
+      <link>https://xiangli2pro.github.io/categories/troubleshooting/</link>
+      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/categories/troubleshooting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>website</title>
+      <link>https://xiangli2pro.github.io/categories/website/</link>
+      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/categories/website/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>syntax</title>
+      <link>https://xiangli2pro.github.io/categories/syntax/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/categories/syntax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>themes</title>
+      <link>https://xiangli2pro.github.io/categories/themes/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/categories/themes/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
