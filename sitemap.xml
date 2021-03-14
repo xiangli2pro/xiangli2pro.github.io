@@ -3,12 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://xiangli2pro.github.io/categories/</loc>
-    <lastmod>2021-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/categories/coding/</loc>
-    <lastmod>2021-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/tech/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/categories/website/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/tech/websitetheme/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/</loc>
+    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/categories/coding/</loc>
     <lastmod>2021-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/categories/troubleshooting/</loc>
@@ -17,19 +26,10 @@
     <loc>https://xiangli2pro.github.io/tech/troubleshooting/</loc>
     <lastmod>2021-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiangli2pro.github.io/categories/website/</loc>
-    <lastmod>2021-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/</loc>
-    <lastmod>2021-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/tech/websitetheme/</loc>
-    <lastmod>2021-03-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://xiangli2pro.github.io/about/</loc>
     <lastmod>2021-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiangli2pro.github.io/tags/color/</loc>
+    <loc>https://xiangli2pro.github.io/categories/color/</loc>
     <lastmod>2021-03-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/life/hello/</loc>
@@ -38,10 +38,7 @@
     <loc>https://xiangli2pro.github.io/life/</loc>
     <lastmod>2021-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiangli2pro.github.io/tags/</loc>
-    <lastmod>2021-03-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/tags/test/</loc>
+    <loc>https://xiangli2pro.github.io/categories/test/</loc>
     <lastmod>2021-03-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/tags/css/</loc>
@@ -57,6 +54,9 @@
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/categories/syntax/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/tags/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/template/</loc>

@@ -21,8 +21,8 @@
         
         
         <link rel="stylesheet"
-        href="https://xiangli2pro.github.io/css/customer.min.257fd93fd6f7eb803bc56601fec1a67b881c64eb2fe565ee825cf8ce167b87c0.css"
-        integrity="sha256-JX/ZP9b364A7xWYB/sGme4gcZOsv5WXuglz4zhZ7h8A="
+        href="https://xiangli2pro.github.io/css/customer.min.b9ea351fa4174d95d202601f41ba7692b86b84c1cecc1ba22b8485b781f212cb.css"
+        integrity="sha256-ueo1H6QXTZXSAmAfQbp2krhrhMHOzBuiK4SFt4HyEss="
         crossorigin="anonymous"
         media="screen" />
     
@@ -157,7 +157,7 @@
                 
                     <div class="info">
                         <em class="fas fa-calendar-day"></em>
-                        <span class="date"> Thu, Mar 11, 2021
+                        <span class="date"> Fri, Mar 12, 2021
                                            </span>
                         <em class="fas fa-stopwatch"></em>
                         <span class="reading-time">One-minute read</span>
@@ -168,11 +168,30 @@
             <p><br>
 <br>
 The website is powered by <a href="https://gohugo.io/getting-started/quick-start/">Hugo</a>, employing the theme <a href="https://themes.gohugo.io/anatole/">Anatole</a>. It&rsquo;s a beautiful template, and I would like to customize the setup a bit to reflect personal preference. I am a newcomer to the language css, js, basically I open the website in the chrome and use the developer tools to get a hint on which parameter changing which feature, a lot of functions are still under development. I will keep recording the changes I have made, in case I am going to modify it later or someone else wants a similar setup.</p>
-<h4 id="font-size-stylecss">font size (style.css)</h4>
+<h4 id="font-stylecss">font (style.css)</h4>
 <ol>
-<li>content font size:</li>
+<li>content font size: .p(16px);</li>
+<li>post title font size: .post .post-title(20px); .post .post-content(20px);</li>
 </ol>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">p{font-size: 16px;}
+<h4 id="layout-stylecss">layout (style.css)</h4>
+<ol>
+<li>sidebar width: .content (70%), .page-top(70%); @media(30%), .sidebar(30%);</li>
+</ol>
+<h4 id="comment-md">comment (.md)</h4>
+<ol>
+<li>make utterance comment box show up in each post: need to set type= &ldquo;post&rdquo; in the .md file FrontMatter, and add &ldquo;post&rdquo; into mainSections in config.toml;</li>
+</ol>
+<h4 id="read-more-indexhtml">read more (index.html)</h4>
+<ol>
+<li>add code below in the /anatole/layouts/index.html, between code chuck &lsquo;post-content&rsquo; and &lsquo;post-footer&rsquo;</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--  &lt;div class=&#34;post-content&#34;&gt; &lt;div&gt;  --&gt;</span>
+
+{{- if .Truncated -}}
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;{{ .RelPermalink }}&#39;</span><span class="p">&gt;</span><span class="ni">&amp;hellip;</span> Read more<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+{{- end -}}
+
+<span class="c">&lt;!--  &lt;div class=&#34;post-footer&#34;&gt; &lt;div&gt; --&gt;</span>
 </code></pre></div></div>
         <div class="post-footer">
             <div class="info">
@@ -183,11 +202,12 @@ The website is powered by <a href="https://gohugo.io/getting-started/quick-start
         </div>
 
         <div id="fb_comments_container">
-                <h2>comments</h2>
+              
+                <h2></h2>
                 <script src="https://utteranc.es/client.js"
         repo="xiangli2pro/xiangli2pro.github.io"
         issue-term="pathname"
-        theme="preferred-color-scheme"
+        theme="github-light"
         
         crossorigin="anonymous"
         async>

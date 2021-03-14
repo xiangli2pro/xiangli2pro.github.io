@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lives on Xiang Li&#39;s Blog</title>
-    <link>https://xiangli2pro.github.io/life/</link>
-    <description>Recent content in Lives on Xiang Li&#39;s Blog</description>
+    <title>color on Xiang Li&#39;s Blog</title>
+    <link>https://xiangli2pro.github.io/categories/color/</link>
+    <description>Recent content in color on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 06 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/categories/color/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World</title>
       <link>https://xiangli2pro.github.io/life/hello/</link>
