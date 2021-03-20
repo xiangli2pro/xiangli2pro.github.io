@@ -129,6 +129,12 @@
                         
                    title="">About</a></li>
         
+            
+            <li><a 
+                   href="/resource/"
+                        
+                   title="">Resource</a></li>
+        
         
         
     </ul>
@@ -158,7 +164,7 @@
 Suppose we have a fair coin with two faces Head (H) and Tail (T). Intuitively,  one would say that as we toss the coin more times, the relative frequency of H occurrence is getting closer to one half. Here I provide an interesting statistic look at the above statement based on the content from <!-- raw HTML omitted --><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><!-- raw HTML omitted --> .</p>
 <p>Let \(1\) indicate H and \(0\) indicate T, \(w\) be the infinite sequence of tosses of coin.  Then  \(w\) can be represented by a nonterminating dyadic expansion (similar to binary expansion)<!-- raw HTML omitted --><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup><!-- raw HTML omitted --> \(w=\sum_{n=1}^{\infty}\frac{d_n(w)}{2^n}\), where \(d_n(w)\) takes value in \(\{0,1\}\) and can be understood as the result of \(n\)-th toss in the sequence \(w\). For example, \(w=0.0101010111&hellip;\); Nonterminating means for value with two expansion representations, use the representation not ending in \(0\). Take \(0.5\) as an example, \(0.5\) can be written as \(0.1\) or \(0.0111&hellip;\)<!-- raw HTML omitted --><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup><!-- raw HTML omitted -->, we choose the one of \(0.0111&hellip;\);</p>
 <p>The statement mentioned in the beginning can be statistically translated as
-\(P(\big[w:\underset{n\rightarrow \infty}{\lim}\frac{1}{n}\sum_{i=1}^n d_i(w)=\frac{1}{2}\big])=1\), often referred as &lsquo;strong law of large numbers&rsquo;. Before we start the proof, we first look at some useful definitions and lemmas.</p>
+\(P(\big[w:\underset{n\rightarrow \infty}{\lim}\frac{1}{n}\sum_{i=1}^n d_i(w)=\frac{1}{2}\big])=1\), often referred as &lsquo;strong law of large numbers&rsquo;. Before we start the proof, let&rsquo;s first look at some useful definitions and lemmas.</p>
 <h4 id="1-notation">1. notation</h4>
 <p>Let \(N=\big[w:\underset{n\rightarrow \infty}{\lim}\frac{1}{n}\sum_{i=1}^n d_i(w)=\frac{1}{2}\big]\), \(s_n(w)=\sum_{i=1}^n[2d_i(w)-1]\).</p>
 <p>Then it&rsquo;s equivalent to write \(N=\big[w:\underset{n\rightarrow \infty}{\lim}\frac{1}{n}s_n(w)=0\big]\). We prove \(P(N)=1\) by showing that \(P(N^c)=0\).</p>
