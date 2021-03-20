@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" data-theme=""><head>
-    <title> Xiang Li | website </title>
+    <title> Xiang Li | Troubleshooting List </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta name="description" content="">
+    <meta name="description" content="Issues Encountered in Coding">
     
     <link rel="stylesheet"
           href="https://xiangli2pro.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css"
@@ -37,10 +37,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="https://xiangli2pro.github.io/categories/website/">
+    <link rel="canonical" href="https://xiangli2pro.github.io/tech/0311-2021-troubleshooting/">
 
     
-    <link rel="alternate" type="application/rss+xml" href="https://xiangli2pro.github.io/categories/website/index.xml" title="Xiang Li's Blog" />
     
     
     
@@ -54,8 +53,8 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
 
-<meta name="twitter:title" content="website"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Troubleshooting List"/>
+<meta name="twitter:description" content="Issues Encountered in Coding"/>
 
 
     
@@ -137,23 +136,59 @@
 
     <div class="autopagerize_page_element">
         <div class="content">
-    <div class="archive  animated fadeInDown ">
-        <ul class="list-with-title">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
             
-                <div class="listing-title">2021</div>
+            <div class="post-title">
+                <h3>Troubleshooting List</h3>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://xiangli2pro.github.io/tech/0312-2021-websitetheme/" title="Website Theme">Website Theme</a>
-                                <div class="post-time"><span class="date"> Mar 12 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Thu, Mar 11, 2021
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">One-minute read</span>
+                        <span class="separator"><a class="category" href="/categories/troubleshooting/">troubleshooting</a><a class="category" href="/categories/coding/">coding</a></span>
+
+                    </div>
                 
-            
-        </ul>
+            </div>
+
+            <p><br>
+This is an ongoing post.</p>
+<h4 id="1--conda-not-found-anaconda">1.  <code>conda not found</code> (Anaconda)</h4>
+<p>This error occurs when running <code>conda</code> command on terminal after upgrading MacOS to Catalina. Anaconda <a href="https://www.anaconda.com/blog/how-to-restore-anaconda-after-macos-catalina-update">website</a> offers two options to reinstall the old anaconda configurations that is supposed to be in the filepath <code>Desktop/Relocated Items</code>. For me I do not need to recover the previous setup or environment, so the solution is simple, re-download Anaconda (at the moment it&rsquo;s Anaconda Individual Edition), then <strong>restart</strong> terminal and type <code>conda list</code>, if the screen displays packages information, then mission accomplished!</p>
+<p>Another useful reference <a href="https://towardsdatascience.com/how-to-successfully-install-anaconda-on-a-mac-and-actually-get-it-to-work-53ce18025f97">https://towardsdatascience.com/how-to-successfully-install-anaconda-on-a-mac-and-actually-get-it-to-work-53ce18025f97</a></p>
+<h4 id="2--permission-denied-publickey-github">2.  <code>permission denied (publickey)</code> (Github)</h4>
+<p>When <code>push</code> a new commit to the remote Github repository, especially the first time, the error occurs. In my case, the problem is solved by following the instructions on the Github <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">webstie</a>.</p>
+<h4 id="3--unable-to-load-shared-object--systemfontsso-r">3.  <code>unable to load shared object ... systemfonts.so</code> (R)</h4>
+<p>After updating MacOS to Catalina and updating R packages and R studio (3.6.1) to the latest version, I run into the below error when I try to call the package <code>KableExtra</code> in the .Rmd file.</p>
+<p><em>Error: package or namespace load failed for ‘kableExtra’ in dyn.load(file, DLLpath = DLLpath, &hellip;): unable to load shared object &lsquo;/Library/Frameworks/R.framework/Versions/3.6/Resources/library/systemfonts/libs/systemfonts.so&rsquo;: &hellip;</em></p>
+<p>Solution: refer to this <a href="https://github.com/yixuan/showtext/issues/13">Github issue</a>, download and install
+<a href="https://www.xquartz.org/"><code>XQuartz</code></a>, then restart Mac.</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+              
+                <h2></h2>
+                <script src="https://utteranc.es/client.js"
+        repo="xiangli2pro/xiangli2pro.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
     </div>
+
 
         </div>
     </div>

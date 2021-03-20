@@ -6,23 +6,33 @@
     <description>Recent content in Teches on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Website Theme (Updating...)</title>
-      <link>https://xiangli2pro.github.io/tech/websitetheme/</link>
-      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      <title>What happened to the sequence of infinite coin toss?</title>
+      <link>https://xiangli2pro.github.io/tech/0318-2021-dyadic/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/websitetheme/</guid>
-      <description>The website is powered by Hugo, employing the theme Anatole.</description>
+      <guid>https://xiangli2pro.github.io/tech/0318-2021-dyadic/</guid>
+      <description>Suppose we have a fair coin with two faces Head (H) and Tail (T).</description>
     </item>
     
     <item>
-      <title>Troubleshooting List (Updating...)</title>
-      <link>https://xiangli2pro.github.io/tech/troubleshooting/</link>
+      <title>Website Theme</title>
+      <link>https://xiangli2pro.github.io/tech/0312-2021-websitetheme/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0312-2021-websitetheme/</guid>
+      <description>This is an ongoing post. The website is powered by Hugo, employing the theme Anatole.</description>
+    </item>
+    
+    <item>
+      <title>Troubleshooting List</title>
+      <link>https://xiangli2pro.github.io/tech/0311-2021-troubleshooting/</link>
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/troubleshooting/</guid>
-      <description>1. conda not found (Anaconda) This error occurs when running conda command on terminal after upgrading MacOS to Catalina.</description>
+      <guid>https://xiangli2pro.github.io/tech/0311-2021-troubleshooting/</guid>
+      <description>This is an ongoing post.
+1. conda not found (Anaconda) This error occurs when running conda command on terminal after upgrading MacOS to Catalina.</description>
     </item>
     
   </channel>

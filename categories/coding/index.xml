@@ -8,12 +8,13 @@
     <language>en</language>
     <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/categories/coding/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Troubleshooting List (Updating...)</title>
-      <link>https://xiangli2pro.github.io/tech/troubleshooting/</link>
+      <title>Troubleshooting List</title>
+      <link>https://xiangli2pro.github.io/tech/0311-2021-troubleshooting/</link>
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/troubleshooting/</guid>
-      <description>1. conda not found (Anaconda) This error occurs when running conda command on terminal after upgrading MacOS to Catalina.</description>
+      <guid>https://xiangli2pro.github.io/tech/0311-2021-troubleshooting/</guid>
+      <description>This is an ongoing post.
+1. conda not found (Anaconda) This error occurs when running conda command on terminal after upgrading MacOS to Catalina.</description>
     </item>
     
   </channel>

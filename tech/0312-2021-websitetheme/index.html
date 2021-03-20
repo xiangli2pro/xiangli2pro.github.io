@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" data-theme=""><head>
-    <title> Xiang Li | website </title>
+    <title> Xiang Li | Website Theme </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta name="description" content="">
+    <meta name="description" content="Parameters Setup of the Theme">
     
     <link rel="stylesheet"
           href="https://xiangli2pro.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css"
@@ -37,10 +37,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="https://xiangli2pro.github.io/categories/website/">
+    <link rel="canonical" href="https://xiangli2pro.github.io/tech/0312-2021-websitetheme/">
 
     
-    <link rel="alternate" type="application/rss+xml" href="https://xiangli2pro.github.io/categories/website/index.xml" title="Xiang Li's Blog" />
     
     
     
@@ -54,8 +53,8 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
 
-<meta name="twitter:title" content="website"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Website Theme"/>
+<meta name="twitter:description" content="Parameters Setup of the Theme"/>
 
 
     
@@ -137,23 +136,87 @@
 
     <div class="autopagerize_page_element">
         <div class="content">
-    <div class="archive  animated fadeInDown ">
-        <ul class="list-with-title">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
             
-                <div class="listing-title">2021</div>
+            <div class="post-title">
+                <h3>Website Theme</h3>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://xiangli2pro.github.io/tech/0312-2021-websitetheme/" title="Website Theme">Website Theme</a>
-                                <div class="post-time"><span class="date"> Mar 12 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Fri, Mar 12, 2021
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">2-minute read</span>
+                        <span class="separator"><a class="category" href="/categories/website/">website</a></span>
+
+                    </div>
                 
-            
-        </ul>
+            </div>
+
+            <p><br>
+This is an ongoing post.
+<br>
+<br>
+The website is powered by <a href="https://gohugo.io/getting-started/quick-start/">Hugo</a>, employing the theme <a href="https://themes.gohugo.io/anatole/">Anatole</a>. It&rsquo;s a beautiful template, and I would like to customize the setup a bit to reflect personal preference. I am a newcomer to the language css, js, basically I open the website in the chrome and use the developer tools to get a hint on which parameter changing which feature, a lot of functions are still under development. I will keep recording the changes I have made, in case I am going to modify it later or someone else wants a similar setup.</p>
+<h4 id="font-stylecss">font (style.css)</h4>
+<ol>
+<li>content font size: .p(16px);</li>
+<li>post title font size: .post .post-title(20px); .post .post-content(20px);</li>
+<li>post title not capitalized: add code below to .css file</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">h3 {
+    text-transform: none !important;
+}
+</code></pre></div><h4 id="layout-stylecss">layout (style.css)</h4>
+<ol>
+<li>sidebar width: .content (70%), .page-top(70%); @media(30%), .sidebar(30%);</li>
+<li>category position (single.html):  move category to the top of a post</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--&lt;div class=&#34;post-title&#34;&gt;--&gt;</span>
+     <span class="c">&lt;!--&lt;div class=&#34;info&#34;&gt;--&gt;</span>
+         <span class="c">&lt;!--&lt;em class=&#34;fas fa-calendar-day&#34;&gt;&lt;/em&gt;--&gt;</span>
+         {{ with .Page.Params.Categories }}{{ partial &#34;taxonomy/categories.html&#34; . }}{{ end }}
+    <span class="c">&lt;!-- &lt;/div&gt;
+</span><span class="c">&lt;!-- &lt;/div&gt;
+</span></code></pre></div><h4 id="comment-md">comment (.md)</h4>
+<ol>
+<li>make utterance comment box show up in each post: need to set type= &ldquo;post&rdquo; in the .md file FrontMatter, and add &ldquo;post&rdquo; into mainSections in config.toml;</li>
+</ol>
+<h4 id="read-more-indexhtml">read more (index.html)</h4>
+<ol>
+<li>add code below in the /anatole/layouts/index.html, between code chuck &lsquo;post-content&rsquo; and &lsquo;post-footer&rsquo;</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--  &lt;div class=&#34;post-content&#34;&gt; &lt;div&gt;  --&gt;</span>
+
+{{- if .Truncated -}}
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;{{ .RelPermalink }}&#39;</span><span class="p">&gt;</span><span class="ni">&amp;hellip;</span> Read more<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+{{- end -}}
+
+<span class="c">&lt;!--  &lt;div class=&#34;post-footer&#34;&gt; &lt;div&gt; --&gt;</span>
+</code></pre></div></div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+              
+                <h2></h2>
+                <script src="https://utteranc.es/client.js"
+        repo="xiangli2pro/xiangli2pro.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
     </div>
+
 
         </div>
     </div>
