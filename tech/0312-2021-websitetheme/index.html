@@ -165,7 +165,7 @@ This is an ongoing post.
 <br>
 <br>
 The website is powered by <a href="https://gohugo.io/getting-started/quick-start/">Hugo</a>, employing the theme <a href="https://themes.gohugo.io/anatole/">Anatole</a>. It&rsquo;s a beautiful template, and I would like to customize the setup a bit to reflect personal preference. I am a newcomer to the language css, js, basically I open the website in the chrome and use the developer tools to get a hint on which parameter changing which feature, a lot of functions are still under development. I will keep recording the changes I have made, in case I am going to modify it later or someone else wants a similar setup.</p>
-<h4 id="font-stylecss">font (style.css)</h4>
+<h4 id="1-font-stylecss">1. font (style.css)</h4>
 <ol>
 <li>content font size: .p(16px);</li>
 <li>post title font size: .post .post-title(20px); .post .post-content(20px);</li>
@@ -174,7 +174,8 @@ The website is powered by <a href="https://gohugo.io/getting-started/quick-start
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">h3 {
     text-transform: none !important;
 }
-</code></pre></div><h4 id="layout-stylecss">layout (style.css)</h4>
+</code></pre></div><p> </p>
+<h4 id="2-layout-stylecss">2. layout (style.css)</h4>
 <ol>
 <li>sidebar width: .content (70%), .page-top(70%); @media(30%), .sidebar(30%);</li>
 <li>category position (single.html):  move category to the top of a post</li>
@@ -185,11 +186,13 @@ The website is powered by <a href="https://gohugo.io/getting-started/quick-start
          {{ with .Page.Params.Categories }}{{ partial &#34;taxonomy/categories.html&#34; . }}{{ end }}
     <span class="c">&lt;!-- &lt;/div&gt;
 </span><span class="c">&lt;!-- &lt;/div&gt;
-</span></code></pre></div><h4 id="comment-md">comment (.md)</h4>
+</span></code></pre></div><p> </p>
+<h4 id="3-comment-md">3. comment (.md)</h4>
 <ol>
 <li>make utterance comment box show up in each post: need to set type= &ldquo;post&rdquo; in the .md file FrontMatter, and add &ldquo;post&rdquo; into mainSections in config.toml;</li>
 </ol>
-<h4 id="read-more-indexhtml">read more (index.html)</h4>
+<p> </p>
+<h4 id="4-read-more-indexhtml">4. read more (index.html)</h4>
 <ol>
 <li>add code below in the /anatole/layouts/index.html, between code chuck &lsquo;post-content&rsquo; and &lsquo;post-footer&rsquo;</li>
 </ol>
@@ -200,7 +203,20 @@ The website is powered by <a href="https://gohugo.io/getting-started/quick-start
 {{- end -}}
 
 <span class="c">&lt;!--  &lt;div class=&#34;post-footer&#34;&gt; &lt;div&gt; --&gt;</span>
-</code></pre></div></div>
+</code></pre></div><p> </p>
+<h4 id="5-render-ipynb-on-hugo">5. render .ipynb on Hugo</h4>
+<ol>
+<li>install <a href="https://nbconvert.readthedocs.io/en/latest/usage.html">nbconvert</a></li>
+<li>create a text cell on top of the .ipynb file, add metadata (<a href="https://wowchemy.com/docs/content/front-matter/">Front Matter</a>) that you would normally setup for your hugo posts to the text cell.</li>
+<li>upload .ipynb file to your website &hellip;/content/posts/ folder</li>
+<li>go to command line under this folder path, render .ipynb to markdown by typing</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">jupyter nbconvert --to markdown &lt;filename&gt;.ipynb
+</code></pre></div><ol start="5">
+<li>now you would see a &lt;filename&gt;.md file, you can make further changes</li>
+</ol>
+<p> </p>
+</div>
         <div class="post-footer">
             <div class="info">
                 

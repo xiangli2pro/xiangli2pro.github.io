@@ -165,13 +165,16 @@ This is an ongoing post.</p>
 <h4 id="1--conda-not-found-anaconda">1.  <code>conda not found</code> (Anaconda)</h4>
 <p>This error occurs when running <code>conda</code> command on terminal after upgrading MacOS to Catalina. Anaconda <a href="https://www.anaconda.com/blog/how-to-restore-anaconda-after-macos-catalina-update">website</a> offers two options to reinstall the old anaconda configurations that is supposed to be in the filepath <code>Desktop/Relocated Items</code>. For me I do not need to recover the previous setup or environment, so the solution is simple, re-download Anaconda (at the moment it&rsquo;s Anaconda Individual Edition), then <strong>restart</strong> terminal and type <code>conda list</code>, if the screen displays packages information, then mission accomplished!</p>
 <p>Another useful reference <a href="https://towardsdatascience.com/how-to-successfully-install-anaconda-on-a-mac-and-actually-get-it-to-work-53ce18025f97">https://towardsdatascience.com/how-to-successfully-install-anaconda-on-a-mac-and-actually-get-it-to-work-53ce18025f97</a></p>
+<p> </p>
 <h4 id="2--permission-denied-publickey-github">2.  <code>permission denied (publickey)</code> (Github)</h4>
 <p>When <code>push</code> a new commit to the remote Github repository, especially the first time, the error occurs. In my case, the problem is solved by following the instructions on the Github <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">webstie</a>.</p>
+<p> </p>
 <h4 id="3--unable-to-load-shared-object--systemfontsso-r">3.  <code>unable to load shared object ... systemfonts.so</code> (R)</h4>
 <p>After updating MacOS to Catalina and updating R packages and R studio (3.6.1) to the latest version, I run into the below error when I try to call the package <code>KableExtra</code> in the .Rmd file.</p>
 <p><em>Error: package or namespace load failed for ‘kableExtra’ in dyn.load(file, DLLpath = DLLpath, &hellip;): unable to load shared object &lsquo;/Library/Frameworks/R.framework/Versions/3.6/Resources/library/systemfonts/libs/systemfonts.so&rsquo;: &hellip;</em></p>
 <p>Solution: refer to this <a href="https://github.com/yixuan/showtext/issues/13">Github issue</a>, download and install
 <a href="https://www.xquartz.org/"><code>XQuartz</code></a>, then restart Mac.</p>
+<p> </p>
 </div>
         <div class="post-footer">
             <div class="info">

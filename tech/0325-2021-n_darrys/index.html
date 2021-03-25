@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> Xiang Li | Understand slicing in python 3d-arrays </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="Coding">
+    
+    <link rel="stylesheet"
+          href="https://xiangli2pro.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css"
+          integrity="sha256-DGQ95ACK3KMp96LWFs4wjMqZ1O9F5MyjBzI&#43;eFeRAZQ="
+          crossorigin="anonymous"
+          type="text/css">
+    
+    <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+        
+        
+        <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/customer.min.0a7e49f5bde37e4a34cd758cd68ad6c40e3ab0075d2c541e564bf2cdf6a3b920.css"
+        integrity="sha256-Cn5J9b3jfko0zXWM1orWxA46sAddLFQeVkvyzfajuSA="
+        crossorigin="anonymous"
+        media="screen" />
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="https://xiangli2pro.github.io/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://xiangli2pro.github.io/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="https://xiangli2pro.github.io/tech/0325-2021-n_darrys/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://xiangli2pro.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
+
+<meta name="twitter:title" content="Understand slicing in python 3d-arrays"/>
+<meta name="twitter:description" content="Coding"/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://xiangli2pro.github.io/images/dandan.jpeg" alt="profile picture">
+            <h3 title=""><a href="/">Xiang Li</a></h3>
+            <div class="description">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://www.linkedin.com/in/xiang-li-505757129/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/xiangli2pro" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:xiangli2pro@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Xiang Li  2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/life/"
+                        
+                   title="">Life</a></li>
+        
+            
+            <li><a 
+                   href="/tech/"
+                        
+                   title="">Tech</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/resource/"
+                        
+                   title="">Resource</a></li>
+        
+        
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Understand slicing in python 3d-arrays</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Thu, Mar 25, 2021
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">3-minute read</span>
+                        <span class="separator"><a class="category" href="/categories/coding/">coding</a></span>
+
+                    </div>
+                
+            </div>
+
+            <p> </p>
+<p>I was having a hard time understanding the slicing along different axes of a 3d-array in python. Since the best way to learn is through practice, here I will list some helpful examples that has enhanced my understanding, and an application on converting a colorful image to a grayscale image. I will use functions <code>numpy.apply_along_axis</code> and <code>numpy.apply_over_axes</code> to illustrate the ideas, their operations look confusing at the first sight, but once you understand the difference, you will certainly have a better perception about the topic.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># import libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+</code></pre></div><p> </p>
+<p>We start from a 2d-array <code>A</code> of shape <code>(2,3)</code>. When we slice along an axis, for example, row axis(axis=0), the slices are the columns. More specifically, slices are <code>A[:,0], A[:,1], A[:,2]</code>. Each <code>A[:,j]</code> is a 1d-array by looping over (<strong>slice along</strong>) the row indices when column index is fixed.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;2d-arry A is</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;apply sum function along the row axis(axis=0)&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="p">))</span>
+</code></pre></div><pre><code>2d-arry A is
+ [[0 1 2]
+ [0 1 2]] 
+
+apply sum function along the row axis(axis=0)
+[0. 1. 2.]
+</code></pre>
+<p> </p>
+<p>Next we look at a 3d-array example. <code>B</code> is of shape <code>(2,4,3)</code>. When we slice along an axis, for example, the last axis(axis=-1 or axis=2), the slices are <code>B[i,j,:]</code> (<code>i=0,1</code>, <code>j=0,1,2,3</code>). Each <code>B[i,j,:]</code> is a 1d-array by looping over (<strong>slice along</strong>) the last axis indices when the first two axes indices are fixed. Suppose we apply a <code>np.mean</code> along the last axis, we will get a 2d-array of shape <code>(2,4)</code>, the <code>(0,0)</code>th element of which is <code>np.mean(B[0,0,:])=np.mean([0,40,80])=40</code>, the <code>(1,0)</code>th element of which is <code>np.mean(B[1,0,:])=np.mean([120,160,200])=160</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># create a 3d-arrary of shape (2,4,3)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;3d-arry B is</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;apply mean function along the last axis(axis=-1)&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
+</code></pre></div><pre><code>3d-arry B is
+ [[[  0  40  80]
+  [  0  40  80]
+  [  0  40  80]
+  [  0  40  80]]
+
+ [[120 160 200]
+  [120 160 200]
+  [120 160 200]
+  [120 160 200]]] 
+
+apply mean function along the last axis(axis=-1)
+[[ 40.  40.  40.  40.]
+ [160. 160. 160. 160.]]
+</code></pre>
+<p> </p>
+<p>Here is an application where we use slices along certain axis of a 3d-array data.</p>
+<p>Colorful image is often a 3d-array with the last axis indicating the three RGB channels. One way to turn the color to grayscale is to average the 3d-array values over the last axis(color channels), then populate the mean values along the last axis such that each color channel has the same values. We first define a function that calculates and populates the mean along the last axis, then plot the pictures before and after the transformation.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># function to_gray</span>
+<span class="k">def</span> <span class="nf">to_gray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="n">repeats</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span> 
+                             <span class="c1"># repeat the mean 3 times because there are 3 color channels</span>
+                             <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="c1"># function apply along the last axis</span>
+                             <span class="n">x</span><span class="p">)</span>
+
+<span class="n">B_scale</span> <span class="o">=</span> <span class="n">B</span><span class="o">/</span><span class="mf">255.0</span> <span class="c1"># scale the value to be in [0,1]</span>
+<span class="n">figs</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">B_scale</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&#34;Original&#34;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;Off&#39;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">to_gray</span><span class="p">(</span><span class="n">B_scale</span><span class="p">))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&#34;Transformed&#34;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;Off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img src="/images/nd-arrays.png" alt=""></p>
+<p> </p>
+<p>Another function I want to present is <code>numpy.apply_over_axes</code>, it applies a function repeatedly over <strong>multiple axes</strong>. The difference from <code>numpy.apply_along_axis</code> is that <code>apply_along_axis</code> applies function on each 1d-array slice, but the <code>apply_over_axes</code> applies function on each multi-dimension array slice.</p>
+<p>Use <code>B</code> as an exmaple, <code>np.apply_along_axis(np.mean, -1, B)</code> applies mean function on each 1d-array <code>B[i,j,:]</code> slice, since indices vary over <code>(i,j)</code> we get a output of shape <code>(2,4)</code>; <code>np.apply_over_axis(np.mean, B, [0,1])</code> applies mean function on each 2d-arry <code>B[:,:,k]</code>, since index varies over <code>k</code>, we get a output of shape <code>(,,3)</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s1">&#39;apply mean function over the first two axes(axes=[0,1])&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">apply_over_axes</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">mean over 2d-array B[:,:,0]&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">B</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">mean over 2d-array B[:,:,1]&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">B</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">mean over 2d-array B[:,:,2]&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">B</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]))</span>
+</code></pre></div><pre><code>apply mean function over the first two axes(axes=[0,1])
+[[[ 60. 100. 140.]]]
+
+mean over 2d-array B[:,:,0]
+60.0
+
+mean over 2d-array B[:,:,1]
+100.0
+
+mean over 2d-array B[:,:,2]
+140.0
+</code></pre>
+<p> 
+ </p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+              
+                <h2></h2>
+                <script src="https://utteranc.es/client.js"
+        repo="xiangli2pro/xiangli2pro.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js"
+        integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ="
+        crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js"
+        integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2&#43;LqU="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script><link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+              integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq"
+              crossorigin="anonymous"><script defer
+                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+                integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz"
+                crossorigin="anonymous"></script><script defer
+                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+                integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+                crossorigin="anonymous"
+                onload="renderMathInElement(document.body);"></script></body>
+
+</html>

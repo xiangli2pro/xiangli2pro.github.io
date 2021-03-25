@@ -6,14 +6,23 @@
     <description>Recent content on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understand slicing in python 3d-arrays</title>
+      <link>https://xiangli2pro.github.io/tech/0325-2021-n_darrys/</link>
+      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0325-2021-n_darrys/</guid>
+      <description>I was having a hard time understanding the slicing along different axes of a 3d-array in python.</description>
+    </item>
+    
     <item>
       <title>Study Resources</title>
       <link>https://xiangli2pro.github.io/resource/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiangli2pro.github.io/resource/</guid>
-      <description>&amp;mdash;&amp;ndash;&amp;gt;Scientific Reading  Website: FiveThirtyEight Website: Scientific American  &amp;mdash;&amp;ndash;&amp;gt;Statistics  Website: Rice University Supplemental Resources and Data for Statisticians Book: Computer age statistical inference  &amp;mdash;&amp;ndash;&amp;gt;Machine Learning  Website: UC Business Analytics R Programming Guide Standford CS224W Machine Learning with Graphs  &amp;mdash;&amp;ndash;&amp;gt;Spanish  Youtube: Why not Spanish Youtube: Hola Spanish Youtube: Spanishland School  </description>
+      <description> Scientific Reading  Website: FiveThirtyEight Website: Scientific American   Statistics  Website: Rice University Supplemental Resources and Data for Statisticians Book: Computer age statistical inference   Machine Learning  Website: UC Business Analytics R Programming Guide Standford CS224W Machine Learning with Graphs   Spanish  Youtube: Why not Spanish Youtube: Hola Spanish Youtube: Spanishland School  </description>
     </item>
     
     <item>
