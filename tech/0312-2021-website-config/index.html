@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" data-theme=""><head>
-    <title> Xiang Li | What happened to the sequence of infinite coin toss? </title>
+    <title> Xiang Li | Website Configuration </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta name="description" content="dyadic expansion">
+    <meta name="description" content="Parameters Setup of the Theme">
     
     <link rel="stylesheet"
           href="https://xiangli2pro.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css"
@@ -37,7 +37,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="https://xiangli2pro.github.io/tech/0318-2021-dyadic/">
+    <link rel="canonical" href="https://xiangli2pro.github.io/tech/0312-2021-website-config/">
 
     
     
@@ -53,8 +53,8 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
 
-<meta name="twitter:title" content="What happened to the sequence of infinite coin toss?"/>
-<meta name="twitter:description" content="dyadic expansion"/>
+<meta name="twitter:title" content="Website Configuration"/>
+<meta name="twitter:description" content="Parameters Setup of the Theme"/>
 
 
     
@@ -146,61 +146,93 @@
         <div class="post-content">
             
             <div class="post-title">
-                <h3>What happened to the sequence of infinite coin toss?</h3>
+                <h3>Website Configuration</h3>
                 
                     <div class="info">
                         <em class="fas fa-calendar-day"></em>
-                        <span class="date"> Thu, Mar 18, 2021
+                        <span class="date"> Fri, Mar 12, 2021
                                            </span>
                         <em class="fas fa-stopwatch"></em>
-                        <span class="reading-time">3-minute read</span>
-                        <span class="separator"><a class="category" href="/categories/statistics/">statistics</a></span>
+                        <span class="reading-time">2-minute read</span>
+                        <span class="separator"><a class="category" href="/categories/website/">website</a></span>
 
                     </div>
                 
             </div>
 
             <p><br>
-Suppose we have a fair coin with two faces Head (H) and Tail (T). Intuitively,  one would say that as we toss the coin more times, the relative frequency of H occurrence is getting closer to one half. Here I provide an interesting statistic look at the above statement based on the content from <em>Probability and Measure</em><cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite> .</p>
-<p>Let \(1\) indicate H and \(0\) indicate T, \(w\) be the infinite sequence of tosses of coin.  Then  \(w\) can be represented by a nonterminating dyadic expansion (similar to binary expansion)<cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite> \(w=\sum_{n=1}^{\infty}\frac{d_n(w)}{2^n}\), where \(d_n(w)\) takes value in \(\{0,1\}\) and can be understood as the result of \(n\)-th toss in the sequence \(w\). For example, \(w=0.0101010111&hellip;\); Nonterminating means for value with two expansion representations, use the representation not ending in \(0\). Take \(0.5\) as an example, \(0.5\) can be written as \(0.1\) or \(0.0111&hellip;\)<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite>, we choose the one of \(0.0111&hellip;\);</p>
-<p>The statement mentioned in the beginning can be statistically translated as
-\(P(\big[w:\underset{n\rightarrow \infty}{\lim}\frac{1}{n}\sum_{i=1}^n d_i(w)=\frac{1}{2}\big])=1\), often referred as &lsquo;strong law of large numbers&rsquo;. Before we start the proof, let&rsquo;s first look at some useful definitions and lemmas.</p>
-<h4 id="1-notation">1. notation</h4>
-<p>Let \(N=\big[w:\underset{n\rightarrow \infty}{\lim}\frac{1}{n}\sum_{i=1}^n d_i(w)=\frac{1}{2}\big]\), \(s_n(w)=\sum_{i=1}^n[2d_i(w)-1]\).</p>
-<p>Then it&rsquo;s equivalent to write \(N=\big[w:\underset{n\rightarrow \infty}{\lim}\frac{1}{n}s_n(w)=0\big]\). We prove \(P(N)=1\) by showing that \(P(N^c)=0\).</p>
-<h4 id="2-negligible-set">2. negligible set</h4>
-<p>Define a set \(A\) to be negligible if for each positive \(\epsilon\) there exists a finite or countable collection \(I_1, I_2,&hellip;\) of intervals (they may overlap) satisfying \(A \subset \sum_k I_k\) and \(\sum_k|I_k|&lt;\epsilon\). A finite or countable union of negligible sets is negligible.</p>
-<h4 id="3-lemma">3. lemma</h4>
-<p>\(P(\big[w: |\frac{1}{n}s_n(w)|\geq \epsilon\big])\leq \frac{3}{n^2\epsilon^4}\). The proof of this lemma is not the focus here, details can be found in <cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite>.</p>
-<p><br>
-Now we are prepared to start the proof.</p>
-<p>Let \(A_n=\big[w: |n^{-1}s_n(w)|\geq \epsilon_n\big]\), then by the lemma, \(P(A_n)\leq \frac{3}{n^2\epsilon_n^4}\). We fix a positive sequence \(\{\epsilon_n\}\) going to \(0\) slowly enough such that the series \(\sum_n\epsilon_n^{-4}n^{-2}\)(take \(\epsilon_n=n^{-1/10}\), for example) converges, so \(\sum_nP(A_n)&lt; \infty\).</p>
-<p>Next we prove \(P(N^c)=0\) by showing that \(N^c\) can be covered by intervals the total sum of whose lengths can be made arbitrarily small.</p>
-<ul>
-<li>If for some \(m\), \(w\) lies in \(A_n^c\) for all \(n\geq m\), then \(|n^{-1}s_n(w)|&lt;\epsilon_n\) for \(n\geq m\), and it follows that \(w\in N\).<br>
-In other words, for each \(m\), \(\cap_{n=m}^{\infty}A_n^c\subset N\), which is the same thing as \(N^c \subset \cup_{n=m}^{\infty}A_n\).</li>
-<li>Since \(\sum_nP(A_n)&lt; \infty\), so we can find a \(m\) such that \(\sum_{n=m}^{\infty}P(A_n)&lt; \epsilon\).</li>
-<li>Therefore, \(P(N^c)&lt;\sum_{n=m}^{\infty}P(A_n)&lt; \epsilon\). \(P(N^c)=0\) due to \(\epsilon\) is arbitrary.</li>
-</ul>
-<p>\(\blacksquare\)</p>
-<p>To be more accurate, since \(s_n(w)\) is a step function on the interval \((0,1]\), \(A_n\) is a finite disjoint union of \(\cup_kI_{nk}\) with \(P(A_n)=\sum_k|I_{nk}|\). Therefore \(\cup_{n=m}^{\infty}A_n\) is a countable union of  \(\cup_{n=m}^{\infty}\cup_kI_{nk}\) with \(\sum_{n=m}^{\infty}\sum_k|I_{nk}|=\sum_{n=m}^{\infty}P(A_n)&lt; \epsilon\). The intervals \(I_{nk}(n\geq m, k\geq 1)\) provide a covering of \(N^c\).</p>
-<p> </p>
-<p> </p>
-<section class="footnotes" role="doc-endnotes">
-<hr>
+This is an ongoing post.
+<br>
+<br>
+The website is powered by <a href="https://gohugo.io/getting-started/quick-start/">Hugo</a>, employing the theme <a href="https://themes.gohugo.io/anatole/">Anatole</a>. It&rsquo;s a beautiful template, and I would like to customize the setup a bit to reflect personal preference. I am a newcomer to the language css, js, basically I open the website in the chrome and use the developer tools to get a hint on which parameter changing which feature, a lot of functions are still under development. I will keep recording the changes I have made, in case I am going to modify it later or someone else wants a similar setup.</p>
+<h4 id="1-font-stylecss">1. font (style.css)</h4>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p><em><a href="https://www.colorado.edu/amath/sites/default/files/attached-files/billingsley.pdf">Probability and Measure</a></em> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>similar in the sense that they have the same format \(\sum_{n=1}^{\infty}\frac{d_n(w)}{2^n}\), the difference is that in dyadic expansion \(d_n(w)\) is actually a step function of \(w\) when \(n\) is fixed <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:3" role="doc-endnote">
-<p>\(0.5=1\times 2^{-1}=0.1\)(in binary)</p>
-<p>\(0.5=\sum_{n=2}^{\infty}2^{-n}=0\times 2^{-1}+1\times 2^{-2}+1\times 2^{-3}+1\times 2^{-4}+&hellip;=0.0111&hellip;\)(in binary, nonterminating) <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
+<li>content font size: .p(16px);</li>
+<li>post title font size: .post .post-title(20px); .post .post-content(20px);</li>
+<li>post title not capitalized: add code below to .css file</li>
 </ol>
-</section>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">h3 {
+    text-transform: none !important;
+}
+</code></pre></div><p> </p>
+<h4 id="2-layout-stylecss">2. layout (style.css)</h4>
+<ol>
+<li>sidebar width: .content (70%), .page-top(70%); @media(30%), .sidebar(30%);</li>
+<li>category position (single.html):  move category to the top of a post</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--&lt;div class=&#34;post-title&#34;&gt;--&gt;</span>
+     <span class="c">&lt;!--&lt;div class=&#34;info&#34;&gt;--&gt;</span>
+         <span class="c">&lt;!--&lt;em class=&#34;fas fa-calendar-day&#34;&gt;&lt;/em&gt;--&gt;</span>
+         {{ with .Page.Params.Categories }}{{ partial &#34;taxonomy/categories.html&#34; . }}{{ end }}
+    <span class="c">&lt;!-- &lt;/div&gt;
+</span><span class="c">&lt;!-- &lt;/div&gt;
+</span></code></pre></div><p> </p>
+<h4 id="3-comment-md">3. comment (.md)</h4>
+<ol>
+<li>make utterance comment box show up in each post: need to set type= &ldquo;post&rdquo; in the .md file FrontMatter, and add &ldquo;post&rdquo; into mainSections in config.toml;</li>
+</ol>
+<p> </p>
+<h4 id="4-read-more-indexhtml">4. read more (index.html)</h4>
+<ol>
+<li>add code below in the /anatole/layouts/index.html, between code chuck &lsquo;post-content&rsquo; and &lsquo;post-footer&rsquo;</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--  &lt;div class=&#34;post-content&#34;&gt; &lt;div&gt;  --&gt;</span>
+
+{{- if .Truncated -}}
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;{{ .RelPermalink }}&#39;</span><span class="p">&gt;</span><span class="ni">&amp;hellip;</span> Read more<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+{{- end -}}
+
+<span class="c">&lt;!--  &lt;div class=&#34;post-footer&#34;&gt; &lt;div&gt; --&gt;</span>
+</code></pre></div><p> </p>
+<h4 id="5-render-ipynb-on-hugo">5. render .ipynb on Hugo</h4>
+<ol>
+<li>install <a href="https://nbconvert.readthedocs.io/en/latest/usage.html">nbconvert</a></li>
+<li>create a text cell on top of the .ipynb file, add metadata (<a href="https://wowchemy.com/docs/content/front-matter/">Front Matter</a>) that you would normally setup for your hugo posts to the text cell.</li>
+<li>upload .ipynb file to your website &hellip;/content/posts/ folder</li>
+<li>go to command line under this folder path, render .ipynb to markdown by typing</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">jupyter nbconvert --to markdown &lt;filename&gt;.ipynb
+</code></pre></div><ol start="5">
+<li>now you would see a &lt;filename&gt;.md file, you can make further changes</li>
+</ol>
+<p> </p>
+<h4 id="6-customize-image-size">6. customize image size</h4>
+<p>refer to this support <a href="https://github.com/lxndrblz/anatole/issues/175">post</a>, in order to adjust the size or alignment of the image in a post, we can use either html tag <code>&lt;img&gt;</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md"><span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/your-image.jpg&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;800&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;100&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
+</code></pre></div><p>Or hugo figure <a href="https://gohugo.io/content-management/shortcodes/">shortcode</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{<span class="p">&lt;</span>  <span class="nt">figure</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/your-image.jpg&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;alignright&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;800&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;100&#34;</span>  <span class="p">&gt;</span>}}
+</code></pre></div><p> </p>
+<h4 id="7-render-math-symbols-using-katex">7. render math symbols using <code>KaTex</code></h4>
+<p>sometimes if the <code>_</code> subscript can not be rendered, consider using <code>\_</code> instead. for example,</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">$$
+x = ( \underbrace{0...0}_{N_1}, \underbrace{0...0}_{N_2} )^T #\underbrace{}_{} not working
+$$
+
+$$
+x = ( \underbrace{0...0}\_{N_1}, \underbrace{0...0}\_{N_2} )^T #\underbrace{}\_{} works
+$$
+</code></pre></div><p> 
+ </p>
 </div>
         <div class="post-footer">
             <div class="info">

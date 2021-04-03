@@ -1,1 +1,3 @@
 1. when use math: true, the pattern is xx: xx not xx=xx;
+
+2. Latex https://katex.org/docs/supported.html
