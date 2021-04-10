@@ -6,58 +6,49 @@
     <description>Recent content in Categories on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>statistics</title>
-      <link>https://xiangli2pro.github.io/categories/statistics/</link>
+      <title>microarray analysis</title>
+      <link>https://xiangli2pro.github.io/categories/microarray-analysis/</link>
+      <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/categories/microarray-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://xiangli2pro.github.io/categories/python/</link>
+      <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>r</title>
+      <link>https://xiangli2pro.github.io/categories/r/</link>
+      <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algebra</title>
+      <link>https://xiangli2pro.github.io/categories/algebra/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/categories/statistics/</guid>
+      <guid>https://xiangli2pro.github.io/categories/algebra/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>coding</title>
-      <link>https://xiangli2pro.github.io/categories/coding/</link>
-      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+      <title>probability</title>
+      <link>https://xiangli2pro.github.io/categories/probability/</link>
+      <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/categories/coding/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>website</title>
-      <link>https://xiangli2pro.github.io/categories/website/</link>
-      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiangli2pro.github.io/categories/website/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>troubleshooting</title>
-      <link>https://xiangli2pro.github.io/categories/troubleshooting/</link>
-      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiangli2pro.github.io/categories/troubleshooting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>color</title>
-      <link>https://xiangli2pro.github.io/categories/color/</link>
-      <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiangli2pro.github.io/categories/color/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>https://xiangli2pro.github.io/categories/test/</link>
-      <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiangli2pro.github.io/categories/test/</guid>
+      <guid>https://xiangli2pro.github.io/categories/probability/</guid>
       <description></description>
     </item>
     

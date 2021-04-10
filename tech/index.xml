@@ -6,7 +6,16 @@
     <description>Recent content in Teches on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use Python in R</title>
+      <link>https://xiangli2pro.github.io/tech/0409-2021-python-r/</link>
+      <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0409-2021-python-r/</guid>
+      <description>As a statistician, I use R a lot in my school works and collaboration projects, since R provides almost all the statistical analysis tools I would need in my research, from data wrangling, statistical modeling, simulation, to data visualization.</description>
+    </item>
+    
     <item>
       <title>Decompose correlation matrix with block structure</title>
       <link>https://xiangli2pro.github.io/tech/0401-2021-corr-matrix/</link>

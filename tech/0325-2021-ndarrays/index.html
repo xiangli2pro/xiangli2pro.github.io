@@ -154,7 +154,7 @@
                                            </span>
                         <em class="fas fa-stopwatch"></em>
                         <span class="reading-time">3-minute read</span>
-                        <span class="separator"><a class="category" href="/categories/coding/">coding</a></span>
+                        <span class="separator"><a class="category" href="/categories/python/">python</a></span>
 
                     </div>
                 
@@ -171,13 +171,13 @@
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;2d-arry A is</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;apply sum function along the row axis(axis=0)&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;apply mean function along the row axis(axis=0)&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="p">))</span>
 </code></pre></div><pre><code>2d-arry A is
  [[0 1 2]
  [0 1 2]] 
 
-apply sum function along the row axis(axis=0)
+apply mean function along the row axis(axis=0)
 [0. 1. 2.]
 </code></pre>
 <p> </p>
