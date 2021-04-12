@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme=""><head>
-    <title> Xiang Li | What happened to the sequence of infinite coin toss? </title>
+    <title> Xiang Li | What happens if toss a fair coin infinite times? </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -53,7 +53,7 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
 
-<meta name="twitter:title" content="What happened to the sequence of infinite coin toss?"/>
+<meta name="twitter:title" content="What happens if toss a fair coin infinite times?"/>
 <meta name="twitter:description" content="dyadic expansion"/>
 
 
@@ -146,14 +146,14 @@
         <div class="post-content">
             
             <div class="post-title">
-                <h3>What happened to the sequence of infinite coin toss?</h3>
+                <h3>What happens if toss a fair coin infinite times?</h3>
                 
                     <div class="info">
                         <em class="fas fa-calendar-day"></em>
                         <span class="date"> Thu, Mar 18, 2021
                                            </span>
                         <em class="fas fa-stopwatch"></em>
-                        <span class="reading-time">3-minute read</span>
+                        <span class="reading-time">4-minute read</span>
                         <span class="separator"><a class="category" href="/categories/probability/">probability</a></span>
 
                     </div>
@@ -161,20 +161,26 @@
             </div>
 
             <p><br>
-Suppose we have a fair coin with two faces Head (H) and Tail (T). Intuitively,  one would say that as we toss the coin more times, the relative frequency of H occurrence is getting closer to one half. Here I provide an interesting statistic look at the above statement based on the content from <em>Probability and Measure</em><cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite> .</p>
-<p>Let \(1\) indicate H and \(0\) indicate T, \(w\) be the infinite sequence of tosses of coin.  Then  \(w\) can be represented by a nonterminating dyadic expansion (similar to binary expansion)<cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite> \(w=\sum_{n=1}^{\infty}\frac{d_n(w)}{2^n}\), where \(d_n(w)\) takes value in \(\{0,1\}\) and can be understood as the result of \(n\)-th toss in the sequence \(w\). For example, \(w=0.0101010111&hellip;\); Nonterminating means for value with two expansion representations, use the representation not ending in \(0\). Take \(0.5\) as an example, \(0.5\) can be written as \(0.1\) or \(0.0111&hellip;\)<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite>, we choose the one of \(0.0111&hellip;\);</p>
-<p>The statement mentioned in the beginning can be statistically translated as
-\(P(\big[w:\underset{n\rightarrow \infty}{\lim}\frac{1}{n}\sum_{i=1}^n d_i(w)=\frac{1}{2}\big])=1\), often referred as &lsquo;strong law of large numbers&rsquo;. Before we start the proof, let&rsquo;s first look at some useful definitions and lemmas.</p>
-<h4 id="1-notation">1. notation</h4>
-<p>Let \(N=\big[w:\underset{n\rightarrow \infty}{\lim}\frac{1}{n}\sum_{i=1}^n d_i(w)=\frac{1}{2}\big]\), \(s_n(w)=\sum_{i=1}^n[2d_i(w)-1]\).</p>
-<p>Then it&rsquo;s equivalent to write \(N=\big[w:\underset{n\rightarrow \infty}{\lim}\frac{1}{n}s_n(w)=0\big]\). We prove \(P(N)=1\) by showing that \(P(N^c)=0\).</p>
-<h4 id="2-negligible-set">2. negligible set</h4>
+Suppose we have a fair coin with two faces Head (H) and Tail (T). Intuitively,  one would say that as we toss the coin more times, the relative frequency of H (or T) occurrence is getting closer to one half. If you have taken any statistics course, you might know that the above statement can be directly proved by using the <em>strong law of large number</em><cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite>(SLL) theorem. The SLL comes so handy that I used to apply it to any problem that fits into the conditions without questioning what&rsquo;s really happening on the problem itself. So when I read the proof of the coin tossing problem in <em>Probability and Measure</em><cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite>, a basic but fundamental proof taking a perspective I didn&rsquo;t come across in the previous statistical classes, I felt very inspired and got a better statistical understanding of the problem itself. In the post, I will summarize the idea and present the proof.</p>
+<p> </p>
+<h4 id="1-prelude">1. Prelude</h4>
+<p>Let \(1\) indicate H and \(0\) indicate T, \(w\) be a sequence of infinite tosses of a coin.  Then  \(w\) can be represented by a nonterminating dyadic expansion (similar to binary expansion)<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite> \(w=\sum_{n=1}^{\infty}\frac{d_n(w)}{2^n}\), where \(d_n(w)\) takes value in \(\{0,1\}\) and can be understood as the result of \(n\)-th toss in the sequence \(w\). For example, \(w=0.01101&hellip;\)  means that \((d_1(w)=0, d_2(w)=1, d_3(w)=1, d_4(w)=0, d_5(w)=1,&hellip;)\), and is equivalent to the sequence THHTH\(&hellip;\). Nonterminating means that for value with two expansion representations, use the representation not ending in \(0\).  Take \(0.5\) as an example, \(0.5\) can be written as \(0.1\) or \(0.0111&hellip;\)<cite><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></cite>, we choose the one of \(0.0111&hellip;\) .</p>
+<p>Up to this point, the statement that the relative frequency of 1 (or H) occurrence approaches one half can be statistically translated as
+\(P(\big[w:\underset{n\rightarrow \infty}{\lim}\frac{\sum_{i=1}^n d_i(w)}{n}=\frac{1}{2}\big])=1\), which has the same form as the target probability in SLL, but  here \(d_i(w)\) has a more concrete definition than \(X_i\).  Before starting the proof, let&rsquo;s first look at some useful definitions and a lemma.</p>
+<p> </p>
+<h4 id="2-notation">2. Notation</h4>
+<p>Let \(N=\big[w:\underset{n\rightarrow \infty}{\lim}\frac{\sum_{i=1}^n d_i(w)}{n}=\frac{1}{2}\big]\) and \(s_n(w)=\sum_{i=1}^n[2d_i(w)-1]\).</p>
+<p>Then it&rsquo;s equivalent to write \(N=\big[w:\underset{n\rightarrow \infty}{\lim}\frac{s_n(w)}{n}=0\big]\).</p>
+<p>We prove \(P(N)=1\) by showing that \(P(N^c)=0\).</p>
+<p> </p>
+<h4 id="3-negligible-set">3. Negligible set</h4>
 <p>Define a set \(A\) to be negligible if for each positive \(\epsilon\) there exists a finite or countable collection \(I_1, I_2,&hellip;\) of intervals (they may overlap) satisfying \(A \subset \sum_k I_k\) and \(\sum_k|I_k|&lt;\epsilon\). A finite or countable union of negligible sets is negligible.</p>
-<h4 id="3-lemma">3. lemma</h4>
-<p>\(P(\big[w: |\frac{1}{n}s_n(w)|\geq \epsilon\big])\leq \frac{3}{n^2\epsilon^4}\). The proof of this lemma is not the focus here, details can be found in <cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite>.</p>
-<p><br>
-Now we are prepared to start the proof.</p>
-<p>Let \(A_n=\big[w: |n^{-1}s_n(w)|\geq \epsilon_n\big]\), then by the lemma, \(P(A_n)\leq \frac{3}{n^2\epsilon_n^4}\). We fix a positive sequence \(\{\epsilon_n\}\) going to \(0\) slowly enough such that the series \(\sum_n\epsilon_n^{-4}n^{-2}\)(take \(\epsilon_n=n^{-1/10}\), for example) converges, so \(\sum_nP(A_n)&lt; \infty\).</p>
+<p> </p>
+<h4 id="4-lemma">4. Lemma</h4>
+<p>\(P(\big[w: |\frac{s_n(w)}{n}|\geq \epsilon\big])\leq \frac{3}{n^2\epsilon^4}\). The proof of this lemma employs <em>Markov Inequality</em>, but it is not the focus here, details can be found in the book <cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite>.</p>
+<p> </p>
+<h4 id="5-proof">5. Proof</h4>
+<p>Now we are ready for the proof. Let \(A_n=\big[w: |n^{-1}s_n(w)|\geq \epsilon_n\big]\), then by the lemma, \(P(A_n)\leq \frac{3}{n^2\epsilon_n^4}\). We fix a positive sequence \(\{\epsilon_n\}\) going to \(0\) slowly enough such that the series \(\sum_n\epsilon_n^{-4}n^{-2}\)(take \(\epsilon_n=n^{-1/10}\), for example) converges, so \(\sum_nP(A_n)\leq \sum_n \frac{3}{n^2\epsilon_n^4}&lt;\infty\).</p>
 <p>Next we prove \(P(N^c)=0\) by showing that \(N^c\) can be covered by intervals the total sum of whose lengths can be made arbitrarily small.</p>
 <ul>
 <li>If for some \(m\), \(w\) lies in \(A_n^c\) for all \(n\geq m\), then \(|n^{-1}s_n(w)|&lt;\epsilon_n\) for \(n\geq m\), and it follows that \(w\in N\).<br>
@@ -183,21 +189,27 @@ In other words, for each \(m\), \(\cap_{n=m}^{\infty}A_n^c\subset N\), which is 
 <li>Therefore, \(P(N^c)&lt;\sum_{n=m}^{\infty}P(A_n)&lt; \epsilon\). \(P(N^c)=0\) due to \(\epsilon\) is arbitrary.</li>
 </ul>
 <p>\(\blacksquare\)</p>
+<p> </p>
+<h4 id="6-remark">6. Remark</h4>
 <p>To be more accurate, since \(s_n(w)\) is a step function on the interval \((0,1]\), \(A_n\) is a finite disjoint union of \(\cup_kI_{nk}\) with \(P(A_n)=\sum_k|I_{nk}|\). Therefore \(\cup_{n=m}^{\infty}A_n\) is a countable union of  \(\cup_{n=m}^{\infty}\cup_kI_{nk}\) with \(\sum_{n=m}^{\infty}\sum_k|I_{nk}|=\sum_{n=m}^{\infty}P(A_n)&lt; \epsilon\). The intervals \(I_{nk}(n\geq m, k\geq 1)\) provide a covering of \(N^c\).</p>
+<p>In section 5, the step from \(\sum_nP(A_n)&lt;\infty\) to \(P(N^c)=0\) can be done by using <em>the first Borel Cantelli Lemma</em>. It&rsquo;s encouraged to use those well-established theorems in solving problems, but in the post I mainly want to show the basic but inspiring concepts. The book <cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite> covers some fabulous examples of using the first and second <em>Borel Cantelli Lemma</em>, I intend to write a post about them in the near future.</p>
 <p> </p>
 <p> </p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p><em><a href="https://www.colorado.edu/amath/sites/default/files/attached-files/billingsley.pdf">Probability and Measure</a></em> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><em>the strong law of large number</em>:  if the random variables \(X_1,&hellip;,X_n\) are independent and identically distributed and \(E(X_n)=m\). Let \(T_n=X_1+\cdots+X_n\), then \(P(\lim_n\frac{T_n}{n}=m)=1\). <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>similar in the sense that they have the same format \(\sum_{n=1}^{\infty}\frac{d_n(w)}{2^n}\), the difference is that in dyadic expansion \(d_n(w)\) is actually a step function of \(w\) when \(n\) is fixed <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><em><a href="https://www.colorado.edu/amath/sites/default/files/attached-files/billingsley.pdf">Probability and Measure</a></em> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
+<p>similar in the sense that they have the same format \(\sum_{n=1}^{\infty}\frac{d_n(w)}{2^n}\), the difference is that in dyadic expansion \(d_n(w)\) is actually a step function of \(w\) when \(n\) is fixed <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
 <p>\(0.5=1\times 2^{-1}=0.1\)(in binary)</p>
-<p>\(0.5=\sum_{n=2}^{\infty}2^{-n}=0\times 2^{-1}+1\times 2^{-2}+1\times 2^{-3}+1\times 2^{-4}+&hellip;=0.0111&hellip;\)(in binary, nonterminating) <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>\(0.5=\sum_{n=2}^{\infty}2^{-n}=0\times 2^{-1}+1\times 2^{-2}+1\times 2^{-3}+1\times 2^{-4}+&hellip;=0.0111&hellip;\)(in binary, nonterminating) <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
