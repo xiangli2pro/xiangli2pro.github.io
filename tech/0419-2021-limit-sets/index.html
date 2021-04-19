@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme=""><head>
-    <title> Xiang Li | What happens if toss a fair coin infinite times? </title>
+    <title> Xiang Li | Interpret limit sets </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -37,7 +37,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="https://xiangli2pro.github.io/tech/0318-2021-dyadic/">
+    <link rel="canonical" href="https://xiangli2pro.github.io/tech/0419-2021-limit-sets/">
 
     
     
@@ -53,8 +53,8 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
 
-<meta name="twitter:title" content="What happens if toss a fair coin infinite times?"/>
-<meta name="twitter:description" content="Suppose we have a fair coin with two faces Head (H) and Tail (T)."/>
+<meta name="twitter:title" content="Interpret limit sets"/>
+<meta name="twitter:description" content="In the statistics textbooks or papers, one would encounter many theorems and problems that are studying the limiting behavior of a series of random variables, for example, suppose \(X, X_1,&hellip;,X_n,&hellip;\) are random variables defined on a probability space, a question often asked is, what is the probability of the event that \(\lim_{n}X_n = X\)?"/>
 
 
     
@@ -146,11 +146,11 @@
         <div class="post-content">
             
             <div class="post-title">
-                <h3>What happens if toss a fair coin infinite times?</h3>
+                <h3>Interpret limit sets</h3>
                 
                     <div class="info">
                         <em class="fas fa-calendar-day"></em>
-                        <span class="date"> Thu, Mar 18, 2021
+                        <span class="date"> Mon, Apr 19, 2021
                                            </span>
                         <em class="fas fa-stopwatch"></em>
                         <span class="reading-time">4-minute read</span>
@@ -160,56 +160,41 @@
                 
             </div>
 
-            <p><br>
-Suppose we have a fair coin with two faces Head (H) and Tail (T). Intuitively,  one would say that as we toss the coin more times, the relative frequency of H (or T) occurrence is getting closer to one half. If you have taken any statistics course, you might know that the above statement can be directly proved by using the <em>strong law of large number</em><cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite>(SLL) theorem. The SLL comes so handy that I used to apply it to any problem that fits into the conditions without questioning what&rsquo;s really happening on the problem itself. So when I read the proof of the coin tossing problem in <em>Probability and Measure</em><cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite>, a basic but fundamental proof taking a perspective I didn&rsquo;t come across in the previous statistical classes, I felt very inspired and got a better statistical understanding of the problem itself. In the post, I will summarize the idea and present the proof.</p>
+            <p> </p>
+<p>In the statistics textbooks or papers, one would encounter many theorems and problems that are studying the limiting behavior of a series of random variables, for example, suppose \(X, X_1,&hellip;,X_n,&hellip;\) are random variables defined on a probability space, a question often asked is, what is the probability of the event that \(\lim_{n}X_n = X\)? The event itself  might look very abstract at first sight, but once we are able to write it as the unions or intersections of some simple events, it would become more understandable.  In the post, I will introduce the <i>limits superior set</i>  and  <i>limits inferior set </i>  as well as how to interpret them, and give an example on how to construct the almost sure convergence event using more basic sets. The post content is created based on the book <i>Probability and Measure</i><cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite></p>
 <p> </p>
-<h4 id="1-prelude">1. Prelude</h4>
-<p>Let \(1\) indicate H and \(0\) indicate T, \(w\) be a sequence of infinite tosses of a coin.  Then  \(w\) can be represented by a nonterminating dyadic expansion (similar to binary expansion)<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite> \(w=\sum_{n=1}^{\infty}\frac{d_n(w)}{2^n}\), where \(d_n(w)\) takes value in \(\{0,1\}\) and can be understood as the result of \(n\)-th toss in the sequence \(w\). For example, \(w=0.01101&hellip;\)  means that \((d_1(w)=0, d_2(w)=1, d_3(w)=1, d_4(w)=0, d_5(w)=1,&hellip;)\), and is equivalent to the sequence THHTH\(&hellip;\). Nonterminating means that for value with two expansion representations, use the representation not ending in \(0\).  Take \(0.5\) as an example, \(0.5\) can be written as \(0.1\) or \(0.0111&hellip;\)<cite><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></cite>, we choose the one of \(0.0111&hellip;\) .</p>
-<p>Up to this point, the statement that the relative frequency of 1 (or H) occurrence approaches one half can be statistically translated as
-\(P(\big[w:\underset{n\rightarrow \infty}{\lim}\frac{\sum_{i=1}^n d_i(w)}{n}=\frac{1}{2}\big])=1\), which has the same form as the target probability in SLL, but  here \(d_i(w)\) has a more concrete definition than \(X_i\).  Before starting the proof, let&rsquo;s first look at some useful definitions and a lemma.</p>
+<h4 id="1-limits-superior-sets--limits-inferior-sets">1. limits superior sets &amp; limits inferior sets</h4>
+<p>For a sequence \(A_1, A_2, &hellip;\) of sets, define the <em>limits superior set</em> as</p>
+<p>$$\lim \sup_n A_n =\bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty}A_k=[A_n \ i.o.] $$</p>
+<p>⭐ Interpretation: \(\omega\) lies in the set if and only if for <strong>each</strong> \(n\), there is <strong>some</strong> \(k\geq n\) for which \(\omega \in A_k\). In other words, \(\omega\) lies in the set if and only if it lies in <em>infinitely many</em> of the \(A_n\). Here \(i.o.\) indicates <em>infinitely many</em>.</p>
+<p>Define the <em>limits inferior set</em> as</p>
+<p>$$\lim \inf_n A_n =\bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty}A_k $$</p>
+<p>⭐ Interpretation: \(\omega\) lies in the set if and only if there is <strong>some</strong> \(n\) such that for <strong>all</strong> \(k\geq n\), \(\omega \in A_k\). In other words,  \(\omega\) lies in the set if and only if it lies in <em>all but finitely many</em> of the \(A_n\).</p>
+<p>🎯 Notice how the <em>union</em> is interpreted as <em>some</em> or <em>exists</em>,  and how the <em>intersection</em> is interpreted as <em>each</em> or <em>all</em>.</p>
+<p>It&rsquo;s straightforward to check that \( \lim \inf_n A_n\) is a subset of \(\lim \sup_n A_n\). Since if \(\omega\) lies in <em>all but finitely many</em> of the \(A_n\), then of course it lies in <em>infinitely many</em> of them.</p>
 <p> </p>
-<h4 id="2-notation">2. Notation</h4>
-<p>Let \(N=\big[w:\underset{n\rightarrow \infty}{\lim}\frac{\sum_{i=1}^n d_i(w)}{n}=\frac{1}{2}\big]\) and \(s_n(w)=\sum_{i=1}^n[2d_i(w)-1]\).</p>
-<p>Then it&rsquo;s equivalent to write \(N=\big[w:\underset{n\rightarrow \infty}{\lim}\frac{s_n(w)}{n}=0\big]\).</p>
-<p>We prove \(P(N)=1\) by showing that \(P(N^c)=0\).</p>
+<h4 id="2-example">2. Example</h4>
+<p>Let&rsquo;s go back to the example mentioned at the beginning, the event that \(\lim_{n}X_n = X\), denoted by   \(A = [\lim_{n}X_n = X]\). If the probability of \(A\) equals to 1, then \(X_n\) converges to \(X\) almost surely. Based on the limitation definition, if \(\omega\) lies in \(A\), i.e. \(\lim_n X_n(\omega)=X(\omega)\), then for <b>each</b> positive \(\epsilon\), there <b>exists</b> an \(m\) such that \(|X_n(\omega)-X(\omega)|&lt;\epsilon\) for <b>all</b> \(n\geq m\). Denote \(A_n=[|X_n(\omega)-X(\omega)|&lt;\epsilon]\), the we can write</p>
+<p>$$A = \bigcap_{\epsilon}\bigcup_{m=1}^{\infty}\bigcap_{n=m}^{\infty}A_n $$</p>
+<p>where \(\epsilon\) can take values over the positive rational numbers in \((0,1)\) to avoid uncountable intersection.</p>
+<p>🎯 Notice how we construct the <em>union</em> and <em>intersection</em> based on the descriptions on \(\epsilon, \  m, \ n\).</p>
+<p>Sometimes it is convenient to solve problems by characterizing the complementary event. We can directly use <em>De Morgan&rsquo;s laws</em><cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite> to write \(A^c = \bigcup_{\epsilon}\bigcap_{m=1}^{\infty}\bigcup_{n=m}^{\infty}A_n^c\). However, since we are practicing the <i>limit sets</i>, we will see how we can derive the complementary event of \(A\) using more basic sets.</p>
+<p>Recall from the limitation definition, \(\omega\) lies in \(A^c\), i.e. \(X_n(\omega)\) fails to converge to \(X(\omega)\), if and only if there is <strong>some</strong> \(\epsilon\) such that for <strong>no</strong> \(m\) does \(|X_n(\omega)-X(\omega)|\) remain below \(\epsilon\) for <strong>all</strong> \(n\) exceeding \(m\). In other words,  \(\omega\) lies in \(A^c\) if and only if for some \(\epsilon\), \(|X_n(\omega)-X(\omega)|\geq \epsilon\), i.e. \(A_n^c\), holds for infinitely many values of \(n\). Therefore, based on the above description, we can write</p>
+<p>$$ A^c = \bigcup_{\epsilon}[A_n^c \ i.o.] =  \bigcup_{\epsilon}\bigcap_{m=1}^{\infty}\bigcup_{n=m}^{\infty}A_n^c$$</p>
+<p>which is exactly what we got when using the <em>De Morgan&rsquo;s laws</em>.</p>
 <p> </p>
-<h4 id="3-negligible-set">3. Negligible set</h4>
-<p>Define a set \(A\) to be negligible if for each positive \(\epsilon\) there exists a finite or countable collection \(I_1, I_2,&hellip;\) of intervals (they may overlap) satisfying \(A \subset \sum_k I_k\) and \(\sum_k|I_k|&lt;\epsilon\). A finite or countable union of negligible sets is negligible.</p>
-<p> </p>
-<h4 id="4-lemma">4. Lemma</h4>
-<p>\(P(\big[w: |\frac{s_n(w)}{n}|\geq \epsilon\big])\leq \frac{3}{n^2\epsilon^4}\). The proof of this lemma employs <em>Markov Inequality</em>, but it is not the focus here, details can be found in the book <cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite>.</p>
-<p> </p>
-<h4 id="5-proof">5. Proof</h4>
-<p>Now we are ready for the proof. Let \(A_n=\big[w: |n^{-1}s_n(w)|\geq \epsilon_n\big]\), then by the lemma, \(P(A_n)\leq \frac{3}{n^2\epsilon_n^4}\). We fix a positive sequence \(\{\epsilon_n\}\) going to \(0\) slowly enough such that the series \(\sum_n\epsilon_n^{-4}n^{-2}\)(take \(\epsilon_n=n^{-1/10}\), for example) converges, so \(\sum_nP(A_n)\leq \sum_n \frac{3}{n^2\epsilon_n^4}&lt;\infty\).</p>
-<p>Next we prove \(P(N^c)=0\) by showing that \(N^c\) can be covered by intervals the total sum of whose lengths can be made arbitrarily small.</p>
-<ul>
-<li>If for some \(m\), \(w\) lies in \(A_n^c\) for all \(n\geq m\), then \(|n^{-1}s_n(w)|&lt;\epsilon_n\) for \(n\geq m\), and it follows that \(w\in N\).<br>
-In other words, for each \(m\), \(\cap_{n=m}^{\infty}A_n^c\subset N\), which is the same thing as \(N^c \subset \cup_{n=m}^{\infty}A_n\).</li>
-<li>Since \(\sum_nP(A_n)&lt; \infty\), so we can find a \(m\) such that \(\sum_{n=m}^{\infty}P(A_n)&lt; \epsilon\).</li>
-<li>Therefore, \(P(N^c)&lt;\sum_{n=m}^{\infty}P(A_n)&lt; \epsilon\). \(P(N^c)=0\) due to \(\epsilon\) is arbitrary.</li>
-</ul>
-<p>\(\blacksquare\)</p>
-<p> </p>
-<h4 id="6-remark">6. Remark</h4>
-<p>To be more accurate, since \(s_n(w)\) is a step function on the interval \((0,1]\), \(A_n\) is a finite disjoint union of \(\cup_kI_{nk}\) with \(P(A_n)=\sum_k|I_{nk}|\). Therefore \(\cup_{n=m}^{\infty}A_n\) is a countable union of  \(\cup_{n=m}^{\infty}\cup_kI_{nk}\) with \(\sum_{n=m}^{\infty}\sum_k|I_{nk}|=\sum_{n=m}^{\infty}P(A_n)&lt; \epsilon\). The intervals \(I_{nk}(n\geq m, k\geq 1)\) provide a covering of \(N^c\).</p>
-<p>In section 5, the step from \(\sum_nP(A_n)&lt;\infty\) to \(P(N^c)=0\) can be done by using <em>the first Borel Cantelli Lemma</em>. It&rsquo;s encouraged to use those well-established theorems in solving problems, but in the post I mainly want to show the basic but inspiring concepts. The book <cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite> covers some fabulous examples of using the first and second <em>Borel Cantelli Lemma</em>, I intend to write a post about them in the near future.</p>
+<h4 id="3-closing-remark">3. Closing remark</h4>
+<p>The events involving limiting behavior can be intimidating sometimes, but I think one workaround is to rewrite them as the unions or intersections of simple events, which would require us to have a comprehensive understanding on the connection between descriptions like <em>each</em>, <em>exists</em>, <em>all</em>, <em>some</em> and the functions of unions and intersections.</p>
 <p> </p>
 <p> </p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p><em>the strong law of large number</em>:  if the random variables \(X_1,&hellip;,X_n\) are independent and identically distributed and \(E(X_n)=m\). Let \(T_n=X_1+\cdots+X_n\), then \(P(\lim_n\frac{T_n}{n}=m)=1\). <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><em><a href="https://www.colorado.edu/amath/sites/default/files/attached-files/billingsley.pdf">Probability and Measure</a></em> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p><em><a href="https://www.colorado.edu/amath/sites/default/files/attached-files/billingsley.pdf">Probability and Measure</a></em> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:3" role="doc-endnote">
-<p>similar in the sense that they have the same format \(\sum_{n=1}^{\infty}\frac{d_n(w)}{2^n}\), the difference is that in dyadic expansion \(d_n(w)\) is actually a step function of \(w\) when \(n\) is fixed <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:4" role="doc-endnote">
-<p>\(0.5=1\times 2^{-1}=0.1\)(in binary)</p>
-<p>\(0.5=\sum_{n=2}^{\infty}2^{-n}=0\times 2^{-1}+1\times 2^{-2}+1\times 2^{-3}+1\times 2^{-4}+&hellip;=0.0111&hellip;\)(in binary, nonterminating) <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://en.wikipedia.org/wiki/De_Morgan%27s_laws">De Morgan&rsquo;s laws</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

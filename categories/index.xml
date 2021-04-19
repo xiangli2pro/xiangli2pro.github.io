@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 09 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>probability</title>
+      <link>https://xiangli2pro.github.io/categories/probability/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/categories/probability/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>microarray analysis</title>
       <link>https://xiangli2pro.github.io/categories/microarray-analysis/</link>
@@ -40,15 +49,6 @@
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiangli2pro.github.io/categories/algebra/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>probability</title>
-      <link>https://xiangli2pro.github.io/categories/probability/</link>
-      <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiangli2pro.github.io/categories/probability/</guid>
       <description></description>
     </item>
     
