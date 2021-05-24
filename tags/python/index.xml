@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Xiang Li&#39;s Blog</title>
+    <link>https://xiangli2pro.github.io/tags/python/</link>
+    <description>Recent content in python on Xiang Li&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coding challenge May of 2021</title>
+      <link>https://xiangli2pro.github.io/tech/0523-2021-code-challenge/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0523-2021-code-challenge/</guid>
+      <description>This post may not be very informative, but I feel compelled to write something to keep the blog updated regularly, otherwise the guilty feeling of not keeping the commitment would haunt me all the time 😐.</description>
+    </item>
+    
+    <item>
+      <title>Tensorflow2 learning note - Part 2</title>
+      <link>https://xiangli2pro.github.io/tech/0501-2021-tf-part2/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0501-2021-tf-part2/</guid>
+      <description>In the second part of this Tensorflow2 mini-series, I will write about how to make use of the pre-trained and well-established deep learning models to perform new tasks.</description>
+    </item>
+    
+    <item>
+      <title>Tensorflow2 learning note - Part 1</title>
+      <link>https://xiangli2pro.github.io/tech/0423-2021-tf-part1/</link>
+      <pubDate>Fri, 23 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0423-2021-tf-part1/</guid>
+      <description>Recently I have been taking a series of online courses to learn Tensorflow2, simply out of curiosity to know how it works, especially nowadays when almost everyone is talking about AI, deep learning, etc.</description>
+    </item>
+    
+    <item>
+      <title>Use Python in R</title>
+      <link>https://xiangli2pro.github.io/tech/0409-2021-python-r/</link>
+      <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0409-2021-python-r/</guid>
+      <description>As a statistician, I use R a lot in my school works and collaboration projects, since R provides almost all the statistical analysis tools I would need in my research, from data wrangling, statistical modeling, simulation, to data visualization.</description>
+    </item>
+    
+    <item>
+      <title>Understand slicing in python 3d-arrays</title>
+      <link>https://xiangli2pro.github.io/tech/0325-2021-ndarrays/</link>
+      <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0325-2021-ndarrays/</guid>
+      <description>I was having a hard time understanding the slicing along different axes of a 3d-array in python.</description>
+    </item>
+    
+  </channel>
+</rss>

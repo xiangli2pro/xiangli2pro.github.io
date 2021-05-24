@@ -21,8 +21,8 @@
         
         
         <link rel="stylesheet"
-        href="https://xiangli2pro.github.io/css/customer.min.0a7e49f5bde37e4a34cd758cd68ad6c40e3ab0075d2c541e564bf2cdf6a3b920.css"
-        integrity="sha256-Cn5J9b3jfko0zXWM1orWxA46sAddLFQeVkvyzfajuSA="
+        href="https://xiangli2pro.github.io/css/customer.min.938e13e5d3c98244cdb804dafac2c16e12f528f8746d8005a6cd295df8a17bce.css"
+        integrity="sha256-k44T5dPJgkTNuATa&#43;sLBbhL1KPh0bYAFps0pXfihe84="
         crossorigin="anonymous"
         media="screen" />
     
@@ -54,7 +54,7 @@
 <meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
 
 <meta name="twitter:title" content="Website Configuration"/>
-<meta name="twitter:description" content="This is an ongoing post. The website is powered by Hugo, employing the theme Anatole."/>
+<meta name="twitter:description" content="The website is powered by Hugo, employing the theme Anatole."/>
 
 
     
@@ -155,15 +155,13 @@
                         <em class="fas fa-stopwatch"></em>
                         <span class="reading-time">2-minute read</span>
                         
+                        
                     </div>
                 
             </div>
 
-            <p><br>
-This is an ongoing post.
-<br>
-<br>
-The website is powered by <a href="https://gohugo.io/getting-started/quick-start/">Hugo</a>, employing the theme <a href="https://themes.gohugo.io/anatole/">Anatole</a>. It&rsquo;s a beautiful template, and I would like to customize the setup a bit to reflect personal preference. I am a newcomer to the language css, js, basically I open the website in the chrome and use the developer tools to get a hint on which parameter changing which feature, a lot of functions are still under development. I will keep recording the changes I have made, in case I am going to modify it later or someone else wants a similar setup.</p>
+            <p> </p>
+<p>The website is powered by <a href="https://gohugo.io/getting-started/quick-start/">Hugo</a>, employing the theme <a href="https://themes.gohugo.io/anatole/">Anatole</a>. It&rsquo;s a beautiful template, and I would like to customize the setup a bit to reflect personal preference. I am a newcomer to the language css, js, basically I open the website in the chrome and use the developer tools to get a hint on which parameter changing which feature, a lot of functions are still under development. I will keep recording the changes I have made, in case I am going to modify it later or someone else wants a similar setup.</p>
 <h4 id="1-font-stylecss">1. font (style.css)</h4>
 <ol>
 <li>content font size: .p(16px);</li>
@@ -185,7 +183,11 @@ The website is powered by <a href="https://gohugo.io/getting-started/quick-start
          {{ with .Page.Params.Categories }}{{ partial &#34;taxonomy/categories.html&#34; . }}{{ end }}
     <span class="c">&lt;!-- &lt;/div&gt;
 </span><span class="c">&lt;!-- &lt;/div&gt;
-</span></code></pre></div><p> </p>
+</span></code></pre></div><ol start="3">
+<li>body: with = 80%</li>
+<li>.page-top: width = 65%</li>
+</ol>
+<p> </p>
 <h4 id="3-comment-md">3. comment (.md)</h4>
 <ol>
 <li>make utterance comment box show up in each post: need to set type= &ldquo;post&rdquo; in the .md file FrontMatter, and add &ldquo;post&rdquo; into mainSections in config.toml;</li>

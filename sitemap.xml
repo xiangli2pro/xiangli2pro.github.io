@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://xiangli2pro.github.io/categories/</loc>
-    <lastmod>2021-05-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://xiangli2pro.github.io/tech/0523-2021-code-challenge/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiangli2pro.github.io/categories/python/</loc>
+    <loc>https://xiangli2pro.github.io/tags/python/</loc>
+    <lastmod>2021-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/tags/regex/</loc>
+    <lastmod>2021-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/tags/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/tech/</loc>
@@ -17,13 +20,13 @@
     <loc>https://xiangli2pro.github.io/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiangli2pro.github.io/categories/probability/</loc>
+    <loc>https://xiangli2pro.github.io/tags/probability/</loc>
     <lastmod>2021-05-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/tech/0509-2021-clt/</loc>
     <lastmod>2021-05-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiangli2pro.github.io/categories/tensorflow2/</loc>
+    <loc>https://xiangli2pro.github.io/tags/tensorflow2/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/tech/0501-2021-tf-part2/</loc>
@@ -35,16 +38,16 @@
     <loc>https://xiangli2pro.github.io/tech/0419-2021-limit-sets/</loc>
     <lastmod>2021-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiangli2pro.github.io/categories/microarray-analysis/</loc>
+    <loc>https://xiangli2pro.github.io/tags/microarray-analysis/</loc>
     <lastmod>2021-04-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiangli2pro.github.io/categories/r/</loc>
+    <loc>https://xiangli2pro.github.io/tags/r/</loc>
     <lastmod>2021-04-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/tech/0409-2021-python-r/</loc>
     <lastmod>2021-04-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiangli2pro.github.io/categories/algebra/</loc>
+    <loc>https://xiangli2pro.github.io/tags/algebra/</loc>
     <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/tech/0401-2021-corr-matrix/</loc>
@@ -74,6 +77,9 @@
     <loc>https://xiangli2pro.github.io/life/</loc>
     <lastmod>2021-03-06T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://xiangli2pro.github.io/categories/</loc>
+    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://xiangli2pro.github.io/tags/css/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -87,9 +93,6 @@
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/categories/syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/tags/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/template/</loc>

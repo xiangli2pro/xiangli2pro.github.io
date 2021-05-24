@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tensorflow2 on Xiang Li&#39;s Blog</title>
+    <link>https://xiangli2pro.github.io/tags/tensorflow2/</link>
+    <description>Recent content in Tensorflow2 on Xiang Li&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/tensorflow2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tensorflow2 learning note - Part 2</title>
+      <link>https://xiangli2pro.github.io/tech/0501-2021-tf-part2/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0501-2021-tf-part2/</guid>
+      <description>In the second part of this Tensorflow2 mini-series, I will write about how to make use of the pre-trained and well-established deep learning models to perform new tasks.</description>
+    </item>
+    
+    <item>
+      <title>Tensorflow2 learning note - Part 1</title>
+      <link>https://xiangli2pro.github.io/tech/0423-2021-tf-part1/</link>
+      <pubDate>Fri, 23 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0423-2021-tf-part1/</guid>
+      <description>Recently I have been taking a series of online courses to learn Tensorflow2, simply out of curiosity to know how it works, especially nowadays when almost everyone is talking about AI, deep learning, etc.</description>
+    </item>
+    
+  </channel>
+</rss>
