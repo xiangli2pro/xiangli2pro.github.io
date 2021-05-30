@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://xiangli2pro.github.io/tags/probability/</loc>
+    <lastmod>2021-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/tech/0529-2021-measure/</loc>
+    <lastmod>2021-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/tags/</loc>
+    <lastmod>2021-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/tech/</loc>
+    <lastmod>2021-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/</loc>
+    <lastmod>2021-05-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://xiangli2pro.github.io/tech/0523-2021-code-challenge/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -10,18 +25,6 @@
   </url><url>
     <loc>https://xiangli2pro.github.io/tags/regex/</loc>
     <lastmod>2021-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/tags/</loc>
-    <lastmod>2021-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/tech/</loc>
-    <lastmod>2021-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/</loc>
-    <lastmod>2021-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/tags/probability/</loc>
-    <lastmod>2021-05-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/tech/0509-2021-clt/</loc>
     <lastmod>2021-05-09T00:00:00+00:00</lastmod>
