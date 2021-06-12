@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme=""><head>
-    <title> Xiang Li | probability </title>
+    <title> Xiang Li | Research Crumbs: Tail Bound </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -37,10 +37,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="https://xiangli2pro.github.io/tags/probability/">
+    <link rel="canonical" href="https://xiangli2pro.github.io/tech/0612-2021-tail-bound/">
 
     
-    <link rel="alternate" type="application/rss+xml" href="https://xiangli2pro.github.io/tags/probability/index.xml" title="Xiang Li's Blog" />
     
     
     
@@ -54,8 +53,8 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
 
-<meta name="twitter:title" content="probability"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Research Crumbs: Tail Bound"/>
+<meta name="twitter:description" content="The other day I was having the regular meeting with my advisors to discuss a paper, and there were two theorems involving the tail bound that I found very intriguing."/>
 
 
     
@@ -143,59 +142,74 @@
 
     <div class="autopagerize_page_element">
         <div class="content">
-    <div class="archive  animated fadeInDown ">
-        <ul class="list-with-title">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
             
-                <div class="listing-title">2021</div>
+            <div class="post-title">
+                <h3>Research Crumbs: Tail Bound</h3>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://xiangli2pro.github.io/tech/0612-2021-tail-bound/" title="Research Crumbs: Tail Bound">Research Crumbs: Tail Bound</a>
-                                <div class="post-time"><span class="date"> Jun 12 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Sat, Jun 12, 2021
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">2-minute read</span>
+                        
+                        <span class="separator"><a class="tag" href="/tags/crumbs/">crumbs</a><a class="tag" href="/tags/probability/">probability</a><a class="tag" href="/tags/statistics/">statistics</a></span>
+
+                    </div>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://xiangli2pro.github.io/tech/0529-2021-measure/" title="Some understandings about measure theory">Some understandings about measure theory</a>
-                                <div class="post-time"><span class="date"> May 29 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
+            </div>
+
+            <p> </p>
+<p>The other day I was having the regular meeting with my advisors to discuss a paper, and there were two theorems involving the tail bound that I found very intriguing. What&rsquo;s interesting about them is that it&rsquo;s  likely that one would derive a similar but fallacious conclusions, which I name &lsquo;false friend&rsquo; (<a href="https://en.wikipedia.org/wiki/False_friend">amigo falso</a>, a Spanish word), if the subtle difference is not understood. The context is a bit complicated so I will simplify the notations and just focus on the logics.</p>
+<p> </p>
+<h4 id="-case-1">🔖 Case 1</h4>
+<p>Let \(X\) be a random variable and \(\theta\) is a parameter in the parameter space \(\Theta\). \(f(X,\theta)\) is a function of \(X\) and \(\theta\), and \(\epsilon\) is a value greater than \(0\).</p>
+<p>The question is that if we want to prove \(P(|f(X,\theta)|\geq \epsilon)\rightarrow 0\) for any \(\theta\in\Theta\), which one of the sufficient conditions below should be established?</p>
+<ol>
+<li>\( P(\underset{\theta}{\max}|f(X,\theta)|\geq \epsilon)\rightarrow 0\)</li>
+<li>\(P(|f(X,\theta)|\geq \epsilon)\rightarrow 0\)</li>
+</ol>
+<p>The answer is the first one. The second condition looks reasonable at first glance, however, the notation \(\theta\) is misleading. If we change it to \(\theta_1\), one may notice what the issue is.</p>
+<p>Recall that the objective is to prove \(P(|f(X,\theta)|\geq \epsilon)\rightarrow 0\) for <strong>any</strong> \(\theta\in\Theta\). \(P(|f(X,\theta_1)|\geq \epsilon)\rightarrow 0\) does NOT imply \(P(|f(X,\theta_2)|\geq \epsilon)\rightarrow 0\), therefore the second condition cannot deduce the conclusion of interest.</p>
+<p> </p>
+<h4 id="-case-2">🔖 Case 2</h4>
+<p>Let \(X_{ij}\) be independent random variables with mean \(\mu_{ij}=0\).  Given the condition that \(P(|X_{ij}|\geq\epsilon)\rightarrow 0\), which one of the following conclusions is correct?</p>
+<ol>
+<li>\(P(\underset{0\leq u_{i}, v_{j} \leq 1}{\max}|\sum_{i=1}^m\sum_{j=1}^nX_{ij}u_iv_j|\geq\epsilon)\rightarrow 0\)</li>
+<li>\(P(\underset{0\leq t_{ij} \leq 1}{\max}|\sum_{i=1}^m\sum_{j=1}^nX_{ij}t_{ij}|\geq\epsilon)\rightarrow 0\)</li>
+</ol>
+<p>The answer is the first one.</p>
+<p>Let&rsquo;s first demonstrate the incorrectness of the second conclusion using a counterexample. Assign \(t_{ij}=1\) if \(X_{ij}&gt;0\) and \(t_{ij}=0\) otherwise, then \(|\sum_{i=1}^m\sum_{j=1}^nX_{ij}t_{ij}|\) is always greater than \(0\), therefore the second conclusion does not hold.</p>
+<p>Naturally one may ask that does the first conclusion still hold if we employ the same argument above? The answer is yes, but how come? Well, the key point resides in a concept similar to the &lsquo;degree of freedom&rsquo;.</p>
+<p>In the second statement, the number of \(t_{ij}\) matches the number of \(X_{ij}\), which is \(mn\). Hence each \(X_{ij}\) is controlled by a \(t_{ij}\) and we can take the positive \(X_{ij}\) into the summation while ignoring the the negative \(X_{ij}\), which makes the summation always greater than \(0\).</p>
+<p>However, in the first statement, the \(u_i\) and \(v_j\) can only control \(m+n\) of \(X_{ij}\), and their summation value will be offset by the summation of the rest \(mn-m-n\) of \(X_{ij}\), therefore \(|\sum_{i=1}^m\sum_{j=1}^nX_{ij}u_iv_j|\) will go to zero as \(m,n\) go to infinity, the first conclusion holds.</p>
+<p> </p>
+<p> </p>
+</div>
+        <div class="post-footer">
+            <div class="info">
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://xiangli2pro.github.io/tech/0509-2021-clt/" title="Why the Central Limit Theorem (CLT) is not working?">Why the Central Limit Theorem (CLT) is not working?</a>
-                                <div class="post-time"><span class="date"> May 9 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://xiangli2pro.github.io/tech/0419-2021-limit-sets/" title="Interpret limit sets">Interpret limit sets</a>
-                                <div class="post-time"><span class="date"> Apr 19 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://xiangli2pro.github.io/tech/0318-2021-dyadic/" title="What happens if toss a fair coin infinite times?">What happens if toss a fair coin infinite times?</a>
-                                <div class="post-time"><span class="date"> Mar 18 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-            
-        </ul>
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+              
+                <h2></h2>
+                <script src="https://utteranc.es/client.js"
+        repo="xiangli2pro/xiangli2pro.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
     </div>
+
 
         </div>
     </div>

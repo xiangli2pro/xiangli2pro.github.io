@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crumbs on Xiang Li&#39;s Blog</title>
+    <link>https://xiangli2pro.github.io/tags/crumbs/</link>
+    <description>Recent content in crumbs on Xiang Li&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 12 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/crumbs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Research Crumbs: Tail Bound</title>
+      <link>https://xiangli2pro.github.io/tech/0612-2021-tail-bound/</link>
+      <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0612-2021-tail-bound/</guid>
+      <description>The other day I was having the regular meeting with my advisors to discuss a paper, and there were two theorems involving the tail bound that I found very intriguing.</description>
+    </item>
+    
+  </channel>
+</rss>
