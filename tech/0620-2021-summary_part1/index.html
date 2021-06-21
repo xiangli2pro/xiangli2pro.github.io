@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> Xiang Li | Coding challenge learning note - Part 1 </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet"
+          href="https://xiangli2pro.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css"
+          integrity="sha256-DGQ95ACK3KMp96LWFs4wjMqZ1O9F5MyjBzI&#43;eFeRAZQ="
+          crossorigin="anonymous"
+          type="text/css">
+    
+    <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+        
+        
+        <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/customer.min.fa6f0e653bb87420e04c85c34826e55f8125633aaaf4994d46996a715d4b3a85.css"
+        integrity="sha256-&#43;m8OZTu4dCDgTIXDSCblX4ElYzqq9JlNRplqcV1LOoU="
+        crossorigin="anonymous"
+        media="screen" />
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="https://xiangli2pro.github.io/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://xiangli2pro.github.io/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="https://xiangli2pro.github.io/tech/0620-2021-summary_part1/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://xiangli2pro.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
+
+<meta name="twitter:title" content="Coding challenge learning note - Part 1"/>
+<meta name="twitter:description" content="As I mentioned in the last post, I was doing a 10-days python coding bootcamp at the end of May."/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://xiangli2pro.github.io/images/dandan.jpeg" alt="profile picture">
+            <h3 title=""><a href="/">Xiang Li</a></h3>
+            <div class="description">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://www.linkedin.com/in/xiang-li-505757129/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/xiangli2pro" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:xiangli2pro@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Xiang Li  2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/life/"
+                        
+                   title="">Life</a></li>
+        
+            
+            <li><a 
+                   href="/tech/"
+                        
+                   title="">Tech</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/resource/"
+                        
+                   title="">Resource</a></li>
+        
+        
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Coding challenge learning note - Part 1</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Sun, Jun 20, 2021
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">7-minute read</span>
+                        
+                        <span class="separator"><a class="tag" href="/tags/python/">python</a></span>
+
+                    </div>
+                
+            </div>
+
+            <p> </p>
+<p>As I mentioned in the last <a href="https://xiangli2pro.github.io/tech/0523-2021-code-challenge/">post</a>, I was doing a 10-days python coding bootcamp at the end of May. Now it&rsquo;s time to summarize what I have learnt. This post is part 1 of the learning note, and three main topics are covered here: list/tuple/string, class and file reading. I would say the note is not something that one would learn from a regular python tutorial, it falls into the category that you learn it only after you have come across it in a practice, at least that&rsquo;s the case for me. Hope everyone can find something helpful or refreshing from the post.</p>
+<p> </p>
+<h4 id="-about-list-tuple-string">🌀 About list, tuple, string</h4>
+<p>&mdash; 1. <code>lst[-0:]</code> is the same thing as <code>lst[0:]</code>, so be careful when slicing the last <code>n</code> items of a list <code>lst[-n:]</code>.
+OR if the iterable is large, we can use:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">items</span><span class="p">[</span><span class="o">-</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):],</span> <span class="n">item</span><span class="p">]</span>
+</code></pre></div><p>&mdash; 2.  A slice object is what Python creates when you use the slicing notation. When you say <code>lst[-n:]</code>, Python essentially converts that to <code>lst[slice(-n, None)]</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div><p>&mdash; 3.  When you append to a deque which has reached it&rsquo;s maximum length, it will efficiently remove the item closest to the beginning before appending the new item. So this is an efficient way to keep track of the most recent <code>n</code> items we&rsquo;ve seen.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">dq</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">dq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">dq</span><span class="p">)</span>
+</code></pre></div><p>OR deque objects can be passed an iterable of items to initialize themselves with, so we can max a deque with a iterable and setting the maximum length.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">list</span><span class="p">(</span><span class="n">deque</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">n</span><span class="p">))</span>
+</code></pre></div><p>&mdash; 4. Tuples can be hashable so we can pass a generator expression into the tuple constructor inside a set comprehension to make a set of tuples.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">matrix_shapes</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nb">tuple</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">matrix</span> <span class="ow">in</span> <span class="n">matrices</span>
+    <span class="p">}</span>
+</code></pre></div><p>&mdash; 5. Looping over <code>None</code> would fail and adding <code>None</code> to a number would fail too, cause <code>TypeError</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div><p>&mdash; 6. That <code>raise X from Y</code> syntax we&rsquo;re using is a Python 3 feature to make tracebacks more clear.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div><p>&mdash; 7. Whenever you&rsquo;re using a list comprehension to create a list that will only be looped over once, you could make a generator expression instead.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div><p>&mdash; 8. Whenever you see <code>for x in iterable: yield x</code> you can instead write <code>yield from iterable</code>.</p>
+<p>&mdash; 9. <code>re.findall(r'\b(\d+)-(\d+)\b', string)</code>. Finding all sets of consecutive digits separate by a hyphen which are at the ends of &ldquo;words&rdquo; (meaning they&rsquo;re at the beginning/end of the string or they have a comma, space, or other non-word character before/after them). <code>\b are word breaks</code>.</p>
+<p><code>re.findall(r'(\d+)(?:-(\d+))?',  string)</code>. Search for any number of digits, optionally followed by a dash and more consecutive digits. We&rsquo;re capturing the two groups of consecutive digits here using those parenthesis. <code>(?:-(\d+))</code> indicates the group <code>(-(\d+))</code> is non-capturing, but we capture the group <code>(\d+)</code> inside, i.e the part after the dash.</p>
+<p>&mdash; 10. <code>.partition()</code> VS <code>.split()</code>. <code>.partition()</code> always return a list of 3 items, while the number of return items by <code>.split()</code> varies. The partition method on strings partitions the string by splitting on the given separator and returns back the part before the partition (the head), the separator itself, and the part after the partition (the tail). If no separator is found, an empty string is returned for the partition and the tail.</p>
+<p>&mdash; 11. <code>int(b or a)</code> means <code>int(b) if b else int(a)</code>.</p>
+<p>&mdash; 12. <a href="https://nedbatchelder.com/blog/201802/a_python_gargoyle.html">list comprehensions can’t have assignments in them</a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="mi">17</span><span class="p">]</span> <span class="c1"># gives error</span>
+
+<span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">17</span><span class="p">]]</span> <span class="c1"># works</span>
+</code></pre></div><p>&mdash; 13. Check if a string starts with certain characters <code>'words'.startswith('wo')</code>.</p>
+<p>&mdash; 14. Return iterable in the same order but with duplicates removed, use <code>dict.formkeys</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</code></pre></div><p>&mdash; 15. Tuples are compared deeply.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div><p> </p>
+<h4 id="-about-class">🌀 About class</h4>
+<p>&mdash; 1. Use methods <code>__repr__(self)</code> to set useful string representation for a class. We don&rsquo;t need to implement <code>__str__</code>, the other string representation. By default <code>__str__</code> relies on <code>__repr__</code>, so if they&rsquo;re the same we only need to define <code>__repr__</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">f</span><span class="s2">&#34;string representation&#34;</span> <span class="c1"># use f-string, format or %</span>
+</code></pre></div><p>&mdash; 2. For a class, if we want to set attribute <code>attr_b</code> to change whenever attribute <code>attr_a</code> change, we can use property decorator, they&rsquo;re Python&rsquo;s preferred equivalent to getter and setter methods.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr_a</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">attr_a</span> <span class="o">=</span> <span class="n">attr_a</span>
+ 
+<span class="nd">@property</span>
+<span class="k">def</span> <span class="nf">attr_b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">attr_a</span> <span class="o">*</span> <span class="mi">2</span>
+</code></pre></div><p>&mdash; 3. For a class, if we want to set a value to property <code>attr_b</code> and at the same time to make sure the attribute <code>attr_a</code> will automatically change appropriately based on the set value, we can make a <code>setter</code> for the property. When you make a property without a <code>setter</code> method, attempting to set the property will raise an <code>AttributeError</code> automatically.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr_a</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">attr_a</span> <span class="o">=</span> <span class="n">attr_a</span>
+      
+<span class="c1"># a getter</span>
+<span class="nd">@property</span> 
+<span class="k">def</span> <span class="nf">attr_b</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">attr_a</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="c1"># a setter</span>
+<span class="nd">@attr_b.setter</span>  
+<span class="k">def</span> <span class="nf">attr_b</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr_b</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">attr_a</span> <span class="o">=</span> <span class="n">attr_b</span> <span class="o">/</span> <span class="mi">2</span>
+</code></pre></div><p>&mdash; 4. For a class, if we want to validate a non-nagative attribute <code>attr_a</code>, we can use property and setter decorators. Note that we  we&rsquo;re using a <code>_attr_a</code> to store the actual <code>attr_a</code> now. We&rsquo;re doing this for two reasons:
+1. We can&rsquo;t use a <code>attr_a</code> attribute to store this data because <code>&lt;class&gt;.attr_a</code> will call our <code>attr_a</code> property and that will look up <code>self.attr_a</code> which looks up the same property infinitely so we&rsquo;d get a recursion error.
+2. That <code>_</code> is a convention in Python that means &ldquo;this attribute is non-public by convention, so don&rsquo;t touch it unless you know what you&rsquo;re doing&rdquo;. There&rsquo;s no such thing as private attributes in Python, but an underscore prefix is often used to declare an attribute as being an internal implementation detail, not to be touched by folks outside this class implementation.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr_a</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">attr_a</span> <span class="o">=</span> <span class="n">attr_a</span>
+ 
+<span class="nd">@property</span> 
+<span class="k">def</span> <span class="nf">attr_a</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attr_a</span>
+ 
+<span class="nd">@attr_a.setter</span>
+<span class="k">def</span> <span class="nf">attr_a</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr_a</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">attr_a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;attr_a cannot be negative&#39;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">_attr_a</span> <span class="o">=</span> <span class="n">attr_a</span>
+</code></pre></div><p>&mdash; 5. Operator overload</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">compare</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># make object to be iterable, so we can do tuple unpacking (multiple assignment)</span>
+        <span class="k">yield</span> <span class="kn">from</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> 
+    
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="c1"># return tuple(self) == tuple(other) # if object is iterable</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">compare</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">+</span><span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">compare</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">-</span><span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">-</span><span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">compare</span><span class="p">(</span><span class="n">scalar</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">scalar</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalar</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">(</span><span class="n">scalar</span><span class="p">)</span>
+</code></pre></div><p> </p>
+<h4 id="-about-read-file">🌀 About read file</h4>
+<p>&mdash; 1. When writing CSV files in Python 3, using newline=<code>''</code> is recommended. This will make line endings consistent with Window system (<code>\r\n</code>) and Mac system (<code>\n</code>). Also when write files using <code>print</code>, better to set <code>end=''</code>, so no extra line endings are added.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rt&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+     <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+         <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+ <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;wt&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> 
+         <span class="c1"># OR </span>
+         <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span> <span class="c1"># needs to set end=&#39;&#39;, so no extra line endings are added</span>
+</code></pre></div><p>&mdash; 2. Read file (binary/string)</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+
+    <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># read in character</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span> <span class="c1"># split by newline character, each line has NO newline character attached</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1"># read in lines, each line has new line character </span>
+    <span class="n">f</span> <span class="c1"># same as f.readlines()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># read one line</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">buffer</span><span class="p">:</span> <span class="c1"># binary input</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="c1"># binary output</span>
+</code></pre></div><p>&mdash; 3. Null context manager can be used in the context manager when file is <code>None</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">nullcontext</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;wt&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">file</span> <span class="k">else</span> <span class="n">nullcontext</span><span class="p">()</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span> <span class="c1"># standard input</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="c1"># standard output</span>
+        <span class="k">if</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="c1"># write file</span>
+</code></pre></div><p>&mdash; 4. module <a href="https://zetcode.com/python/argparse/"><code>argparse</code></a>, a good command-line parsing tool, can handle both optional ('&ndash;flag') and positional arguments. Default value for the arguments is <code>None</code> (if they are not specified)</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">ArgumentParse</span><span class="p">,</span> <span class="n">FileType</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">ArgumentParse</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;&lt;positional_arg&gt;&#39;</span><span class="p">)</span> <span class="c1"># add positional argument</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;&lt;files&gt;&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">FileType</span><span class="p">(</span><span class="s1">&#39;wt&#39;</span><span class="p">))</span> <span class="c1"># add file object</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--&lt;optional_arg&gt;&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;&lt;optional_name&gt;&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&lt;&gt;&#39;</span><span class="p">)</span> <span class="c1"># add optional/keyword argument </span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--&lt;optional_arg&gt;&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s1">&#39;&lt;optional_name&gt;&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&lt;&gt;&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_const&#39;</span><span class="p">,</span> <span class="n">const</span><span class="o">=</span><span class="s1">&#39;&lt;value&gt;&#39;</span><span class="p">)</span> 
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="n">args</span><span class="o">.&lt;</span><span class="n">positional_arg</span><span class="o">&gt;</span>
+<span class="n">args</span><span class="o">.&lt;</span><span class="n">optional_name</span><span class="o">&gt;</span>
+
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.&lt;</span><span class="n">files</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+</code></pre></div><p>&mdash; 5. Use csv module&rsquo;s Sniffer class to automatically detect (or attempt to detect) the format of the input file. Files are iterators which means they&rsquo;re stateful: they keep track of where we are in them as we loop over them.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">with open(file, newline=&#39;&#39;) as f:
+
+    dialect = csv.Sniffer().sniff(f.read())
+    f.seek(0)
+    reader = csv.reader(f, dialect)
+    rows = list(reader)
+</code></pre></div><p> </p>
+<p> </p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+              
+                <h2></h2>
+                <script src="https://utteranc.es/client.js"
+        repo="xiangli2pro/xiangli2pro.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js"
+        integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ="
+        crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js"
+        integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2&#43;LqU="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script><link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+              integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq"
+              crossorigin="anonymous"><script defer
+                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+                integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz"
+                crossorigin="anonymous"></script><script defer
+                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+                integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+                crossorigin="anonymous"
+                onload="renderMathInElement(document.body);"></script></body>
+
+</html>

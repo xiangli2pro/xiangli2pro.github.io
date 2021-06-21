@@ -21,8 +21,8 @@
         
         
         <link rel="stylesheet"
-        href="https://xiangli2pro.github.io/css/customer.min.938e13e5d3c98244cdb804dafac2c16e12f528f8746d8005a6cd295df8a17bce.css"
-        integrity="sha256-k44T5dPJgkTNuATa&#43;sLBbhL1KPh0bYAFps0pXfihe84="
+        href="https://xiangli2pro.github.io/css/customer.min.fa6f0e653bb87420e04c85c34826e55f8125633aaaf4994d46996a715d4b3a85.css"
+        integrity="sha256-&#43;m8OZTu4dCDgTIXDSCblX4ElYzqq9JlNRplqcV1LOoU="
         crossorigin="anonymous"
         media="screen" />
     
@@ -162,7 +162,7 @@
 
             <p> </p>
 <p>The website is powered by <a href="https://gohugo.io/getting-started/quick-start/">Hugo</a>, employing the theme <a href="https://themes.gohugo.io/anatole/">Anatole</a>. It&rsquo;s a beautiful template, and I would like to customize the setup a bit to reflect personal preference. I am a newcomer to the language css, js, basically I open the website in the chrome and use the developer tools to get a hint on which parameter changing which feature, a lot of functions are still under development. I will keep recording the changes I have made, in case I am going to modify it later or someone else wants a similar setup.</p>
-<h4 id="1-font-stylecss">1. font (style.css)</h4>
+<h4 id="1-font-customercss">1. font (customer.css)</h4>
 <ol>
 <li>content font size: .p(16px);</li>
 <li>post title font size: .post .post-title(20px); .post .post-content(20px);</li>
@@ -172,7 +172,7 @@
     text-transform: none !important;
 }
 </code></pre></div><p> </p>
-<h4 id="2-layout-stylecss">2. layout (style.css)</h4>
+<h4 id="2-layout-customercss">2. layout (customer.css)</h4>
 <ol>
 <li>sidebar width: .content (70%), .page-top(70%); @media(30%), .sidebar(30%);</li>
 <li>category position (single.html):  move category to the top of a post</li>
@@ -184,10 +184,18 @@
     <span class="c">&lt;!-- &lt;/div&gt;
 </span><span class="c">&lt;!-- &lt;/div&gt;
 </span></code></pre></div><ol start="3">
-<li>body: with = 80%</li>
-<li>.page-top: width = 65%</li>
+<li>current post content layout:</li>
 </ol>
-<p> </p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">.content {
+    height: auto;
+    float: right;
+    /* width: 70%;
+    margin-top: 60px; */
+    width: 60%;
+    margin-top: 60px;
+    margin-right: 5%;
+}
+</code></pre></div><p> </p>
 <h4 id="3-comment-md">3. comment (.md)</h4>
 <ol>
 <li>make utterance comment box show up in each post: need to set type= &ldquo;post&rdquo; in the .md file FrontMatter, and add &ldquo;post&rdquo; into mainSections in config.toml;</li>

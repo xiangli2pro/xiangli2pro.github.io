@@ -6,7 +6,16 @@
     <description>Recent content on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 12 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coding challenge learning note - Part 1</title>
+      <link>https://xiangli2pro.github.io/tech/0620-2021-summary_part1/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0620-2021-summary_part1/</guid>
+      <description>As I mentioned in the last post, I was doing a 10-days python coding bootcamp at the end of May.</description>
+    </item>
+    
     <item>
       <title>Research Crumbs: Tail Bound</title>
       <link>https://xiangli2pro.github.io/tech/0612-2021-tail-bound/</link>
@@ -67,7 +76,7 @@
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiangli2pro.github.io/tech/0419-2021-limit-sets/</guid>
-      <description>In the statistics textbooks or papers, one would encounter many theorems and problems that are studying the limiting behavior of a series of random variables, for example, suppose \(X, X_1,&amp;hellip;,X_n,&amp;hellip;\) are random variables defined on a probability space, a question often asked is, what is the probability of the event that \(\lim_{n}X_n = X\)?</description>
+      <description>In the statistics textbooks or papers, one would encounter many theorems and problems that are studying the limiting behavior of a series of random variables.</description>
     </item>
     
     <item>
@@ -103,7 +112,7 @@
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiangli2pro.github.io/resource/</guid>
-      <description> Scientific Reading  Website: FiveThirtyEight Website: Scientific American   Statistics/Mathematics  Website: Rice University Supplemental Resources and Data for Statisticians Book: Computer age statistical inference Blog: Andrew Gelman Blog: math3ma Blog: math \(\bigcap\) programming Course: Applied Causal Analysis (with R) Course: Lecture Notes for Causality in Machine Learning Course: Advanced Statistical Computing   Machine Learning  Website: UC Business Analytics R Programming Guide Website: Paper with Code Course: Stanford CS224W Machine Learning with Graphs Course: Stanford CS228 Graphical Models   Coding  Website: Python Code Example Website: Free Python Game Website: Python Morsels Website: Efficient R Programming   Spanish  Youtube: Why not Spanish Youtube: Spanishland School Youtube: Hola Spanish Youtube: Maria Español Youtube: Spanish with Vicente Website: español avanzado  </description>
+      <description> Scientific Reading  Website: FiveThirtyEight Website: Scientific American   Statistics/Mathematics  Website: Rice University Supplemental Resources and Data for Statisticians Book: Computer age statistical inference Blog: Andrew Gelman Blog: math3ma Blog: math \(\bigcap\) programming Course: Applied Causal Analysis (with R) Course: Lecture Notes for Causality in Machine Learning Course: Advanced Statistical Computing   Career  Blog: Perspectives   Machine Learning  Website: UC Business Analytics R Programming Guide Website: Paper with Code Course: Stanford CS224W Machine Learning with Graphs Course: Stanford CS228 Graphical Models   Coding  Website: Python Code Example Website: Free Python Game Website: Python Morsels Website: Efficient R Programming   Spanish  Youtube: Why not Spanish Youtube: Spanishland School Youtube: Hola Spanish Youtube: Maria Español Youtube: Spanish with Vicente Website: español avanzado  </description>
     </item>
     
     <item>

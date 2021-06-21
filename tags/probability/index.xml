@@ -40,7 +40,7 @@
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiangli2pro.github.io/tech/0419-2021-limit-sets/</guid>
-      <description>In the statistics textbooks or papers, one would encounter many theorems and problems that are studying the limiting behavior of a series of random variables, for example, suppose \(X, X_1,&amp;hellip;,X_n,&amp;hellip;\) are random variables defined on a probability space, a question often asked is, what is the probability of the event that \(\lim_{n}X_n = X\)?</description>
+      <description>In the statistics textbooks or papers, one would encounter many theorems and problems that are studying the limiting behavior of a series of random variables.</description>
     </item>
     
     <item>
