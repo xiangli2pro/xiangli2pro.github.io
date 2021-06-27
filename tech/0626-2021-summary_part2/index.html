@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> Xiang Li | Coding challenge learning note - Part 2 </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet"
+          href="https://xiangli2pro.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css"
+          integrity="sha256-DGQ95ACK3KMp96LWFs4wjMqZ1O9F5MyjBzI&#43;eFeRAZQ="
+          crossorigin="anonymous"
+          type="text/css">
+    
+    <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+        
+        
+        <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/customer.min.fa6f0e653bb87420e04c85c34826e55f8125633aaaf4994d46996a715d4b3a85.css"
+        integrity="sha256-&#43;m8OZTu4dCDgTIXDSCblX4ElYzqq9JlNRplqcV1LOoU="
+        crossorigin="anonymous"
+        media="screen" />
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="https://xiangli2pro.github.io/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://xiangli2pro.github.io/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="https://xiangli2pro.github.io/tech/0626-2021-summary_part2/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://xiangli2pro.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
+
+<meta name="twitter:title" content="Coding challenge learning note - Part 2"/>
+<meta name="twitter:description" content="This post is the continuation of the previous one. Topics covered here are: iterables, date, regex, read files, and other miscellaneous items."/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://xiangli2pro.github.io/images/dandan.jpeg" alt="profile picture">
+            <h3 title=""><a href="/">Xiang Li</a></h3>
+            <div class="description">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://www.linkedin.com/in/xiang-li-505757129/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/xiangli2pro" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:xiangli2pro@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Xiang Li  2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/life/"
+                        
+                   title="">Life</a></li>
+        
+            
+            <li><a 
+                   href="/tech/"
+                        
+                   title="">Tech</a></li>
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/resource/"
+                        
+                   title="">Resource</a></li>
+        
+        
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Coding challenge learning note - Part 2</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Sat, Jun 26, 2021
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">5-minute read</span>
+                        
+                        <span class="separator"><a class="tag" href="/tags/python/">python</a></span>
+
+                    </div>
+                
+            </div>
+
+            <p> </p>
+<p>This post is the continuation of the previous <a href="https://xiangli2pro.github.io/tech/0620-2021-summary_part1/">one</a>. Topics covered here are: iterables, date, regex, read files, and other miscellaneous items.</p>
+<p>I may start uploading the python learning note every month from now on, as there are so many things I can envision myself to learn in the foreseeable future, and I do feel that writing post like this is an efficient way to keep track of the progress and enhance my understandings.</p>
+<p> </p>
+<h4 id="-about-list-tuple-string">🌀 About list, tuple, string</h4>
+<p>&mdash; 1. <a href="https://treyhunner.com/2019/03/python-deep-comparisons-and-code-readability/">Tuple ordering and deep comparision in python</a>.</p>
+<p>&mdash; 2. <a href="https://www.tutorialspoint.com/python3/string_ljust.htm">string <code>ljust()</code> method</a>.</p>
+<p>&mdash; 3.  control the string split times using argument <code>maxsplit</code>: <code>string.split(sep, maxsplit=1)</code>.</p>
+<p>&mdash; 4. concatenate tuple:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">t</span> <span class="o">=</span> <span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span><span class="p">,)</span> <span class="c1"># notice that we add , here</span>
+<span class="n">t</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># is still an int 5</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># is a list [5]</span>
+</code></pre></div><p>&mdash; 5. check if an item is iterable</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># solution 1: use try/except</span>
+
+<span class="c1"># if the for loop fails, then item is not iterable</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
+      <span class="k">pass</span>
+<span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># solution 2: use isinstance()</span>
+
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Iterable</span>
+
+<span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">)</span>
+
+<span class="c1"># solution 3: use hasattr()</span>
+<span class="nb">hasattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s1">&#39;__iter__&#39;</span><span class="p">)</span>
+</code></pre></div><p>&mdash; 6. The dictionary <code>setdefault</code> method will only set a key-value pair if the key isn&rsquo;t in the dictionary yet. This can be useful if there are duplicate keys and we want the (key, value) pair that appears first.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">dic</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+    <span class="n">dic</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+</code></pre></div><p>&mdash; 7. The <code>shlex.split</code> function splits in a way that is quote-aware.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">shlex</span>
+
+<span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;This is a &#34;quoted sentence&#34;&#39;</span><span class="p">)</span>
+<span class="c1"># [&#39;This&#39;, &#39;is&#39;, &#39;a&#39;, &#39;quoted sentence&#39;]</span>
+
+<span class="c1"># not quote-aware</span>
+<span class="s1">&#39;This is a &#34;quoted sentence&#34;&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="c1"># [&#39;This&#39;, &#39;is&#39;, &#39;a&#39;, &#39;&#34;quoted&#39;, &#39;sentence&#34;&#39;]</span>
+
+</code></pre></div><p> </p>
+<h4 id="-about-date">🌀 About date</h4>
+<p>&mdash; 1. use <code>monthcalendar</code> function from module <code>calendar</code> to get a list of lists representing a calendar.</p>
+<p>The Calendar class gives an object that represents a calendar with the first day of each week starting on the given weekday.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">calendar</span> <span class="kn">import</span> <span class="n">monthcalendar</span><span class="p">,</span> <span class="n">THURSDAY</span><span class="p">,</span> <span class="n">Calendar</span>
+
+<span class="n">monthcalendar</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="c1">#year, month</span>
+
+<span class="c1"># [[0, 1, 2, 3, 4, 5, 6],</span>
+<span class="c1">#  [7, 8, 9, 10, 11, 12, 13],</span>
+<span class="c1">#  [14, 15, 16, 17, 18, 19, 20],</span>
+<span class="c1">#  [21, 22, 23, 24, 25, 26, 27],</span>
+<span class="c1">#  [28, 29, 30, 0, 0, 0, 0]]</span>
+
+<span class="n">thursday_calendar</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">THURSDAY</span><span class="p">)</span><span class="o">.</span><span class="n">monthdatescalendar</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+</code></pre></div><p> </p>
+<h4 id="-about-regex">🌀 About regex</h4>
+<p>&mdash; 1. Write good docstrings: <a href="https://rhodesmill.org/brandon/2012/one-sentence-per-line/">semantic linefeeds</a>.</p>
+<p>below is an example of replacing every sentence ending character (<code>.</code>, <code>?</code>, <code>!</code>) which is followed by one or more spaces with that same character followed by a newline character.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># use group capturing </span>
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([.?!])[ ]+&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&#34;\1\n&#34;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># OR use positive lookbehind</span>
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?&lt;=[.?!])[ ]+&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&#34;\1\n&#34;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> 
+<span class="c1"># look for one or more spaces that are directly following a period question mark, or exclamation mark. The punctuation characters aren&#39;t actually matched here, just the spaces after them.</span>
+
+<span class="c1"># if we want to handle double quotes outside of punctuation marks.</span>
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([.?!]&#34;?)[ ]+&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&#34;\1\n&#34;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="c1"># &#34;? in the capture group indicates that &#34; is a optional character</span>
+
+<span class="c1"># We can&#39;t use a lookbehind because Python&#39;s regular expression engine requires that lookbehinds be a fixed number of characters.</span>
+
+</code></pre></div><p> </p>
+<h4 id="-about-read-file">🌀 About read file</h4>
+<p>&mdash; 1. Instead of using the <code>open</code> function in a <code>with</code> block, we could do use <code>pathlib</code> module. The <code>pathlib</code> module&rsquo;s <code>Path</code> object accepts a filename and creates an object which can be used in a number of ways. The <code>read_text</code> method opens the file, reads the contents, closes the file, and returns the file contents.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">Path</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
+
+</code></pre></div><p>&mdash; 2. print message to standard error (<code>sys.stderr</code>) instead of standard output, so that if someone piped the output to a file, they wouldn&rsquo;t see this message printed to the file.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">print(message, file=sys.stderr)
+
+</code></pre></div><p> </p>
+<h4 id="-other">🌀 Other</h4>
+<p>&mdash; 1. make a namespace by creating a class:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+<span class="k">class</span> <span class="nc">example</span><span class="p">:</span>
+  <span class="n">attr_a</span> <span class="o">=</span> <span class="s1">&#39;s&#39;</span>
+  <span class="n">attr_b</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">attr_c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">example</span><span class="o">.</span><span class="n">attr_a</span> <span class="c1"># call the attribute</span>
+
+<span class="c1"># if it&#39;s numeric attributes</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">count</span>
+
+<span class="k">class</span> <span class="nc">example</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+  <span class="n">attr_a</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">attr_b</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">attr_c</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1"># OR</span>
+<span class="n">example</span> <span class="o">=</span> <span class="n">IntEnum</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">,</span> <span class="s1">&#39;attr_a attr_b attr_c&#39;</span><span class="p">)</span> <span class="c1"># start count from 1</span>
+
+<span class="c1"># OR </span>
+<span class="n">example</span> <span class="o">=</span> <span class="n">IntEnum</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">,</span> <span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;attr_a&#39;</span><span class="p">,</span> <span class="s1">&#39;attr_b&#39;</span><span class="p">,</span> <span class="s1">&#39;attr_c&#39;</span><span class="p">],</span> <span class="n">count</span><span class="p">())</span> <span class="c1"># start count from 0</span>
+
+</code></pre></div><p>&mdash; 2. <a href="https://daniel.feldroy.com/posts/why-doesnt-python-have-switch-case">Why python does not have switch/case ?</a></p>
+<p>&mdash; 3. <a href="https://stackoverflow.com/questions/10825926/python-3-x-rounding-behavior">The built-in <code>round</code> function doesn&rsquo;t always round upward at .5</a></p>
+<p>customize to round-half-up:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># solution 1: use ceil</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">ceil</span>
+
+<span class="k">if</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">:</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="c1"># solution 2:</span>
+<span class="nb">int</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># solution 3: </span>
+<span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span><span class="p">,</span> <span class="n">ROUND_HALF_UP</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">quantize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ROUND_HALF_UP</span><span class="p">)</span>
+
+</code></pre></div><p>&mdash; 4. programming style: <a href="https://docs.python.org/3/glossary.html#term-eafp">EAFP (easier to ask forgiveness than permission)</a>, <a href="https://docs.python.org/3/glossary.html#term-lbyl">LBYL (look before you leap)</a>, <a href="https://docs.python.org/3/glossary.html#term-duck-typing">duck typing</a></p>
+<p>&mdash; 5. a better way to set default value for function arguments: use <code>object()</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+<span class="n">default_value</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+<span class="c1"># default_value = None # warning: this will make None as a invalid default value)</span>
+
+<span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="n">default_value</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">default_value</span><span class="p">:</span>
+      <span class="k">pass</span>
+      
+</code></pre></div><p>&mdash; 6. the functions below are  two different ways to flatten an iterable of iterables (example taken from <a href="https://www.pythonmorsels.com">python morsel</a>). The first one uses recursion, and the second function uses stack. It took me a long time to figure out the logic of the second function, and the key is to keep in mind that iterator is lazy and it can be looped only once! I think this is a very inspiring example so I put it here.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Iterable</span>
+
+<span class="c1"># use recursion</span>
+<span class="k">def</span> <span class="nf">deep_flatten</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="kn">from</span> <span class="nn">deep_flatten</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">item</span>
+
+<span class="c1"># use stack</span>
+<span class="k">def</span> <span class="nf">deep_flatten</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
+    <span class="n">iterators</span> <span class="o">=</span> <span class="p">[</span><span class="nb">iter</span><span class="p">(</span><span class="n">iterable</span><span class="p">)]</span> <span class="c1"># tricky part is using iterator as elements in a list</span>
+    <span class="k">while</span> <span class="n">iterators</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterators</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">)</span>
+                    <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">))):</span>
+                <span class="n">iterators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+                <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">item</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="n">iterators</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            
+<span class="c1"># example</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="n">deep_flatten</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="c1"># 1, 2, 3</span>
+
+</code></pre></div></div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+              
+                <h2></h2>
+                <script src="https://utteranc.es/client.js"
+        repo="xiangli2pro/xiangli2pro.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js"
+        integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ="
+        crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js"
+        integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2&#43;LqU="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script><link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+              integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq"
+              crossorigin="anonymous"><script defer
+                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+                integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz"
+                crossorigin="anonymous"></script><script defer
+                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+                integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
+                crossorigin="anonymous"
+                onload="renderMathInElement(document.body);"></script></body>
+
+</html>
