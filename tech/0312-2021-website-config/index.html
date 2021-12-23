@@ -21,8 +21,8 @@
         
         
         <link rel="stylesheet"
-        href="https://xiangli2pro.github.io/css/customer.min.9faf1e9363b54ce3442bf8c844672ae5261d564a228d047b5cc3051ec2e193e5.css"
-        integrity="sha256-n68ek2O1TONEK/jIRGcq5SYdVkoijQR7XMMFHsLhk&#43;U="
+        href="https://xiangli2pro.github.io/css/customer.min.59ef4903a6796616d5f0cb4dd4190d864235efcae8342417cd69f247298549ae.css"
+        integrity="sha256-We9JA6Z5ZhbV8MtN1BkNhkI178roNCQXzWnyRymFSa4="
         crossorigin="anonymous"
         media="screen" />
     
@@ -163,7 +163,7 @@
 
             <p> </p>
 <p>The website is powered by <a href="https://gohugo.io/getting-started/quick-start/">Hugo</a>, employing the theme <a href="https://themes.gohugo.io/anatole/">Anatole</a>. It&rsquo;s a beautiful template, and I would like to customize the setup a bit to reflect personal preference. I am a newcomer to the language css, js, basically I open the website in the chrome and use the developer tools to get a hint on which parameter changing which feature, a lot of functions are still under development. I will keep recording the changes I have made, in case I am going to modify it later or someone else wants a similar setup.</p>
-<h4 id="1-font-customercss">1. font (customer.css)</h4>
+<h3 id="1-font-customercss">1. font (customer.css)</h3>
 <ol>
 <li>content font size: .p(16px);</li>
 <li>post title font size: .post .post-title(20px); .post .post-content(20px);</li>
@@ -172,8 +172,7 @@
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">h3 {
     text-transform: none !important;
 }
-</code></pre></div><p> </p>
-<h4 id="2-layout-customercss">2. layout (customer.css)</h4>
+</code></pre></div><h3 id="2-layout-customercss">2. layout (customer.css)</h3>
 <ol>
 <li>sidebar width: .content (70%), .page-top(70%); @media(30%), .sidebar(30%);</li>
 <li>category position (single.html):  move category to the top of a post</li>
@@ -196,16 +195,10 @@
     margin-top: 60px;
     margin-right: 5%;
 }
-</code></pre></div><p> </p>
-<h4 id="3-comment-md">3. comment (.md)</h4>
-<ol>
-<li>make utterance comment box show up in each post: need to set type= &ldquo;post&rdquo; in the .md file FrontMatter, and add &ldquo;post&rdquo; into mainSections in config.toml;</li>
-</ol>
-<p> </p>
-<h4 id="4-read-more-indexhtml">4. read more (index.html)</h4>
-<ol>
-<li>add code below in the /anatole/layouts/index.html, between code chuck &lsquo;post-content&rsquo; and &lsquo;post-footer&rsquo;</li>
-</ol>
+</code></pre></div><h3 id="3-comment-md">3. comment (.md)</h3>
+<p>make utterance comment box show up in each post: need to set type= &ldquo;post&rdquo; in the .md file FrontMatter, and add &ldquo;post&rdquo; into mainSections in config.toml;</p>
+<h3 id="4-read-more-indexhtml">4. read more (index.html)</h3>
+<p>add code below in the /anatole/layouts/index.html, between code chuck &lsquo;post-content&rsquo; and &lsquo;post-footer&rsquo;</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--  &lt;div class=&#34;post-content&#34;&gt; &lt;div&gt;  --&gt;</span>
 
 {{- if .Truncated -}}
@@ -213,8 +206,7 @@
 {{- end -}}
 
 <span class="c">&lt;!--  &lt;div class=&#34;post-footer&#34;&gt; &lt;div&gt; --&gt;</span>
-</code></pre></div><p> </p>
-<h4 id="5-render-ipynb-on-hugo">5. render .ipynb on Hugo</h4>
+</code></pre></div><h3 id="5-render-ipynb-on-hugo">5. render .ipynb on Hugo</h3>
 <ol>
 <li>install <a href="https://nbconvert.readthedocs.io/en/latest/usage.html">nbconvert</a></li>
 <li>create a text cell on top of the .ipynb file, add metadata (<a href="https://wowchemy.com/docs/content/front-matter/">Front Matter</a>) that you would normally setup for your hugo posts to the text cell.</li>
@@ -225,14 +217,12 @@
 </code></pre></div><ol start="5">
 <li>now you would see a &lt;filename&gt;.md file, you can make further changes</li>
 </ol>
-<p> </p>
-<h4 id="6-customize-image-size">6. customize image size</h4>
+<h3 id="6-customize-image-size">6. customize image size</h3>
 <p>refer to this support <a href="https://github.com/lxndrblz/anatole/issues/175">post</a>, in order to adjust the size or alignment of the image in a post, we can use either html tag <code>&lt;img&gt;</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md"><span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/your-image.jpg&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;800&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;100&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
 </code></pre></div><p>Or hugo figure <a href="https://gohugo.io/content-management/shortcodes/">shortcode</a></p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{<span class="p">&lt;</span>  <span class="nt">figure</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/your-image.jpg&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;alignright&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;800&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;100&#34;</span>  <span class="p">&gt;</span>}}
-</code></pre></div><p> </p>
-<h4 id="7-render-math-symbols-using-katex">7. render math symbols using <code>KaTex</code></h4>
+</code></pre></div><h3 id="7-render-math-symbols-using-katex">7. render math symbols using KaTex</h3>
 <p>sometimes if the <code>_</code> subscript can not be rendered, consider using <code>\_</code> instead. for example,</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">$$
 x = ( \underbrace{0...0}_{N_1}, \underbrace{0...0}_{N_2} )^T #\underbrace{}_{} not working
@@ -287,16 +277,13 @@ $$
 <script type="text/javascript"
         src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
         integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
-        crossorigin="anonymous"></script><link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
-              integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq"
-              crossorigin="anonymous"><script defer
-                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
-                integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz"
-                crossorigin="anonymous"></script><script defer
-                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
-                integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
-                crossorigin="anonymous"
-                onload="renderMathInElement(document.body);"></script></body>
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
 
 </html>

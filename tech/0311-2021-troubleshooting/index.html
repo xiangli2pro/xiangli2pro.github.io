@@ -21,8 +21,8 @@
         
         
         <link rel="stylesheet"
-        href="https://xiangli2pro.github.io/css/customer.min.9faf1e9363b54ce3442bf8c844672ae5261d564a228d047b5cc3051ec2e193e5.css"
-        integrity="sha256-n68ek2O1TONEK/jIRGcq5SYdVkoijQR7XMMFHsLhk&#43;U="
+        href="https://xiangli2pro.github.io/css/customer.min.59ef4903a6796616d5f0cb4dd4190d864235efcae8342417cd69f247298549ae.css"
+        integrity="sha256-We9JA6Z5ZhbV8MtN1BkNhkI178roNCQXzWnyRymFSa4="
         crossorigin="anonymous"
         media="screen" />
     
@@ -61,8 +61,7 @@
 <meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
 
 <meta name="twitter:title" content="Troubleshooting List"/>
-<meta name="twitter:description" content="This is an ongoing post.
-1. conda not found (Anaconda) This error occurs when running conda command on terminal after upgrading MacOS to Catalina."/>
+<meta name="twitter:description" content="1. conda not found (Anaconda) This error occurs when running conda command on terminal after upgrading MacOS to Catalina."/>
 
 
     
@@ -163,18 +162,15 @@
             </div>
 
             <p> </p>
-<p>This is an ongoing post.</p>
 <h4 id="1--conda-not-found-anaconda">1.  conda not found (Anaconda)</h4>
 <p>This error occurs when running <code>conda</code> command on terminal after upgrading MacOS to Catalina. Anaconda <a href="https://www.anaconda.com/blog/how-to-restore-anaconda-after-macos-catalina-update">website</a> offers two options to reinstall the old anaconda configurations that is supposed to be in the filepath <code>Desktop/Relocated Items</code>. For me I do not need to recover the previous setup or environment, so the solution is simple, re-download Anaconda (at the moment it&rsquo;s Anaconda Individual Edition), then <strong>restart</strong> terminal and type <code>conda list</code>, if the screen displays packages information, then mission accomplished! Another useful reference can be found <a href="https://towardsdatascience.com/how-to-successfully-install-anaconda-on-a-mac-and-actually-get-it-to-work-53ce18025f97">here</a>.</p>
-<p> </p>
 <h4 id="2--permission-denied-publickey-github">2.  permission denied (publickey) (Github)</h4>
 <p>When <code>push</code> a new commit to the remote Github repository, especially the first time, the error occurs. In my case, the problem is solved by following the instructions on the Github <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">webstie</a>.</p>
-<p> </p>
 <h4 id="3--unable-to-load-shared-object--systemfontsso-r">3.  unable to load shared object &hellip; systemfonts.so (R)</h4>
 <p>After updating MacOS to Catalina and updating R packages and R studio (3.6.1) to the latest version, I run into the below error when I try to call the package <code>KableExtra</code> in the .Rmd file.</p>
-<p><em>Error: package or namespace load failed for ‘kableExtra’ in dyn.load(file, DLLpath = DLLpath, &hellip;): unable to load shared object &lsquo;/Library/Frameworks/R.framework/Versions/3.6/Resources/library/systemfonts/libs/systemfonts.so&rsquo;: &hellip;</em></p>
+<p><em>Error: package or namespace load failed for ‘kableExtra’ in dyn.load(file, DLLpath = DLLpath, &hellip;): unable to load shared object &lsquo;/&hellip;/library/systemfonts/libs/systemfonts.so&rsquo;: &hellip;</em></p>
 <p>Solution: refer to this <a href="https://github.com/yixuan/showtext/issues/13">Github issue</a>, download and install
-<a href="https://www.xquartz.org/"><code>XQuartz</code></a>, then restart Mac.</p>
+<a href="https://www.xquartz.org/">XQuartz</a>, then restart Mac.</p>
 <p> </p>
 </div>
         <div class="post-footer">
@@ -220,16 +216,13 @@
 <script type="text/javascript"
         src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
         integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
-        crossorigin="anonymous"></script><link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
-              integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq"
-              crossorigin="anonymous"><script defer
-                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
-                integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz"
-                crossorigin="anonymous"></script><script defer
-                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
-                integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
-                crossorigin="anonymous"
-                onload="renderMathInElement(document.body);"></script></body>
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
 
 </html>

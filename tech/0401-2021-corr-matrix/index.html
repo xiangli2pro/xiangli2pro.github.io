@@ -21,8 +21,8 @@
         
         
         <link rel="stylesheet"
-        href="https://xiangli2pro.github.io/css/customer.min.9faf1e9363b54ce3442bf8c844672ae5261d564a228d047b5cc3051ec2e193e5.css"
-        integrity="sha256-n68ek2O1TONEK/jIRGcq5SYdVkoijQR7XMMFHsLhk&#43;U="
+        href="https://xiangli2pro.github.io/css/customer.min.59ef4903a6796616d5f0cb4dd4190d864235efcae8342417cd69f247298549ae.css"
+        integrity="sha256-We9JA6Z5ZhbV8MtN1BkNhkI178roNCQXzWnyRymFSa4="
         crossorigin="anonymous"
         media="screen" />
     
@@ -164,14 +164,11 @@
 
             <p> </p>
 <p>I recently read an interesting paper<cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite> about how to sample from multivariate normal distribution with less computational complexity, and I really like the part where they make use of the block structure of the correlation matrix to conduct the eigen-decomposition. In the post, I will explain the ideas and present the techniques applied in the paper.</p>
-<p> </p>
 <h4 id="1-background">1. Background</h4>
 <p>Sampling from multivariate normal distribution is very common in simulation studies. Suppose that \(X=(X_1, X_2,&hellip;, X_n)\) is a random vector following a multivariate normal distribution \(N(0, \Sigma)\), where \(\Sigma\) is the covariance matrix of size \(n\times n\). The standard sampling method applies Cholesky factorization on the covariance matrix \(\Sigma\) to get \(\Sigma = LL^T\), where \(L\) is a lower triangular matrix. Then make the sampling by \(\tilde{X}=LZ\), where \(Z\) is a  \(n\times 1\) vector of independent standard normal random variables.</p>
 <p>Correlation matrix with block structure often occurs when the random variables belong to non-overlapping groups and the correlations are solely determined by the group labels. For instance, in finance, a portfolio usually consists of obligators which can be divided into different groups by the industry, region etc; In gene co-expression data, genes can be categorized to different functional groups, where genes in the same group usually are expressed concurrently. In both of the above examples, the correlations between variables is an important component of understanding the overall performance of the variables, and often times it is assumed to depend only on the group level information.</p>
-<p> </p>
 <h4 id="2--key-idea-">2. 🎈 Key Idea 🎈</h4>
 <p>When random vector \(X\) is of size \(n\), make one sample from the multivariate normal distribution using the Cholesky factorization would take \(O(n^2)\)<cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite> time. The new sampling method proposed in the paper reduces the time to \(O(K^2)+O(n)\), given that correlation matrix is <strong>positive semi-definite</strong> and has a <strong>block structure</strong>, where \(K\) is the number of non-overlapping groups. The strategy is to first eigen-decompose \(\Sigma\) by \(\Sigma=UDU^T\), where \(U\) is the orthogonal<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite> matrix composed of eigenvectors of \(\Sigma\) and \(D\) is a diagonal matrix with corresponding eigenvalues along the diagonal, then make the sample by \(\tilde{X}=U\sqrt{D}Z\). Here comes the key idea &mdash; with the block structure, eigenvectors of \(\Sigma\) can be created from the basis of a set of predefined subspaces spanning \(R^n\). The eigenvalues of those eigenvectors are easily calculated and the eigenvectors form a simple structure in \(U\) which reduces the computational cost of \(U\sqrt{D}Z\). In the next sections, we break down the idea into detailed steps.</p>
-<p> </p>
 <h4 id="3-notation">3. Notation</h4>
 <p>Let \(X=(X_1, X_2,&hellip;, X_n)\) be a vector of Gaussian random variables, without loss of generality, assume that each \(X_i\) of \(X\) has zero mean and unit variance, so that the covariance matrix is equal to the correlation matrix, i.e \(\Sigma=\text{Cor}\). Suppose we can divide the random variables into \(K\) non-overlapping groups, and write \(X=(X^{(1)}, X^{(2)},&hellip;, X^{(K)} )\), where \(X^{(k)}=(X^{(k)}_1,&hellip;,X^{(k)}_{N_k})\) is the vector of random variables belong to group \(k\), \(1 \leq k \leq K\). Consider the case where the correlation between two non-identical variables only depends on the groups they belong to. That is, correlation \(\text{Cor}(X^{(k)}_i,X^{(l)}_j )=\rho_{kl}\). For two identical variables, the correlation is always \(1\). Therefore, the correlation matrix has a block structure as presented in (1).</p>
 <p>$$\tag{1}
@@ -180,7 +177,6 @@
 1 &amp; \rho_{11} &amp; \cdots &amp; \rho_{11} &amp; \rho_{12} &amp;\cdots &amp; \rho_{12}  &amp; \cdots &amp; \cdots &amp; \rho_{1K} &amp; \cdots &amp; \rho_{1K} \\  \rho_{11} &amp; 1 &amp; \cdots &amp; \rho_{11} &amp; \rho_{12} &amp;\cdots &amp; \rho_{12}  &amp; \cdots &amp; \cdots &amp; \rho_{1K} &amp; \cdots &amp; \rho_{1K}  \\  \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp;\vdots &amp; \vdots &amp; \vdots &amp; \vdots&amp; \vdots&amp; \vdots &amp; \vdots \\ \rho_{11} &amp; \rho_{11}  &amp; \cdots &amp;1  &amp; \rho_{12} &amp;\cdots &amp; \rho_{12}  &amp; \cdots &amp; \cdots &amp; \rho_{1K} &amp; \cdots &amp; \rho_{1K} \\ \hdashline \rho_{21} &amp; \rho_{21} &amp; \cdots &amp; \rho_{21} &amp; 1 &amp; \cdots &amp; \rho_{22} &amp; \cdots &amp; \cdots &amp; \rho_{2K} &amp; \cdots &amp; \rho_{2K} \\ \vdots &amp; \vdots  &amp; \vdots &amp; \vdots &amp; \vdots  &amp; \vdots &amp;\vdots  &amp; \vdots &amp; \vdots  &amp; \vdots &amp; \vdots  &amp; \vdots  \\ \rho_{21} &amp; \rho_{21} &amp; \cdots &amp; \rho_{21} &amp; \rho_{22} &amp; \cdots &amp;1 &amp; \cdots &amp; \cdots &amp; \rho_{2K} &amp; \cdots &amp; \rho_{2K} \\ \hdashline \vdots &amp; \vdots  &amp; \vdots &amp; \vdots &amp; \vdots  &amp; \vdots &amp;\vdots  &amp; \vdots &amp; \vdots  &amp; \vdots &amp; \vdots  &amp; \vdots \\ \hdashline \rho_{K1} &amp; \rho_{K1} &amp; \cdots &amp; \rho_{K1} &amp; \rho_{K2} &amp; \cdots &amp; \rho_{K2} &amp; \cdots &amp; \cdots &amp; 1 &amp; \cdots &amp; \rho_{KK} \\ \vdots &amp; \vdots  &amp; \vdots &amp; \vdots &amp; \vdots  &amp; \vdots &amp;\vdots  &amp; \vdots &amp; \vdots  &amp; \vdots &amp; \vdots  &amp; \vdots  \\ \rho_{K1} &amp; \rho_{K1} &amp; \cdots &amp; \rho_{K1} &amp; \rho_{K2} &amp; \cdots &amp;\rho_{K2} &amp; \cdots &amp; \cdots &amp; \rho_{KK} &amp; \cdots &amp; 1
 \end{array} \right]
 $$</p>
-<p> </p>
 <h4 id="4-define-subspaces-lbrace-v_0-v_1-v_krbrace-that-span-rn">4. Define subspaces \(\lbrace V_0, V_1,&hellip;, V_K\rbrace\) that span \(R^n\)</h4>
 <p>For \(k=1,&hellip;,K\), let  \(V_k\) be the subspace of \(R^n\) such that its elements have the below form:
 $$
@@ -192,7 +188,6 @@ $$ \tag{2}
 $$</p>
 <p>Let \(x=(x_1,&hellip;,x_K)\), define a mapping \(P(x)\) from \(R^K\) to \(R^n\): \(P(x) = \frac{\hat{x}}{||\hat{x}||_2}\), where \(\hat{x}\) is in form (2).</p>
 <p>📌 It can be proved that all the subspaces \(V_k, k=0,1,&hellip;,K\) are perpendicular to each other and they span \(R^n\). For each \(k\neq 0\), any element \(v\) of \(V_k\) is an eigenvector of \(\Sigma\) with eigenvalue \(1-\rho_{kk}\), i.e. \(\Sigma v = (1-\rho_{kk})v\).</p>
-<p> </p>
 <h4 id="51-find-orthonormal-basis-of-subspaces-v_k-k-1-k">5.1 Find orthonormal basis of subspaces \(V_k, k =1,&hellip;, K\)</h4>
 <p>Define matrix \(F_m\) of size \(m\times (m-1)\), \(m&gt;1\).
 $$
@@ -216,7 +211,6 @@ B = \begin{bmatrix}
 \end{bmatrix}
 $$</p>
 <p>📌 Therefore, \(x\in R^K\) is an eigenvector of \(B\) w.r.t eigenvalue \(\lambda\) if and only if \(P(x)\in R^n\) is an eigenvector of \(\Sigma\) w.r.t  \(\lambda\). The problem has been reduced from \(N-\)dimensional space to \(K-\)dimensional space. Once we have derived the eigenvectors of \(B\), we can apply the mapping function \(P(\cdot)\) to get eigenvectors of \(\Sigma\). If the eigenvectors of \(\Sigma\) are not orthogonal, one can use the Gram-Schmidt process to orthogonalize them.</p>
-<p> </p>
 <h4 id="6-decompose-sigma">6. Decompose \(\Sigma\)</h4>
 <p>Now we can eigen-decompose \(\Sigma\) by \(\Sigma=UDU^T\), where \(U\) is an orthogonal matrix and \(D\) is a diagonal matrix defined below. \(G\) is a \(N\times K\) matrix, each column of which equals \(P(x)\) with \(x\) being an eigenvector of \(B\).
 $$
@@ -230,11 +224,9 @@ $$</p>
 D = \text{diag}\lbrace \underbrace{\lambda_1, &hellip;, \lambda_K}_{\text{eigenvalues of B}}, \underbrace{1-\rho_{11},&hellip;,1-\rho_{11}}_{N_1-1},\cdots,   \underbrace{1-\rho_{KK},&hellip;,1-\rho_{KK}}_{N_K-1} \rbrace
 $$</p>
 <p>📌 The only calculation required is finding the eigen-pairs of \(B\), which takes \(O(K^3)\) steps, much less than the \(O(n^3)\) steps needed to decompose \(\Sigma\) directly.</p>
-<p> </p>
 <h4 id="7-sample-x">7. Sample \(X\)</h4>
 <p>Once one has the eigen-decomposition of \(\Sigma\) as in section 6, a sample of \(X\) can be calculated by \(X=U\sqrt{D}Z\).</p>
 <p>The calculation takes \(O(K^2)+O(n)\) steps. Since (1) \(D\) is a diagonal matrix and \(Z\) is a vector, so \(\sqrt{D}Z\) takes \(O(n)\) steps; (2) \(G\) has same rows for each group, so the multiplication of \(G\) with the first \(K\) elements of \(\sqrt{D}Z\) can be carried out by \(O(K^2)\) steps; (3) Let \(e_k\) be the subvector of \(\sqrt{D}Z\) corresponding to the submatrix \(F_{N_k}\), since any adjacent rows of \(F_{N_k}\) are different no more than two elements, once one has calculated the \(i-\)th row of  \(F_{N_k}e_k\), it just takes fixed amount of steps to get the \((i+1)-\)th row of \(F_{N_k}e_k\), so \(O(N_k)\) steps are carried out to compute \(F_{N_k}e_k\). In summary, the total number of steps required is about \(O(K^2)+O(n)\).</p>
-<p> </p>
 <h4 id="8-close-remark">8. Close Remark</h4>
 <p>It&rsquo;s important to keep in mind that all the above calculations being feasible is because of the two assumptions: (1) \(\Sigma\) is positive semi-definite; (2) \(\Sigma\) has block structure. Sometimes one would first specify the block structure of a correlation matrix based on the data or experience, however, it&rsquo;s possible that such correlation matrix is not positive semi-definite. In regard to this issue, the paper also mentions how to &lsquo;fix&rsquo; the correlation matrix by setting the negative eigenvalues to zero. Interested reader can refer to the paper<cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite>.</p>
 <p> 
@@ -298,16 +290,13 @@ efficient sampling methods</a> <a href="#fnref:1" class="footnote-backref" role=
 <script type="text/javascript"
         src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
         integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
-        crossorigin="anonymous"></script><link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
-              integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq"
-              crossorigin="anonymous"><script defer
-                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
-                integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz"
-                crossorigin="anonymous"></script><script defer
-                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
-                integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
-                crossorigin="anonymous"
-                onload="renderMathInElement(document.body);"></script></body>
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
 
 </html>

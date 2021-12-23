@@ -21,8 +21,8 @@
         
         
         <link rel="stylesheet"
-        href="https://xiangli2pro.github.io/css/customer.min.9faf1e9363b54ce3442bf8c844672ae5261d564a228d047b5cc3051ec2e193e5.css"
-        integrity="sha256-n68ek2O1TONEK/jIRGcq5SYdVkoijQR7XMMFHsLhk&#43;U="
+        href="https://xiangli2pro.github.io/css/customer.min.59ef4903a6796616d5f0cb4dd4190d864235efcae8342417cd69f247298549ae.css"
+        integrity="sha256-We9JA6Z5ZhbV8MtN1BkNhkI178roNCQXzWnyRymFSa4="
         crossorigin="anonymous"
         media="screen" />
     
@@ -164,23 +164,18 @@
 
             <p><br>
 Suppose we have a fair coin with two faces Head (H) and Tail (T). Intuitively,  one would say that as we toss the coin more times, the relative frequency of H (or T) occurrence is getting closer to one half. If you have taken any statistics course, you might know that the above statement can be directly proved by using the <em>strong law of large number</em><cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite>(SLL) theorem. The SLL comes so handy that I used to apply it to any problem that fits into the conditions without questioning what&rsquo;s really happening on the problem itself. So when I read the proof of the coin tossing problem in <em>Probability and Measure</em><cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite>, a basic but fundamental proof taking a perspective I didn&rsquo;t come across in the previous statistical classes, I felt very inspired and got a better statistical understanding of the problem itself. In the post, I will summarize the idea and present the proof.</p>
-<p> </p>
 <h4 id="1-prelude">1. Prelude</h4>
 <p>Let \(1\) indicate H and \(0\) indicate T, \(w\) be a sequence of infinite tosses of a coin.  Then  \(w\) can be represented by a nonterminating dyadic expansion (similar to binary expansion)<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite> \(w=\sum_{n=1}^{\infty}\frac{d_n(w)}{2^n}\), where \(d_n(w)\) takes value in \(\{0,1\}\) and can be understood as the result of \(n\)-th toss in the sequence \(w\). For example, \(w=0.01101&hellip;\)  means that \((d_1(w)=0, d_2(w)=1, d_3(w)=1, d_4(w)=0, d_5(w)=1,&hellip;)\), and is equivalent to the sequence THHTH\(&hellip;\). Nonterminating means that for value with two expansion representations, use the representation not ending in \(0\).  Take \(0.5\) as an example, \(0.5\) can be written as \(0.1\) or \(0.0111&hellip;\)<cite><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></cite>, we choose the one of \(0.0111&hellip;\) .</p>
 <p>Up to this point, the statement that the relative frequency of 1 (or H) occurrence approaches one half can be statistically translated as
 \(P(\big[w:\underset{n\rightarrow \infty}{\lim}\frac{\sum_{i=1}^n d_i(w)}{n}=\frac{1}{2}\big])=1\), which has the same form as the target probability in SLL, but  here \(d_i(w)\) has a more concrete definition than \(X_i\).  Before starting the proof, let&rsquo;s first look at some useful definitions and a lemma.</p>
-<p> </p>
 <h4 id="2-notation">2. Notation</h4>
 <p>Let \(N=\big[w:\underset{n\rightarrow \infty}{\lim}\frac{\sum_{i=1}^n d_i(w)}{n}=\frac{1}{2}\big]\) and \(s_n(w)=\sum_{i=1}^n[2d_i(w)-1]\).</p>
 <p>Then it&rsquo;s equivalent to write \(N=\big[w:\underset{n\rightarrow \infty}{\lim}\frac{s_n(w)}{n}=0\big]\).</p>
 <p>We prove \(P(N)=1\) by showing that \(P(N^c)=0\).</p>
-<p> </p>
 <h4 id="3-negligible-set">3. Negligible set</h4>
 <p>Define a set \(A\) to be negligible if for each positive \(\epsilon\) there exists a finite or countable collection \(I_1, I_2,&hellip;\) of intervals (they may overlap) satisfying \(A \subset \sum_k I_k\) and \(\sum_k|I_k|&lt;\epsilon\). A finite or countable union of negligible sets is negligible.</p>
-<p> </p>
 <h4 id="4-lemma">4. Lemma</h4>
 <p>\(P(\big[w: |\frac{s_n(w)}{n}|\geq \epsilon\big])\leq \frac{3}{n^2\epsilon^4}\). The proof of this lemma employs <em>Markov Inequality</em>, but it is not the focus here, details can be found in the book <cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite>.</p>
-<p> </p>
 <h4 id="5-proof">5. Proof</h4>
 <p>Now we are ready for the proof. Let \(A_n=\big[w: |n^{-1}s_n(w)|\geq \epsilon_n\big]\), then by the lemma, \(P(A_n)\leq \frac{3}{n^2\epsilon_n^4}\). We fix a positive sequence \(\{\epsilon_n\}\) going to \(0\) slowly enough such that the series \(\sum_n\epsilon_n^{-4}n^{-2}\)(take \(\epsilon_n=n^{-1/10}\), for example) converges, so \(\sum_nP(A_n)\leq \sum_n \frac{3}{n^2\epsilon_n^4}&lt;\infty\).</p>
 <p>Next we prove \(P(N^c)=0\) by showing that \(N^c\) can be covered by intervals the total sum of whose lengths can be made arbitrarily small.</p>
@@ -191,7 +186,6 @@ In other words, for each \(m\), \(\cap_{n=m}^{\infty}A_n^c\subset N\), which is 
 <li>Therefore, \(P(N^c)&lt;\sum_{n=m}^{\infty}P(A_n)&lt; \epsilon\). \(P(N^c)=0\) due to \(\epsilon\) is arbitrary.</li>
 </ul>
 <p>\(\blacksquare\)</p>
-<p> </p>
 <h4 id="6-remark">6. Remark</h4>
 <p>To be more accurate, since \(s_n(w)\) is a step function on the interval \((0,1]\), \(A_n\) is a finite disjoint union of \(\cup_kI_{nk}\) with \(P(A_n)=\sum_k|I_{nk}|\). Therefore \(\cup_{n=m}^{\infty}A_n\) is a countable union of  \(\cup_{n=m}^{\infty}\cup_kI_{nk}\) with \(\sum_{n=m}^{\infty}\sum_k|I_{nk}|=\sum_{n=m}^{\infty}P(A_n)&lt; \epsilon\). The intervals \(I_{nk}(n\geq m, k\geq 1)\) provide a covering of \(N^c\).</p>
 <p>In section 5, the step from \(\sum_nP(A_n)&lt;\infty\) to \(P(N^c)=0\) can be done by using <em>the first Borel Cantelli Lemma</em>. It&rsquo;s encouraged to use those well-established theorems in solving problems, but in the post I mainly want to show the basic but inspiring concepts. The book <cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite> covers some fabulous examples of using the first and second <em>Borel Cantelli Lemma</em>, I intend to write a post about them in the near future.</p>
@@ -259,16 +253,13 @@ In other words, for each \(m\), \(\cap_{n=m}^{\infty}A_n^c\subset N\), which is 
 <script type="text/javascript"
         src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
         integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
-        crossorigin="anonymous"></script><link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
-              integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq"
-              crossorigin="anonymous"><script defer
-                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
-                integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz"
-                crossorigin="anonymous"></script><script defer
-                src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
-                integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
-                crossorigin="anonymous"
-                onload="renderMathInElement(document.body);"></script></body>
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
 
 </html>
