@@ -6,7 +6,16 @@
     <description>Recent content in Teches on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What emotion makes politician&#39;s tweets get more engagement?</title>
+      <link>https://xiangli2pro.github.io/tech/0120-2022-datathon/</link>
+      <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0120-2022-datathon/</guid>
+      <description>This post is based on my report to a 3-day datathon event, code and data are available at Github repo here.</description>
+    </item>
+    
     <item>
       <title>Statistical analysis learnt from vaccine studies</title>
       <link>https://xiangli2pro.github.io/tech/1217-2021-vaccine_study/</link>

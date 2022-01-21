@@ -6,7 +6,16 @@
     <description>Recent content on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 24 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What emotion makes politician&#39;s tweets get more engagement?</title>
+      <link>https://xiangli2pro.github.io/tech/0120-2022-datathon/</link>
+      <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0120-2022-datathon/</guid>
+      <description>This post is based on my report to a 3-day datathon event, code and data are available at Github repo here.</description>
+    </item>
+    
     <item>
       <title>Dan Dan&#39;s relocation story</title>
       <link>https://xiangli2pro.github.io/life/1224_2021_dandan/</link>
