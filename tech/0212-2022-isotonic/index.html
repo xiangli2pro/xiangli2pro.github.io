@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> Xiang Li | Statistical tests &#43; Dynamic Programming = ? </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet"
+          href="https://xiangli2pro.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css"
+          integrity="sha256-DGQ95ACK3KMp96LWFs4wjMqZ1O9F5MyjBzI&#43;eFeRAZQ="
+          crossorigin="anonymous"
+          type="text/css">
+    
+    <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+        
+        
+        <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/customer.min.93e48a477ee532b5600ae5e4aff60bfc28ca5236f93908831b3c74f7423080e1.css"
+        integrity="sha256-k&#43;SKR37lMrVgCuXkr/YL/CjKUjb5OQiDGzx090IwgOE="
+        crossorigin="anonymous"
+        media="screen" />
+    
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+
+    
+    
+      
+      
+      
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Titillium&#43;Web&amp;display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://xiangli2pro.github.io/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://xiangli2pro.github.io/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="https://xiangli2pro.github.io/tech/0212-2022-isotonic/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://xiangli2pro.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
+
+<meta name="twitter:title" content="Statistical tests &#43; Dynamic Programming = ?"/>
+<meta name="twitter:description" content="Recently I encountered an interesting research question &ndash; a binary outcome (e."/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://xiangli2pro.github.io/images/dandan.jpeg" alt="profile picture">
+            <h3 title=""><a href="/">Xiang Li</a></h3>
+            <div class="description">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://www.linkedin.com/in/xiang-li-505757129/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/xiangli2pro" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Xiang Li  2021-2022 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/tech/"
+                        
+                   title="">Tech</a></li>
+        
+            
+            <li><a 
+                   href="/life/"
+                        
+                   title="">Life</a></li>
+        
+            
+            <li><a 
+                   href="/resource/"
+                        
+                   title="">Resource</a></li>
+        
+        
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Statistical tests &#43; Dynamic Programming = ?</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Sat, Feb 12, 2022
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">6-minute read</span>
+                        
+                        <span class="separator"><a class="tag" href="/tags/statistics/">statistics</a><a class="tag" href="/tags/algorithm/">algorithm</a></span>
+
+                    </div>
+                
+            </div>
+
+            <p> </p>
+<p>Recently I encountered an interesting research question &ndash; a binary outcome (e.g. diabetes) is known to be associated with a continuous risk factor (e.g. body mass index (BMI)), how can we partition the continuous variable into consecutive non-overlapping intervals such that the likelihoods of the outcome occurring are similar within an interval but significantly different between two adjacent intervals (e.g. risks of diabetes are significantly different when BMI is in intervals [a, b], [b, c] and [c, d])? One may suggest to use the classic logistic regression. Though the curve of the predicted probability  against the independent variable can give us some insights on which areas the partition points are likely to reside, the guesswork lacks statistical-based evidence.  It turns out that there is a really fascinating solution to such questions &ndash; flexible isotonic regression model<cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite>.</p>
+<p>You may have heard of the <a href="https://en.wikipedia.org/wiki/Isotonic_regression">isotonic regression</a>, a model that fits the optimal monotonic step function to the relation between the independent variable (X) and the dependent variable (Y). However, it&rsquo;s not suitable to the present research question because (1) it has monotonic constrains while the relation between X and Y can be U-shape or other non-monotonic trend, and (2) isotonic regression usually generates overwhelmingly more partition points which requires extra efforts to reduce them. The flexible isotonic regression overcomes the previous two drawbacks, and it employs the clever combination of statistical tests and dynamic programming. The main focus of this post is to decipher and analyze the algorithm<cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite> of the flexible isotonic model.</p>
+<p><img src="/images/isotonic.png" width="300"/> <img src="/images/flexisotonic.png" width="300"/></p>
+<h4 id="-mathematical-notations">💧 Mathematical notations</h4>
+<p>Let&rsquo;s first use some mathematical notations to clarify the question that we are tackling. Consider a data with two variables:
+$$X = \{ \underbrace{x_1}_{x_{11},&hellip;,x_{1n_1}} &lt;  \underbrace{x_2}_{x_{21},&hellip;,x_{2n_2}} &lt; &hellip; &lt; \underbrace{x_m}_{x_{m1},&hellip;,x_{mn_m}}\}$$</p>
+<p>$$Y = \{y_{kl}; k=1,&hellip;,m; l = 1,&hellip;,n_k\} $$
+where $X$ is arranged in increasing order and assigned into $m$ groups/intervals and each group has $n_k (k=1,&hellip;,m)$ observations, $Y$ is also reordered accordingly. The question is how to partition the $m$ intervals of $X$ into consecutive non-overlapping intervals such that the means/proportions of $Y$ are similar within an interval but significantly different between two adjacent intervals?</p>
+<h4 id="-objective-function">💧 Objective function</h4>
+<p>No matter which model is performed, the solution is always trying to optimize an objective function. In this case, the objective function is the maximum likelihood function. If $Y$ is assumed to follow normal distributions (with a common covariance), then the maximum likelihood estimation is equivalent to the estimations by minimizing the sum of squared errors (SSE). The SSE calculation of observations in the block of $\{x_i,&hellip;,x_j\}$ is
+$$s(i,&hellip;,j) = \sum_{k=i}^j\sum_{l=1}^{n_k}(y_{kl}-\bar{y}_{i,&hellip;,j})^2$$
+where $\bar{y}_{i,&hellip;,j}$ is the sample mean in the block. If $Y$ follows binomial distribution, then it&rsquo;s equivalent to minimize the negative log-likelihood function
+$$s(i,&hellip;,j) =  -\ln\prod_{k=i}^j\prod_{l=1}^{n_k} \bar{y}_{i,&hellip;,j}^{y_{kl}}(1-\bar{y}_{i,&hellip;,j})^{(1-{y_{kl}})}$$</p>
+<h4 id="-overlapping-subproblems">💧 Overlapping subproblems</h4>
+<p>The key of the dynamic programming being considered here is that solving the subproblem relies on solving smaller subproblems. i.e., the optimal partition of $\{x_1,&hellip;,x_m\}$ depends on the optimal partition of the smaller block $\{x_1,&hellip;,x_k\}(k&lt;m)$. For now, if we ignore the restriction that means/proportions of $Y$ have to be similar within an interval and significantly different between two adjacent intervals, instead, we only ask the optimal partition to give the maximum likelihood value, then the regular dynamic programing as shown in algorithm 1 solves the problem perfectly. In algorithm 1, $link [k] (k=1,&hellip;,m)$ indicates the optimal partition point for block $\{x_1,&hellip;,x_k\}$, and we can use the $link$ vector to retrieve the optimal partition. $score[k]$ gives the corresponding optimal objective function value of partitioning $\{x_1,&hellip;,x_k\}$.</p>
+<figure class="center">
+    <img src="/images/algorithm1.png" height="250"/> 
+</figure>
+
+<h4 id="-modified-dynamic-programming">💧 Modified dynamic programming</h4>
+<p>However, when take into account the <strong>condition</strong> that means/proportions of $Y$ are similar within an interval and significantly different between two adjacent intervals, we need to modify the dynamic programming to accommodate the requirement. Compared to algorithm 1, algorithm 2 is different in two places:</p>
+<p>Take the partition of $\{x_1,&hellip;,x_i\}$ as an example,</p>
+<ol>
+<li>
+<p>In line 4-12. When deciding if $x_j(j&lt;i)$ is a partition point of block $\{x_1,&hellip;,x_i\}$, we need to consider not only the optimal partition point but <strong>all the partition points</strong> of the subproblem $\{x_1,&hellip;,x_j\}$. Suppose $x_k(k\leq j)$ is a such partition point, if the means/proportions of $Y$ in blocks $\{x_k,&hellip;,x_j\}$ and $\{x_{j+1},&hellip;,x_i\}$ are significantly different, $x_j$ is a partition point for $\{x_1,&hellip;,x_i\}$. Otherwise, we try the next partition point $x_{k'}$ of $\{x_1,&hellip;,x_j\}$ and check if the means/proportions of $Y$ in blocks $\{x_{k'},&hellip;,x_j\}$ and $\{x_{j+1},&hellip;,x_i\}$ are significantly different. Loop through the partition points of $\{x_1,&hellip;,x_j\}$ until we identity a $x_k$ that meets the condition. If no such partition point exits, $x_j$ is not a partition point of $\{x_1,&hellip;,x_i\}$.</p>
+</li>
+<li>
+<p>In line 1-3. For each $i(i=1,&hellip;,m)$, we use $V_i$, a list of lists, to keep in record all partition points and values that satisfy the condition.  The list $V_i[link] = [j_1,&hellip;,j_k,&hellip;,j_i]$ denotes all the partition points of $\{x_1,&hellip;,x_i\}$, list $V_i[rank] = [r_{j_1},&hellip;,r_{j_k}&hellip;,r_{j_i}]$ records the index of the partition point being considered in the sequence of partition points for the subproblem of $\{x_1,&hellip;,x_{j_k}\}$, list $V_i[score] = [s_{j_1},&hellip;,s_{j_k}&hellip;,s_{j_i}]$ gives the corresponding objective values.
+The values of each inner list are arranged by the increasing order of the values in the $score$ list (line 13-16), therefore, for the block $\{x_1,&hellip;,x_i\}$, the optimal value is the first element in list $V_i[score]$. Furthermore, as shown in algorithm 3, we can use the lists $V_1,&hellip;,V_i$ to retrieve the optimal partition of $\{x_1,&hellip;,x_i\}$.</p>
+</li>
+</ol>
+<figure class="center">
+    <img src="/images/algorithm2.png" height="450"/> 
+</figure>
+
+<figure class="center">
+    <img src="/images/algorithm3.png" height="200"/> 
+</figure>
+
+<h4 id="-statistical-tests">💧 Statistical tests</h4>
+<p>Up to this point we haven&rsquo;t touched anything on the statistical tests yet, but you may have already guessed where in the algorithm that we need to employ the testing. In algorithm 2 line 9, we need to check if the means/proportions of the outcome $Y$ in two adjacent groups are significantly different, which reduces to simple two-sample mean/proportion test questions.</p>
+<ol>
+<li>
+<p>If $Y$ follows normal distributions (with common covariance), use two-sample t-test.</p>
+</li>
+<li>
+<p>If $Y$ follows binomial distributions, use chi-square test or Fisher exact test depending on if any of the expected counts in the $2\times 2$ table is less than 5.</p>
+</li>
+</ol>
+<h4 id="-remark">💧 Remark</h4>
+<p>I really like the idea of combining the statistical testing and dynamic programming applied in the flexible isotonic model. It&rsquo;s a perfect example of assembling the simple tools in a clever way can solve complex questions.</p>
+<p>R codes are available for the flexible isotonic model to be used for continuous outcome<cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite>, binary outcome<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite> and survival data<cite><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></cite>.</p>
+<p> </p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0019754">On the Adaptive Partition Approach to the Detection of Multiple Change-Points</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://home.gwu.edu/~ylai/research/FlexStepReg/Rcode.txt">R code of using the flexible isotonic regression for continuous outcome</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://docs.google.com/document/d/1emexqaRG1EBmLYnNK0mYyy82RQ0IBLqTBjeY9BTakvM/edit?usp=sharing">R code of using the flexible isotonic regression for binary outcome</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p><a href="https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pone.0113948/1/pone.0113948.s002.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20220213%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20220213T183258Z&amp;X-Goog-Expires=86400&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=89ac54dd447398044e5c6d417c1087e33900b91aff6135092135731818dad60333afd167a82cb10fbdbcd139aac170491b97a81b0fbee742539016cb014347edb5eb4834f552bafdc0e60089d5d7f199d04439c4c6a9b453b30d62fb484e757e9c0aa8d4514811e7f5ecf5c9266b6448005d5b125f6c37ee689b48b5f433116c4d1dd5c4ec16ddc074ac1be3dfe79591c5a99409711dc9f3e20ed41bcf8c4332833bfcdd4642273aac20a48a1e9abac620d9afb144ca3fdd37159b5da635fb8b392ed494082400def8a11fe579b29a928155872dd30ea0f96337f55a80fb213eb521e475ab9739253fce4f51a37870904257082011ab3d2928e458d86ca0e7c8">R code of using the flexible isotonic regression for survival data</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+              
+                <h2></h2>
+                <script src="https://utteranc.es/client.js"
+        repo="xiangli2pro/xiangli2pro.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js"
+        integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ="
+        crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js"
+        integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2&#43;LqU="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
+
+</html>
