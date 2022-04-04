@@ -6,7 +6,16 @@
     <description>Recent content in r on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some tricks I use for data manipulation in R</title>
+      <link>https://xiangli2pro.github.io/tech/0402-2022-r-na/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0402-2022-r-na/</guid>
+      <description>Recently I have been working on a project that demands lots of efforts on cleaning and manipulating for a collection of longitudinal data sets.</description>
+    </item>
+    
     <item>
       <title>Let&#39;s draw a Pikachu in R!</title>
       <link>https://xiangli2pro.github.io/tech/0125-2022-pikachu/</link>

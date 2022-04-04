@@ -6,7 +6,16 @@
     <description>Recent content on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 12 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some tricks I use for data manipulation in R</title>
+      <link>https://xiangli2pro.github.io/tech/0402-2022-r-na/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0402-2022-r-na/</guid>
+      <description>Recently I have been working on a project that demands lots of efforts on cleaning and manipulating for a collection of longitudinal data sets.</description>
+    </item>
+    
     <item>
       <title>Statistical tests &#43; Dynamic Programming = ?</title>
       <link>https://xiangli2pro.github.io/tech/0212-2022-isotonic/</link>
@@ -184,7 +193,7 @@
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiangli2pro.github.io/resource/</guid>
-      <description> Scientific Reading  Website: FiveThirtyEight Website: Scientific American  Statistics/Mathematics  Website: Rice University Supplemental Resources and Data for Statisticians Website: Biostatistics for Biomedical Research Website: Datamethods Blog: Statistical Modeling, Causal Inference, and Social Science (Andrew Gelman) Blog: Statistical Thinking (Frank Harrell) Blog: Yihui Xie Blog: math3ma Book: Computer age statistical inference Course: Applied Causal Analysis (with R) Course: Lecture Notes for Causality in Machine Learning Course: Advanced Statistical Computing  Career  Blog: Perspectives  Coding  Website: Python Morsels Website: Python Code Example Website: Free Python Game Website: Efficient R Programming Website: R Style Guide  Spanish  Youtube: Hola Spanish Youtube: Maria Español Youtube: Why not Spanish Youtube: Spanishland School Website: español avanzado  </description>
+      <description> Scientific Reading  Website: FiveThirtyEight Website: Scientific American  Statistics/Mathematics  Website: Rice University Supplemental Resources and Data for Statisticians Website: Biostatistics for Biomedical Research Website: Datamethods Blog: Statistical Modeling, Causal Inference, and Social Science (Andrew Gelman) Blog: Statistical Thinking (Frank Harrell) Blog: Yihui Xie Blog: math3ma (This blog inspired me to start my own blog) Blog: R blog by an orthopaedic surgeon Blog: R blog by a historian Book: Computer age statistical inference  Career  Blog: Wes Kao Blog: Perspectives  Coding  Website: Python Morsels Website: Python Code Example Website: Free Python Game Website: Efficient R Programming Website: R Style Guide  Spanish  Youtube: Hola Spanish Youtube: Maria Español Youtube: Why not Spanish Youtube: Spanishland School Website: español avanzado  </description>
     </item>
     
     <item>

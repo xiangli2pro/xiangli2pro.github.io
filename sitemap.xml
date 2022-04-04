@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://xiangli2pro.github.io/tags/dplyr/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/tags/r/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/tech/0402-2022-r-na/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/tags/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/tech/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://xiangli2pro.github.io/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://xiangli2pro.github.io/tags/algorithm/</loc>
     <lastmod>2022-02-12T00:00:00+00:00</lastmod>
   </url><url>
@@ -9,15 +27,6 @@
     <lastmod>2022-02-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/tags/statistics/</loc>
-    <lastmod>2022-02-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/tags/</loc>
-    <lastmod>2022-02-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/tech/</loc>
-    <lastmod>2022-02-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/</loc>
     <lastmod>2022-02-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/tags/book-review/</loc>
@@ -30,9 +39,6 @@
     <lastmod>2022-02-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/tech/0125-2022-pikachu/</loc>
-    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiangli2pro.github.io/tags/r/</loc>
     <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://xiangli2pro.github.io/tags/datathon/</loc>
