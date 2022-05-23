@@ -6,7 +6,16 @@
     <description>Recent content on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Standardization in sparse penalized regressions (1)</title>
+      <link>https://xiangli2pro.github.io/tech/0522-2022-standardization1/</link>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0522-2022-standardization1/</guid>
+      <description>Sparse penalized regressions (e.g. lasso, elastic-net, SCAD) are popular statistical models that can simultaneously conduct variable selection and coefficient estimation.</description>
+    </item>
+    
     <item>
       <title>Some tricks I use for data manipulation in R</title>
       <link>https://xiangli2pro.github.io/tech/0402-2022-r-na/</link>
@@ -80,7 +89,7 @@
     </item>
     
     <item>
-      <title>Coding challenge learning note - Part 2</title>
+      <title>Coding challenge learning note (2)</title>
       <link>https://xiangli2pro.github.io/tech/0626-2021-summary_part2/</link>
       <pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate>
       
@@ -89,7 +98,7 @@
     </item>
     
     <item>
-      <title>Coding challenge learning note - Part 1</title>
+      <title>Coding challenge learning note (1)</title>
       <link>https://xiangli2pro.github.io/tech/0620-2021-summary_part1/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       
@@ -134,7 +143,7 @@
     </item>
     
     <item>
-      <title>Tensorflow2 learning note - Part 2</title>
+      <title>Tensorflow2 learning note (2)</title>
       <link>https://xiangli2pro.github.io/tech/0501-2021-tf-part2/</link>
       <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
       
@@ -143,7 +152,7 @@
     </item>
     
     <item>
-      <title>Tensorflow2 learning note - Part 1</title>
+      <title>Tensorflow2 learning note (1)</title>
       <link>https://xiangli2pro.github.io/tech/0423-2021-tf-part1/</link>
       <pubDate>Fri, 23 Apr 2021 00:00:00 +0000</pubDate>
       
@@ -193,7 +202,7 @@
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiangli2pro.github.io/resource/</guid>
-      <description> Scientific Reading  Website: FiveThirtyEight Website: Scientific American  Statistics/Mathematics  Website: Rice University Supplemental Resources and Data for Statisticians Website: Biostatistics for Biomedical Research Website: Datamethods Blog: Statistical Modeling, Causal Inference, and Social Science (Andrew Gelman) Blog: Statistical Thinking (Frank Harrell) Blog: Yihui Xie Blog: math3ma (This blog inspired me to start my own blog) Blog: R blog by an orthopaedic surgeon Blog: R blog by a historian Book: Computer age statistical inference  Career  Blog: Wes Kao Blog: Perspectives  Coding  Website: Python Morsels Website: Python Code Example Website: Free Python Game Website: Efficient R Programming Website: R Style Guide  Spanish  Youtube: Hola Spanish Youtube: Maria Español Youtube: Why not Spanish Youtube: Spanishland School Website: español avanzado  </description>
+      <description> Scientific Reading  Website: FiveThirtyEight Website: Scientific American  Statistics/Mathematics  Website: Rice University Supplemental Resources and Data for Statisticians Website: Datamethods Blog: Statistical Modeling, Causal Inference, and Social Science (Andrew Gelman) Blog: Statistical Thinking (Frank Harrell) Blog: Yihui Xie Blog: math3ma (This blog inspired me to start my own blog)  Career  Blog: Wes Kao Blog: Perspectives  Coding  Challenge: TidyTuesday Website: Python Morsels Website: Python Code Example Website: Free Python Game  Spanish  Youtube: Hola Spanish Youtube: Maria Español Youtube: Why not Spanish Youtube: Spanishland School Website: español avanzado  </description>
     </item>
     
     <item>
