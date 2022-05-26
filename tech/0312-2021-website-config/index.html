@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme=""><head>
-    <title> Xiang Li | Website Configuration </title>
+    <title> Xiang Li | Website Configuration and Trouble Shooting </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -60,8 +60,8 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
 
-<meta name="twitter:title" content="Website Configuration"/>
-<meta name="twitter:description" content="The website is powered by Hugo, employing the theme Anatole."/>
+<meta name="twitter:title" content="Website Configuration and Trouble Shooting"/>
+<meta name="twitter:description" content="🎏 Website Configuration The website is powered by Hugo, employing the theme Anatole."/>
 
 
     
@@ -141,14 +141,14 @@
         <div class="post-content">
             
             <div class="post-title">
-                <h3>Website Configuration</h3>
+                <h3>Website Configuration and Trouble Shooting</h3>
                 
                     <div class="info">
                         <em class="fas fa-calendar-day"></em>
                         <span class="date"> Fri, Mar 12, 2021
                                            </span>
                         <em class="fas fa-stopwatch"></em>
-                        <span class="reading-time">2-minute read</span>
+                        <span class="reading-time">3-minute read</span>
                         
                         
                     </div>
@@ -156,68 +156,78 @@
             </div>
 
             <p> </p>
+<h3 id="-website-configuration">🎏 Website Configuration</h3>
 <p>The website is powered by <a href="https://gohugo.io/getting-started/quick-start/">Hugo</a>, employing the theme <a href="https://themes.gohugo.io/anatole/">Anatole</a>. It&rsquo;s a beautiful template, and I would like to customize the setup a bit to reflect personal preference. I am a newcomer to the language css, js, basically I open the website in the chrome and use the developer tools to get a hint on which parameter changing which feature, a lot of functions are still under development. I will keep recording the changes I have made, in case I am going to modify it later or someone else wants a similar setup.</p>
-<h3 id="1-font-customercss">1. font (customer.css)</h3>
-<ol>
+<h4 id="1-font-customercss">1. font (customer.css)</h4>
+<ul>
 <li>content font size: .p(16px);</li>
 <li>post title font size: .post .post-title(20px); .post .post-content(20px);</li>
-<li>post title not capitalized: add code below to .css file</li>
-</ol>
+<li>post title not capitalized: add code below to .css file
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">h3 {
     text-transform: none !important;
 }
-</code></pre></div><h3 id="2-layout-customercss">2. layout (customer.css)</h3>
-<ol>
+</code></pre></div></li>
+</ul>
+<h4 id="2-layout-customercss">2. layout (customer.css)</h4>
+<ul>
 <li>sidebar width: .content (70%), .page-top(70%); @media(30%), .sidebar(30%);</li>
-<li>category position (single.html):  move category to the top of a post</li>
-</ol>
+<li>category position (single.html):  move category to the top of a post
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--&lt;div class=&#34;post-title&#34;&gt;--&gt;</span>
-     <span class="c">&lt;!--&lt;div class=&#34;info&#34;&gt;--&gt;</span>
-         <span class="c">&lt;!--&lt;em class=&#34;fas fa-calendar-day&#34;&gt;&lt;/em&gt;--&gt;</span>
-         {{ with .Page.Params.Categories }}{{ partial &#34;taxonomy/categories.html&#34; . }}{{ end }}
-    <span class="c">&lt;!-- &lt;/div&gt;
+   <span class="c">&lt;!--&lt;div class=&#34;info&#34;&gt;--&gt;</span>
+       <span class="c">&lt;!--&lt;em class=&#34;fas fa-calendar-day&#34;&gt;&lt;/em&gt;--&gt;</span>
+       {{ with .Page.Params.Categories }}{{ partial &#34;taxonomy/categories.html&#34; . }}{{ end }}
+  <span class="c">&lt;!-- &lt;/div&gt;
 </span><span class="c">&lt;!-- &lt;/div&gt;
-</span></code></pre></div><ol start="3">
-<li>current post content layout:</li>
-</ol>
+</span></code></pre></div></li>
+<li>current post content layout:
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">.content {
-    height: auto;
-    float: right;
-    /* width: 70%;
-    margin-top: 60px; */
-    width: 60%;
-    margin-top: 60px;
-    margin-right: 5%;
+  height: auto;
+  float: right;
+  /* width: 70%;
+  margin-top: 60px; */
+  width: 60%;
+  margin-top: 60px;
+  margin-right: 5%;
 }
-</code></pre></div><h3 id="3-comment-md">3. comment (.md)</h3>
-<p>make utterance comment box show up in each post: need to set type= &ldquo;post&rdquo; in the .md file FrontMatter, and add &ldquo;post&rdquo; into mainSections in config.toml;</p>
-<h3 id="4-read-more-indexhtml">4. read more (index.html)</h3>
-<p>add code below in the /anatole/layouts/index.html, between code chuck &lsquo;post-content&rsquo; and &lsquo;post-footer&rsquo;</p>
+</code></pre></div></li>
+</ul>
+<h4 id="3-comment-md">3. comment (.md)</h4>
+<ul>
+<li>make utterance comment box show up in each post: need to set type= &ldquo;post&rdquo; in the .md file FrontMatter, and add &ldquo;post&rdquo; into mainSections in config.toml;</li>
+</ul>
+<h4 id="4-read-more-indexhtml">4. read more (index.html)</h4>
+<ul>
+<li>add code below in the /anatole/layouts/index.html, between code chuck &lsquo;post-content&rsquo; and &lsquo;post-footer&rsquo;
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--  &lt;div class=&#34;post-content&#34;&gt; &lt;div&gt;  --&gt;</span>
 
 {{- if .Truncated -}}
-  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;{{ .RelPermalink }}&#39;</span><span class="p">&gt;</span><span class="ni">&amp;hellip;</span> Read more<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#39;{{ .RelPermalink }}&#39;</span><span class="p">&gt;</span><span class="ni">&amp;hellip;</span> Read more<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 {{- end -}}
 
 <span class="c">&lt;!--  &lt;div class=&#34;post-footer&#34;&gt; &lt;div&gt; --&gt;</span>
-</code></pre></div><h3 id="5-render-ipynb-on-hugo">5. render .ipynb on Hugo</h3>
-<ol>
+</code></pre></div></li>
+</ul>
+<h4 id="5-render-ipynb-on-hugo">5. render .ipynb on Hugo</h4>
+<ul>
 <li>install <a href="https://nbconvert.readthedocs.io/en/latest/usage.html">nbconvert</a></li>
 <li>create a text cell on top of the .ipynb file, add metadata (<a href="https://wowchemy.com/docs/content/front-matter/">Front Matter</a>) that you would normally setup for your hugo posts to the text cell.</li>
 <li>upload .ipynb file to your website &hellip;/content/posts/ folder</li>
-<li>go to command line under this folder path, render .ipynb to markdown by typing</li>
-</ol>
+<li>go to command line under this folder path, render .ipynb to markdown by typing
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">jupyter nbconvert --to markdown &lt;filename&gt;.ipynb
-</code></pre></div><ol start="5">
+</code></pre></div></li>
 <li>now you would see a &lt;filename&gt;.md file, you can make further changes</li>
-</ol>
-<h3 id="6-customize-image-size">6. customize image size</h3>
-<p>refer to this support <a href="https://github.com/lxndrblz/anatole/issues/175">post</a>, in order to adjust the size or alignment of the image in a post, we can use either html tag <code>&lt;img&gt;</code></p>
+</ul>
+<h4 id="6-customize-image-size">6. customize image size</h4>
+<ul>
+<li>refer to this support <a href="https://github.com/lxndrblz/anatole/issues/175">post</a>, in order to adjust the size or alignment of the image in a post, we can use either html tag <code>&lt;img&gt;</code>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md"><span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/your-image.jpg&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;800&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;100&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
 </code></pre></div><p>Or hugo figure <a href="https://gohugo.io/content-management/shortcodes/">shortcode</a></p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{<span class="p">&lt;</span>  <span class="nt">figure</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/images/your-image.jpg&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;alignright&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;800&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;100&#34;</span>  <span class="p">&gt;</span>}}
-</code></pre></div><h3 id="7-render-math-symbols-using-katex">7. render math symbols using KaTex</h3>
-<p>sometimes if the <code>_</code> subscript can not be rendered, consider using <code>\_</code> instead. for example,</p>
+</code></pre></div></li>
+</ul>
+<h4 id="7-render-math-symbols-using-katex">7. render math symbols using KaTex</h4>
+<ul>
+<li>sometimes if the <code>_</code> subscript can not be rendered, consider using <code>\_</code> instead. for example,
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">$$
 x = ( \underbrace{0...0}_{N_1}, \underbrace{0...0}_{N_2} )^T #\underbrace{}_{} not working
 $$
@@ -225,8 +235,24 @@ $$
 $$
 x = ( \underbrace{0...0}\_{N_1}, \underbrace{0...0}\_{N_2} )^T #\underbrace{}\_{} works
 $$
-</code></pre></div><p> 
+</code></pre></div></li>
+</ul>
+<p> 
  </p>
+<p> </p>
+<h3 id="-trouble-shooting">🎏 Trouble Shooting</h3>
+<h4 id="1--conda-not-found-anaconda">1.  conda not found (Anaconda)</h4>
+<p>This error occurs when running <code>conda</code> command on terminal after upgrading MacOS to Catalina. Anaconda <a href="https://www.anaconda.com/blog/how-to-restore-anaconda-after-macos-catalina-update">website</a> offers two options to reinstall the old anaconda configurations that is supposed to be in the filepath <code>Desktop/Relocated Items</code>. For me I do not need to recover the previous setup or environment, so the solution is simple, re-download Anaconda (at the moment it&rsquo;s Anaconda Individual Edition), then <strong>restart</strong> terminal and type <code>conda list</code>, if the screen displays packages information, then mission accomplished! Another useful reference can be found <a href="https://towardsdatascience.com/how-to-successfully-install-anaconda-on-a-mac-and-actually-get-it-to-work-53ce18025f97">here</a>.</p>
+<h4 id="2--permission-denied-publickey-github">2.  permission denied (publickey) (Github)</h4>
+<p>When <code>push</code> a new commit to the remote Github repository, especially the first time, the error occurs. In my case, the problem is solved by following the instructions on the Github <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">webstie</a>.</p>
+<h4 id="3--unable-to-load-shared-object--systemfontsso-r">3.  unable to load shared object &hellip; systemfonts.so (R)</h4>
+<p>After updating MacOS to Catalina and updating R packages and R studio (3.6.1) to the latest version, I run into the below error when I try to call the package <code>KableExtra</code> in the .Rmd file.</p>
+<blockquote>
+<p><em>Error: package or namespace load failed for ‘kableExtra’ in dyn.load(file, DLLpath = DLLpath, &hellip;): unable to load shared object &lsquo;/&hellip;/library/systemfonts/libs/systemfonts.so&rsquo;: &hellip;</em></p>
+</blockquote>
+<p>Solution: refer to this <a href="https://github.com/yixuan/showtext/issues/13">Github issue</a>, download and install
+<a href="https://www.xquartz.org/">XQuartz</a>, then restart Mac.</p>
+<p> </p>
 </div>
         <div class="post-footer">
             <div class="info">

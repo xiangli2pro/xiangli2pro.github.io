@@ -179,21 +179,12 @@
     </item>
     
     <item>
-      <title>Website Configuration</title>
+      <title>Website Configuration and Trouble Shooting</title>
       <link>https://xiangli2pro.github.io/tech/0312-2021-website-config/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiangli2pro.github.io/tech/0312-2021-website-config/</guid>
-      <description>The website is powered by Hugo, employing the theme Anatole.</description>
-    </item>
-    
-    <item>
-      <title>Troubleshooting List</title>
-      <link>https://xiangli2pro.github.io/tech/0311-2021-troubleshooting/</link>
-      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://xiangli2pro.github.io/tech/0311-2021-troubleshooting/</guid>
-      <description>1. conda not found (Anaconda) This error occurs when running conda command on terminal after upgrading MacOS to Catalina.</description>
+      <description>🎏 Website Configuration The website is powered by Hugo, employing the theme Anatole.</description>
     </item>
     
   </channel>
