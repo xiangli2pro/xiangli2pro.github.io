@@ -6,7 +6,16 @@
     <description>Recent content on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Standardization in sparse penalized regressions (2)</title>
+      <link>https://xiangli2pro.github.io/tech/0620-2022-standardization2/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0620-2022-standardization2/</guid>
+      <description>In the first post of the series, we learnt that it&amp;rsquo;s recommended to standardize the input data before performing sparse penalized regressions and four standardization methods (Z-score, Gelman, Bring, Min-max) have been introduced with example R code.</description>
+    </item>
+    
     <item>
       <title>Standardization in sparse penalized regressions (1)</title>
       <link>https://xiangli2pro.github.io/tech/0522-2022-standardization1/</link>
@@ -202,7 +211,7 @@
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://xiangli2pro.github.io/resource/</guid>
-      <description> Scientific Reading  Website: FiveThirtyEight Website: Scientific American  Statistics/Mathematics  Website: Rice University Supplemental Resources and Data for Statisticians Website: Datamethods Blog: Statistical Modeling, Causal Inference, and Social Science (Andrew Gelman) Blog: Statistical Thinking (Frank Harrell) Blog: Yihui Xie Blog: math3ma (This blog inspired me to start my own blog)  Career  Blog: Wes Kao Blog: Perspectives  Coding  Challenge: TidyTuesday Website: Python Morsels Website: Python Code Example Website: Free Python Game  Spanish  Youtube: Hola Spanish Youtube: Maria Español Youtube: Why not Spanish Youtube: Spanishland School Website: español avanzado  </description>
+      <description> Scientific Reading  Website: FiveThirtyEight Website: Scientific American Website: Data Journalism  Statistics/Mathematics  Website: The Book of Statistical Proofs (A good reference for general statistics definitions and proofs) Website: Rice University Supplemental Resources and Data for Statisticians Website: Datamethods Blog: Statistical Modeling, Causal Inference, and Social Science (Andrew Gelman) Blog: Statistical Thinking (Frank Harrell) Blog: Yihui Xie Blog: math3ma (This blog inspired me to start my own blog)  Career  Blog: Wes Kao Blog: Perspectives  Coding  Challenge: TidyTuesday Website: Python Morsels Website: Python Code Example Website: Free Python Game  Spanish  Youtube: Hola Spanish Youtube: Maria Español Youtube: Why not Spanish Youtube: Spanishland School Website: español avanzado  </description>
     </item>
     
     <item>

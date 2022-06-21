@@ -6,7 +6,16 @@
     <description>Recent content in statistics on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Standardization in sparse penalized regressions (2)</title>
+      <link>https://xiangli2pro.github.io/tech/0620-2022-standardization2/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xiangli2pro.github.io/tech/0620-2022-standardization2/</guid>
+      <description>In the first post of the series, we learnt that it&amp;rsquo;s recommended to standardize the input data before performing sparse penalized regressions and four standardization methods (Z-score, Gelman, Bring, Min-max) have been introduced with example R code.</description>
+    </item>
+    
     <item>
       <title>Standardization in sparse penalized regressions (1)</title>
       <link>https://xiangli2pro.github.io/tech/0522-2022-standardization1/</link>
