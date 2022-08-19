@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> Xiang Li | Tensorflow2 learning note (2) </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet"
+          href="https://xiangli2pro.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css"
+          integrity="sha256-DGQ95ACK3KMp96LWFs4wjMqZ1O9F5MyjBzI&#43;eFeRAZQ="
+          crossorigin="anonymous"
+          type="text/css">
+    
+    <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+        
+        
+        <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/customer.min.93e48a477ee532b5600ae5e4aff60bfc28ca5236f93908831b3c74f7423080e1.css"
+        integrity="sha256-k&#43;SKR37lMrVgCuXkr/YL/CjKUjb5OQiDGzx090IwgOE="
+        crossorigin="anonymous"
+        media="screen" />
+    
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+
+    
+    
+      
+      
+      
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Titillium&#43;Web&amp;display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://xiangli2pro.github.io/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://xiangli2pro.github.io/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="https://xiangli2pro.github.io/tech/2021_0423_tf-part2/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://xiangli2pro.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
+
+<meta name="twitter:title" content="Tensorflow2 learning note (2)"/>
+<meta name="twitter:description" content="In the second part of this Tensorflow2 mini-series, I will write about how to make use of the pre-trained and well-established deep learning models to perform new tasks."/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://xiangli2pro.github.io/images/dandan.jpeg" alt="profile picture">
+            <h3 title=""><a href="/">Xiang Li</a></h3>
+            <div class="description">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://www.linkedin.com/in/xiang-li-505757129/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/xiangli2pro" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Xiang Li  2021-2022 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/tech/"
+                        
+                   title="">Tech</a></li>
+        
+            
+            <li><a 
+                   href="/life/"
+                        
+                   title="">Life</a></li>
+        
+            
+            <li><a 
+                   href="/resource/"
+                        
+                   title="">Resource</a></li>
+        
+        
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Tensorflow2 learning note (2)</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Sat, May 1, 2021
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">9-minute read</span>
+                        
+                        <span class="separator"><a class="tag" href="/tags/python/">python</a><a class="tag" href="/tags/tensorflow2/">Tensorflow2</a></span>
+
+                    </div>
+                
+            </div>
+
+            <p> </p>
+<p>In the second part of this <a href="https://xiangli2pro.github.io/tech/2021_0423_tf-part1/">Tensorflow2 mini-series</a>, I will write about how to make use of the pre-trained and well-established deep learning models to perform new tasks. Still, the note serves as a template of the modeling pipeline instead of a sophisticated performance-oriented project. <a href="https://keras.io/api/applications/">Keras applications</a> has provided a list of deep learning models having the top performance on the <a href="https://en.wikipedia.org/wiki/ImageNet">ImageNet image recognition tasks</a> with pre-trained weights, and those models can be used for predictions, feature extraction, and fine-tuning. In the post, I will first use the <a href="https://arxiv.org/abs/1512.03385">ResNet50</a> model and its pre-trained weights to classify a dog image, then use the <a href="https://arxiv.org/abs/1409.1556">VGG19</a> model to perform a transfer learning task where features from the last MaxPooling2D layer of the VGG19 are served as the starting point of a logistic regression classifying dogs vs cats. The dataset I used in the post is a subset from <a href="https://www.kaggle.com/c/dogs-vs-cats">Kaggle’s Dogs vs. Cats</a>. In addition, I am glad that my dog bro Dandan has granted permission to use one of his photos as the test data.</p>
+<p>The post mainly consists of four parts,</p>
+<ol>
+<li>Use ResNet50 to classify the test image</li>
+<li>Explore features learned by each layer of VGG19</li>
+<li>Load image dataset and use ImageDataGenerator to perform data augmentation</li>
+<li>Use VGG19 layers + new layers to train a logistic regression model</li>
+</ol>
+<p>and details are given below. The work is originally created on Google Colab with GPU processor.</p>
+<p> </p>
+<h4 id="1-use-resnet50-to-classify-the-test-image">1. Use ResNet50 to classify the test image</h4>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># import the modules</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">layers</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span>  <span class="n">Sequential</span><span class="p">,</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing</span> <span class="kn">import</span> <span class="n">image</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="kn">import</span> <span class="nn">IPython.display</span> <span class="kn">as</span> <span class="nn">display</span>
+<span class="c1"># from PIL import Image</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+</code></pre></div><p>The test image is a photo of Dandan with the face a bit grumpy.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># display the test image</span>
+
+<span class="n">img_path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/dog.jpeg&#39;</span>
+<span class="c1"># display.display(Image.open(img_path))</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span> <span class="p">)</span>
+</code></pre></div><center><img src="/images/tf2-pic1.jpg", width=180, height=300></center>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># import the ResNet50 image processing functions and instantiate the ResNet50 model</span>
+
+<span class="kn">from</span> <span class="nn">tensorflow.keras.applications.resnet50</span> <span class="kn">import</span> <span class="n">preprocess_input</span><span class="p">,</span> <span class="n">decode_predictions</span>
+<span class="n">model_resnet50</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">applications</span><span class="o">.</span><span class="n">ResNet50</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="s1">&#39;imagenet&#39;</span><span class="p">)</span>
+</code></pre></div><p>The default input shape of the ResNet50 model is (224, 224, 3), and we need to use the model-specific data processing functions to process the images.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">img_path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/dog.jpeg&#39;</span>
+
+<span class="c1"># load image to target size</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">))</span>
+
+<span class="c1"># convert image to numpy arrays</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+<span class="c1"># expand image dimension to (batch, width, height, depth)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># use resnet50.preprocess_input to process the image</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">preprocess_input</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># take the top 5 predictions and decode them to the corresponding labels</span>
+<span class="n">x_preds</span> <span class="o">=</span> <span class="n">decode_predictions</span><span class="p">(</span><span class="n">model_resnet50</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">top</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div><p>Voila! The ResNet50 is 99.84% confident that Dandan is a French bulldog, and he is! Interestingly, ImageNet has 120 dog breeds classes and also there is a Kaggle competition dedicated on the <a href="https://www.kaggle.com/c/dog-breed-identification">Dog Breed identification</a> using the canine subset of the ImageNet, so next time when you come across a cute doggy on the road but don&rsquo;t know its breed, instead of searching on Google, using ResNet50 or other deep learning models might give you some clue about the breed!</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># print the top 5 predictions</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_preds</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">,</span><span class="s1">&#39;Probability&#39;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="bp">False</span><span class="p">))</span>
+</code></pre></div><pre><code>                     Class  Probability
+            French_bulldog     0.998435
+                       pug     0.000937
+               Boston_bull     0.000487
+         Brabancon_griffon     0.000069
+ Staffordshire_bullterrier     0.000011
+</code></pre>
+<p> </p>
+<h4 id="2-explore-the-features-learned-by-each-layer-of-vgg19">2. Explore the features learned by each layer of VGG19</h4>
+<p>As I was learning the deep learning models, I found it&rsquo;s difficult to imagine what each layer is learning, but the good news is that we can actually visualize the output of each layer, which would give us some idea about the learning process. The VGG19 model is trained on the ImageNet dataset and has 26 layers, and by default the output layer gives a vector of size 1,000 as the image representative features. In this section, I will explore the features generated from the 2nd and the 11th layer of VGG19.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># instantiate VGG19 model</span>
+
+<span class="kn">from</span> <span class="nn">tensorflow.keras.applications</span> <span class="kn">import</span> <span class="n">VGG19</span>
+<span class="n">model_vgg19</span> <span class="o">=</span> <span class="n">VGG19</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="s1">&#39;imagenet&#39;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># print out model summary</span>
+<span class="c1"># model_vgg19.summary()</span>
+
+<span class="c1"># plot the model architecture</span>
+<span class="c1"># tf.keras.utils.plot_model(model_vgg19, &#39;model_vgg19.png&#39;, show_shapes=True)</span>
+
+<span class="c1"># print the number of layers</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;The number of layers in VGG19 is&#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">model_vgg19</span><span class="o">.</span><span class="n">layers</span><span class="p">))</span>
+</code></pre></div><pre><code>The number of layers in VGG19 is 26
+</code></pre>
+<p>In order to get the output from each layer, we need to use the keras.models functional API <code>Model()</code>, instead of the sequential API used in the part 1 of the notes. We specify the input of the VGG19 as the model inputs, and the outputs from all the layers as the model outputs.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># store the layers outputs of VGG19</span>
+<span class="n">outputs_vgg19</span> <span class="o">=</span> <span class="p">[</span><span class="n">layer</span><span class="o">.</span><span class="n">output</span> <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">model_vgg19</span><span class="o">.</span><span class="n">layers</span><span class="p">]</span>
+
+<span class="c1"># use functional API to instantiate a new model</span>
+<span class="n">features_vgg19</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">model_vgg19</span><span class="o">.</span><span class="n">input</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">outputs_vgg19</span><span class="p">)</span>
+
+<span class="c1"># process the image data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">applications</span><span class="o">.</span><span class="n">vgg19</span><span class="o">.</span><span class="n">preprocess_input</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># get features generated by all layers of the VGG19</span>
+<span class="n">x_features</span> <span class="o">=</span> <span class="n">features_vgg19</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div><p>The layer index starts from 0. The second layer of VGG19 has output shape (224, 224, 64), and I randomly select 5 channels from the last dimension and display them below. It can be observed that at this stage, the model is roughly learning about the shape of the object in an image.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># features from the second layer</span>
+
+<span class="n">features_layer1</span> <span class="o">=</span> <span class="n">x_features</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ran_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">features_layer1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ran_idx</span><span class="p">):</span>
+  <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">features_layer1</span><span class="p">[:,:,</span><span class="n">n</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set3&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</code></pre></div><center><img src="/images/tf2-pic2.png"></center>
+<p>The 11th layer has output shape (56, 56, 256). Similarly, I randomly select 5 channels from the last dimension and display them below. It looks like at this layer, the model is learning about the local information around the shape of the object.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># features from the 11th layer</span>
+
+<span class="n">features_layer10</span> <span class="o">=</span> <span class="n">x_features</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ran_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">features_layer10</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ran_idx</span><span class="p">):</span>
+  <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">features_layer10</span><span class="p">[:,:,</span><span class="n">n</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Set3&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</code></pre></div><center><img src="/images/tf2-pic3.png"></center>
+<p> </p>
+<h4 id="3-load-dogs-vs-cats-images-and-data-augmentation">3. Load Dogs vs. Cats images and Data Augmentation</h4>
+<p>For the following sections, I will show how to construct a transfer learning model to classify dog vs. cat.  Here I only use a subset (600 train, 300 test) of the dataset from <a href="https://www.kaggle.com/c/dogs-vs-cats">Kaggle’s Dogs vs. Cats</a>, if you are interested in how to import and process the initial data, you can refer to this <a href="https://www.pyimagesearch.com/2019/06/24/change-input-shape-dimensions-for-fine-tuning-with-keras/">article</a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">images_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/image_data/images_train.npy&#39;</span><span class="p">)</span>
+<span class="n">images_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/image_data/images_test.npy&#39;</span><span class="p">)</span>
+
+<span class="n">labels_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/image_data/labels_train.npy&#39;</span><span class="p">)</span>
+<span class="n">labels_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/image_data/labels_test.npy&#39;</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># display some sample images</span>
+
+<span class="n">ran_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">images_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ran_idx</span><span class="p">):</span>
+  <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">images_train</span><span class="p">[</span><span class="n">n</span><span class="p">,]</span><span class="o">/</span><span class="mf">255.0</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</code></pre></div><center><img src="/images/tf2-pic4.png"></center>
+<p>If the train set and test set are large, it&rsquo;s recommended to use the data/image generators. Since generators will only load the batch of data when it&rsquo;s called instead of loading all the batches at once, it will reduce the memory cost. Moreover, keras has provided the generator class <code>ImageDataGenerator()</code> which not only converts the dataset into a generator but can also perform data augmentation. Generally speaking, data augmentation helps increase the training size by transforming the images into different versions, thus has the potential to increase the model performance. What the generator of <code>ImageDataGenerator()</code> does is to transform the train images to different versions <strong>at each training epoch</strong>, and it does not directly increase the train size<cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># define how to transform the train image</span>
+
+<span class="n">img_train_generator</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">ImageDataGenerator</span><span class="p">(</span>
+    <span class="c1"># process the image as required by VGG19</span>
+    <span class="n">preprocessing_function</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">applications</span><span class="o">.</span><span class="n">vgg19</span><span class="o">.</span><span class="n">preprocess_input</span><span class="p">,</span> 
+    
+    <span class="c1"># rotate </span>
+    <span class="n">rotation_range</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
+    
+    <span class="c1"># brightness</span>
+    <span class="n">brightness_range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span>
+    
+    <span class="c1"># flip</span>
+    <span class="n">horizontal_flip</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+
+<span class="c1"># do not do any transformation on the test data</span>
+<span class="n">img_test_generator</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">ImageDataGenerator</span><span class="p">(</span>
+    <span class="n">preprocessing_function</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">applications</span><span class="o">.</span><span class="n">vgg19</span><span class="o">.</span><span class="n">preprocess_input</span>
+<span class="p">)</span>
+
+<span class="c1"># need to fit first if there is sample statistics used in the augmentation, like mean, sd etc.</span>
+<span class="c1"># img_train_generator.fit(images_train)</span>
+
+<span class="c1"># instantiate the generator</span>
+<span class="n">train_generator</span> <span class="o">=</span> <span class="n">img_train_generator</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">images_train</span><span class="p">,</span> <span class="n">labels_train</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">test_generator</span> <span class="o">=</span> <span class="n">img_test_generator</span><span class="o">.</span><span class="n">flow</span><span class="p">(</span><span class="n">images_test</span><span class="p">,</span> <span class="n">labels_test</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div><p> </p>
+<h4 id="4-transfer-learning">4. Transfer learning</h4>
+<p>In this section I will use the pre-trained weights and the flattened output from the last MaxPooling2D layer of the VGG model as the input features, and add a new Dense layer with one unit and sigmoid activation to construct a logistic regression model. There are two things need to pay attention to. (1) The default input shape the VGG19 is (224, 224, 3), while the train data has input shape (160, 160, 3), therefore we need to assign a new input shape for the model. (2) If we want to use the pre-trained weights from VGG19, we do not need to train it in the new model, hence set the attribute <code>trainable</code> of VGG19 layers to <code>False</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># reset the input shape to (160, 160, 3)</span>
+<span class="n">model_vgg19_newhead</span> <span class="o">=</span> <span class="n">VGG19</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="s1">&#39;imagenet&#39;</span><span class="p">,</span> <span class="n">include_top</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> 
+                            <span class="n">input_tensor</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+
+<span class="c1"># do not train the vgg19 weights in the new model</span>
+<span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">model_vgg19_newhead</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
+  <span class="n">layer</span><span class="o">.</span><span class="n">trainable</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="c1"># flatten the output from the last layer and set it as input feature of new model</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">model_vgg19_newhead</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">output</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">()(</span><span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># add dense layer to perform logistic regression</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)(</span><span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># instantiate the model</span>
+<span class="n">model_vgg19_transfer</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">model_vgg19_newhead</span><span class="o">.</span><span class="n">input</span><span class="p">,</span> <span class="n">outputs</span> <span class="o">=</span> <span class="n">outputs</span><span class="p">)</span>
+
+<span class="c1"># print out model summary</span>
+<span class="n">model_vgg19_transfer</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</code></pre></div><pre><code>Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/vgg19/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5
+80142336/80134624 [==============================] - 0s 0us/step
+Model: &quot;model_1&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_3 (InputLayer)         [(None, 160, 160, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 160, 160, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 160, 160, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 80, 80, 64)        0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 80, 80, 128)       73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 80, 80, 128)       147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 40, 40, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 40, 40, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 40, 40, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 40, 40, 256)       590080    
+_________________________________________________________________
+block3_conv4 (Conv2D)        (None, 40, 40, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 20, 20, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 20, 20, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 20, 20, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 20, 20, 512)       2359808   
+_________________________________________________________________
+block4_conv4 (Conv2D)        (None, 20, 20, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 10, 10, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 10, 10, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 10, 10, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 10, 10, 512)       2359808   
+_________________________________________________________________
+block5_conv4 (Conv2D)        (None, 10, 10, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 5, 5, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 12800)             0         
+_________________________________________________________________
+dense (Dense)                (None, 1)                 12801     
+=================================================================
+Total params: 20,037,185
+Trainable params: 12,801
+Non-trainable params: 20,024,384
+_________________________________________________________________
+</code></pre>
+<p>As can be seen from the model summary, only 12,801 parameters are trainable, the rest of the parameters belong to the VGG19 model and are set not to be trained. Next we compile and train the new model for 10 epochs, then evaluate it on the test set. The result shows that the test accuracy is 100%.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># compile the model</span>
+<span class="n">model_vgg19_transfer</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;RMSprop&#39;</span><span class="p">,</span>
+                 <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span>
+                 <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+
+<span class="c1"># train the model for 10 epochs</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model_vgg19_transfer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">train_generator</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
+    <span class="c1"># number of batches for each epoch</span>
+    <span class="n">steps_per_epoch</span><span class="o">=</span><span class="n">train_generator</span><span class="o">.</span><span class="n">n</span> <span class="o">//</span> <span class="n">train_generator</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> 
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># evaluate on the test set</span>
+<span class="n">test_loss</span><span class="p">,</span> <span class="n">test_acc</span> <span class="o">=</span> <span class="n">model_vgg19_transfer</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span>
+    <span class="n">test_generator</span><span class="p">,</span> 
+    <span class="n">steps</span> <span class="o">=</span> <span class="n">test_generator</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">//</span> <span class="n">test_generator</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># print out the test result</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Test loss: {}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_loss</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Test accuracy: {}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_acc</span><span class="p">))</span>
+</code></pre></div><pre><code>Test loss: 0.02071295864880085
+Test accuracy: 1.0
+</code></pre>
+<p>Now we test the new model on classifying the photo of Dandan, and it successfully predicts that Dandan is a dog!</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/Colab Notebooks/dog.jpeg&#39;</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="mi">160</span><span class="p">))</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">applications</span><span class="o">.</span><span class="n">vgg19</span><span class="o">.</span><span class="n">preprocess_input</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">model_vgg19_transfer</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0.5</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Yes, Model predicts that Dandan is a dog&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Oops, Model predicts that Dandan is a cat&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>Yes, Model predicts that Dandan is a dog
+</code></pre>
+<p> </p>
+<h4 id="5-other-reference-articles">5. Other reference articles</h4>
+<p><a href="https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r">Difference between numpy array shape (R,1) and (R,)</a></p>
+<p><a href="https://stackoverflow.com/questions/61292890/transfer-learning-only-works-with-trainable-set-to-false">Control trainable parameters in transfer learning</a></p>
+<p><a href="https://github.com/keras-team/keras/issues/4465">Transfer learning using VGG16</a></p>
+<p><a href="https://stackoverflow.com/questions/50054938/why-do-we-need-to-include-top-false-if-we-need-to-change-the-input-shape#:~:text=1%20Answer&amp;text=This%20is%20simply%20because%20the,processing%20in%20the%20convolutional%20layers.">Why set <code>include_top=False</code> when input shape is not the default in transfer learning</a></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="(https://stackoverflow.com/questions/51748514/does-imagedatagenerator-add-more-images-to-my-dataset)">ImageDataGenerator does not increase train size</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+              
+                <h2></h2>
+                <script src="https://utteranc.es/client.js"
+        repo="xiangli2pro/xiangli2pro.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js"
+        integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ="
+        crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js"
+        integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2&#43;LqU="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
+
+</html>

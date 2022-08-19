@@ -9,28 +9,28 @@
     <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Some tricks I use for data manipulation in R</title>
-      <link>https://xiangli2pro.github.io/tech/0402-2022-r-na/</link>
+      <link>https://xiangli2pro.github.io/tech/2022_0402_r-na/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0402-2022-r-na/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2022_0402_r-na/</guid>
       <description>Recently I have been working on a project that demands lots of efforts on cleaning and manipulating for a collection of longitudinal data sets.</description>
     </item>
     
     <item>
       <title>Let&#39;s draw a Pikachu in R!</title>
-      <link>https://xiangli2pro.github.io/tech/0125-2022-pikachu/</link>
+      <link>https://xiangli2pro.github.io/tech/2022_0125_pikachu/</link>
       <pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0125-2022-pikachu/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2022_0125_pikachu/</guid>
       <description>I have always been trying to do something fun with R not just for work.</description>
     </item>
     
     <item>
       <title>Use Python in R</title>
-      <link>https://xiangli2pro.github.io/tech/0409-2021-python-r/</link>
+      <link>https://xiangli2pro.github.io/tech/2021_0409_python-r/</link>
       <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0409-2021-python-r/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2021_0409_python-r/</guid>
       <description>As a statistician, I use R a lot in my school works and collaboration projects, since R provides almost all the statistical analysis tools I would need in my research, from data wrangling, statistical modeling, simulation, to data visualization.</description>
     </item>
     

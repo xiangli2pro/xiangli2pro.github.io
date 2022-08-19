@@ -9,37 +9,37 @@
     <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Standardization in sparse penalized regressions (2)</title>
-      <link>https://xiangli2pro.github.io/tech/0620-2022-standardization2/</link>
+      <link>https://xiangli2pro.github.io/tech/2022_0620_standardization2/</link>
       <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0620-2022-standardization2/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2022_0620_standardization2/</guid>
       <description>In the first post of the series, we learnt that it&amp;rsquo;s recommended to standardize the input data before performing sparse penalized regressions and four standardization methods (Z-score, Gelman, Bring, Min-max) have been introduced with example R code.</description>
     </item>
     
     <item>
       <title>Standardization in sparse penalized regressions (1)</title>
-      <link>https://xiangli2pro.github.io/tech/0522-2022-standardization1/</link>
+      <link>https://xiangli2pro.github.io/tech/2022_0522_standardization1/</link>
       <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0522-2022-standardization1/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2022_0522_standardization1/</guid>
       <description>Sparse penalized regressions (e.g. lasso, elastic-net, SCAD) are popular statistical models that can simultaneously conduct variable selection and coefficient estimation.</description>
     </item>
     
     <item>
       <title>Statistical tests &#43; Dynamic Programming = ?</title>
-      <link>https://xiangli2pro.github.io/tech/0212-2022-isotonic/</link>
+      <link>https://xiangli2pro.github.io/tech/2022_0212_isotonic/</link>
       <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0212-2022-isotonic/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2022_0212_isotonic/</guid>
       <description>Recently I encountered an interesting research question &amp;ndash; a binary outcome (e.</description>
     </item>
     
     <item>
       <title>Research Crumbs: Tail Bound</title>
-      <link>https://xiangli2pro.github.io/tech/0612-2021-tail-bound/</link>
+      <link>https://xiangli2pro.github.io/tech/2021_0612_tail-bound/</link>
       <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0612-2021-tail-bound/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2021_0612_tail-bound/</guid>
       <description>The other day I was having the regular meeting with my advisors to discuss a paper, and there were two theorems involving the tail bound that I found very intriguing.</description>
     </item>
     

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> Xiang Li | Standardization in sparse penalized regressions (1) </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet"
+          href="https://xiangli2pro.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css"
+          integrity="sha256-DGQ95ACK3KMp96LWFs4wjMqZ1O9F5MyjBzI&#43;eFeRAZQ="
+          crossorigin="anonymous"
+          type="text/css">
+    
+    <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+        
+        
+        <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/customer.min.93e48a477ee532b5600ae5e4aff60bfc28ca5236f93908831b3c74f7423080e1.css"
+        integrity="sha256-k&#43;SKR37lMrVgCuXkr/YL/CjKUjb5OQiDGzx090IwgOE="
+        crossorigin="anonymous"
+        media="screen" />
+    
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+
+    
+    
+      
+      
+      
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Titillium&#43;Web&amp;display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://xiangli2pro.github.io/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://xiangli2pro.github.io/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="https://xiangli2pro.github.io/tech/2022_0522_standardization1/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://xiangli2pro.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
+
+<meta name="twitter:title" content="Standardization in sparse penalized regressions (1)"/>
+<meta name="twitter:description" content="Sparse penalized regressions (e.g. lasso, elastic-net, SCAD) are popular statistical models that can simultaneously conduct variable selection and coefficient estimation."/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://xiangli2pro.github.io/images/dandan.jpeg" alt="profile picture">
+            <h3 title=""><a href="/">Xiang Li</a></h3>
+            <div class="description">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://www.linkedin.com/in/xiang-li-505757129/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/xiangli2pro" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Xiang Li  2021-2022 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/tech/"
+                        
+                   title="">Tech</a></li>
+        
+            
+            <li><a 
+                   href="/life/"
+                        
+                   title="">Life</a></li>
+        
+            
+            <li><a 
+                   href="/resource/"
+                        
+                   title="">Resource</a></li>
+        
+        
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Standardization in sparse penalized regressions (1)</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Sun, May 22, 2022
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">6-minute read</span>
+                        
+                        <span class="separator"><a class="tag" href="/tags/standardization/">standardization</a><a class="tag" href="/tags/statistics/">statistics</a></span>
+
+                    </div>
+                
+            </div>
+
+            <p> </p>
+<p>Sparse penalized regressions (e.g. lasso, elastic-net, SCAD) are popular statistical models that can simultaneously conduct variable selection and coefficient estimation. However, there have been some uncertainties about data standardization when applying those models, especially when variables of different types (e.g. continuous, binary or categorical) exist in the same dataset. In the series of two posts, I will talk about the standardization issue based on my research paper <em>Standardization of Continuous and Categorical Covariates in Sparse Penalized Regressions (under journal review)</em>. The first post introduces four commonly implemented standardization methods, and the second post presents a novel method proposed in the paper. R package <code>mixedStandardization</code> is available on <a href="https://github.com/xiangli2pro/mixedStandardization">Github</a> to implement all the methods mentioned in the posts.</p>
+<p>Let&rsquo;s start with two questions.</p>
+<ol>
+<li>
+<p>Do we need to standardize the input data when applying sparse penalized regressions? Why?</p>
+</li>
+<li>
+<p>What standardization methods are available in practice?</p>
+</li>
+</ol>
+<p>The answer to the first question is that it&rsquo;s always recommended to standardize the input data beforehand in the sparse penalized regressions. On page 239 of the classic book <a href="https://www.statlearning.com"><em>An Introduction to Statistical Learning</em></a>, it says that</p>
+<blockquote>
+<p>In other words, $X_j\hat{\beta}_{j,\lambda}$ will depend not only on the value of $\lambda$, but also on the scaling of $j$th predictor. It may also depend on the scaling of other predictors. Therefore, it&rsquo;s best to apply ridge regression after standardizing the predictors.</p>
+</blockquote>
+<p>Also in another paper<cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite>, it mentions that</p>
+<blockquote>
+<p>The original LASSO tends to select variables with high variance even if these are irrelevant variables in the underlying model, with the standardized lasso successfully deletes irrelevant variables with high variance by imposing more amounts of penalty.</p>
+</blockquote>
+<p>Since a variable with larger unit will have larger coefficient size, which would lead to more penalty exerted on the coefficient in the penalized regression. Therefore, standardization alleviates the influence of scales across variables. In fact, the R package <code>glmnet</code> (online downloaded more than 5 millions times) for lasso and elastic net regression provides the Z-score standardization option and sets it as default, the R package <code>ncvreg</code> (online downloaded more than 2 million times) for nonconvex penalties such as SCAD and MCP, only provides standardized coefficient estimates.</p>
+<p>Now it&rsquo;s clear that we need to standardize the input data in sparse penalized regression. The next question is what standardization methods can we use? Here I briefly introduce four methods: Z-score, Gelman, Bring and Min-max. Denote the $j$th predictor as $X_j$.</p>
+<h4 id="-z-score-standardization">🌵 Z-score Standardization</h4>
+<p>Z-score is the most widely applied standardization. It scales all variables by their sample standard deviations respectively, $\frac{X_j}{\text{sd}(X_j)}$, so that the standardized variable has standard deviation equal to one, and it is frequently applied in machine learning algorithms involving euclidean distance measures, such as support vector machine, K-means, etc.</p>
+<p>However, Z-score suffers interpretation problem in the presence of categorical covariates and is sensitive to outliers. In the presence of small sample size or outliers, it&rsquo;s possible that the standard deviation calculated from the sample does not approximate the population standard deviation well and leads to poorly scaled covariates, which can be partially remedied through robust standard deviation estimators such as inter-quartile range divided by 1.35.</p>
+<h4 id="-gelman-standardization">🌵 Gelman Standardization</h4>
+<p>Based on Z-score, Gelman<cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite> made further adjustment which divides continuous covariates by twice their standard deviations, $\frac{X_j}{2\text{sd}(X_j)}$, and leaves binary and multi-category variables unmodified. This method improves the comparability between binary and continuous coefficients. However, the method is not appropriate when the binary variables have extreme probabilities outside the range [0.3, 0.7].</p>
+<h4 id="-bring-standardization">🌵 Bring Standardization</h4>
+<p>The standardized coefficients calculated by the Bring<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite> method inherit the same interpretation and comparability issues as Z-score, but the Bring method makes numerical improvement by using the partial standard deviation in the standardization, instead of the marginal standard deviation. The partial standard deviation is more appropriate than the marginal standard deviation because the former calculates the spread of the variable of interest conditioning on the values of other covariates, while the latter consider the spread of a variable for all observations in the sample. The partial standard deviation of variable $X_j$ is estimated by first regressing the variable on the other covariates to obtain the variance inflation factor (VIF), then calculated by equation $ \frac{\text{sd}(X_j)}{\sqrt{\text{vif}(X_j)}}\sqrt{\frac{n-1}{n-m}}$, where $n, m$ are the number of observations and the number of covarites respectively. Additionally, the Bring standardized coefficient is related to the variables&rsquo;s contribution to the outcome&rsquo;s variance in terms of correlation of determination, when included in the regression.</p>
+<h4 id="-min-max-standardization">🌵 Min-max Standardization</h4>
+<p>Min-max standardization is popular in image processing, it linearly transforms continuous variable $X_j$ to the range $[0,1]$ using the formula $\frac{X_{ij}-\min(X_j)}{\max(X_j)-\min(X_j)}$  and makes no modification on the binary or multi-category covariates that are often represented by several binary indicators for different categories in comparison to the reference group.
+However, the Min-max method is sensitive to outliers. When future sample falls outside the current range of the covariate, standardized covariate values will no longer be within $[0,1]$.</p>
+<h4 id="-example">🌰 Example</h4>
+<p>Next we demonstrate an example of selecting potential variables associated with the baseball player&rsquo;s salary, using cross-validation lasso penalized regression with different standardization methods. The <code>Hitters</code> data provided in R has 16 continuous variables and 3 binary variables.</p>
+<p>The result shows that the lasso model applied on Z-score and Gelman standardized data both select 6 variables, the lasso model with Bring method only selects 1 variable and the lasso model with Minmax standardization selects 4 variables.</p>
+<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># load package</span>
+<span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;xiangli2pro/mixedStandardization&#34;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">mixedStandardization</span><span class="p">)</span>
+
+<span class="c1"># load data</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ISLR2</span><span class="p">)</span>
+<span class="nf">data</span><span class="p">(</span><span class="n">Hitters</span><span class="p">)</span>
+<span class="n">Hitters</span> <span class="o">&lt;-</span> <span class="nf">na.omit</span><span class="p">(</span><span class="n">Hitters</span><span class="p">)</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">Hitters</span><span class="p">)</span>
+<span class="c1"># 263  20</span>
+
+<span class="c1"># check the continuous, binary and categorical variables</span>
+<span class="nf">sapply</span><span class="p">(</span><span class="n">Hitters</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">length</span><span class="p">(</span><span class="nf">levels</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+<span class="n">binaryVars</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;League&#34;</span><span class="p">,</span> <span class="s">&#34;Division&#34;</span><span class="p">,</span> <span class="s">&#34;NewLeague&#34;</span><span class="p">)</span>
+<span class="n">conitnuousVars</span> <span class="o">&lt;-</span> <span class="nf">names</span><span class="p">(</span><span class="n">Hitters</span><span class="p">)</span><span class="n">[</span><span class="o">!</span><span class="nf">names</span><span class="p">(</span><span class="n">Hitters</span><span class="p">)</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="n">binaryVars</span><span class="p">,</span> <span class="s">&#34;Salary&#34;</span><span class="p">)</span><span class="n">]</span>
+
+<span class="c1"># perform cross-validation lasso for data standardized by different methods</span>
+<span class="c1"># use &#34;one standard deviation&#34; rule to select the tuning lambda </span>
+<span class="nf">library</span><span class="p">(</span><span class="n">glmnet</span><span class="p">)</span>
+<span class="n">grid</span> <span class="o">&lt;-</span> <span class="m">10</span><span class="nf">^seq</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">-2</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="m">100</span><span class="p">)</span>
+
+<span class="c1"># parallel computing</span>
+<span class="n">var_selection</span> <span class="o">&lt;-</span> <span class="nf">lapply</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;Zscore&#34;</span><span class="p">,</span> <span class="s">&#34;Gelman&#34;</span><span class="p">,</span> <span class="s">&#34;Bring&#34;</span><span class="p">,</span> <span class="s">&#34;Minmax&#34;</span><span class="p">),</span> <span class="nf">function</span><span class="p">(</span><span class="n">stand</span><span class="p">){</span>
+  
+  <span class="c1"># standardize input</span>
+  <span class="n">x_stand</span> <span class="o">&lt;-</span> <span class="nf">mixedStand</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">Hitters</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">Hitters</span><span class="o">$</span><span class="n">Salary</span><span class="p">,</span>
+    <span class="n">standardization</span> <span class="o">=</span> <span class="n">stand</span><span class="p">,</span>
+    <span class="n">continuousVars</span> <span class="o">=</span> <span class="n">conitnuousVars</span><span class="p">,</span>
+    <span class="n">binaryVars</span> <span class="o">=</span> <span class="n">binaryVars</span>
+  <span class="p">)</span>
+  
+  <span class="c1"># cross-validation of lasso</span>
+  <span class="n">lasso_cv</span> <span class="o">&lt;-</span> <span class="nf">cv.glmnet</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">as.matrix</span><span class="p">(</span><span class="n">x_stand</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Hitters</span><span class="o">$</span><span class="n">Salary</span><span class="p">,</span> 
+                        <span class="n">alpha</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">standardize</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="s">&#34;gaussian&#34;</span><span class="p">)</span>
+  <span class="c1"># coefficient estimation of lambda.1se</span>
+  <span class="n">lasso1se_coef</span> <span class="o">&lt;-</span> <span class="n">lasso_cv</span><span class="o">$</span><span class="n">glmnet.fit</span><span class="o">$</span><span class="n">beta[</span><span class="p">,</span> <span class="nf">which</span><span class="p">(</span><span class="n">lasso_cv</span><span class="o">$</span><span class="n">lambda</span> <span class="o">==</span> <span class="n">lasso_cv</span><span class="o">$</span><span class="n">lambda.1se</span><span class="p">)</span><span class="n">]</span>
+  <span class="c1"># selected variables (nonzero coefficients)</span>
+  <span class="nf">which</span><span class="p">(</span><span class="n">lasso1se_coef</span> <span class="o">!=</span> <span class="m">0</span><span class="p">)</span>
+  
+<span class="p">})</span>
+
+<span class="c1"># variable selected by lasso + Z-score standardized input</span>
+<span class="n">var_selection[[1]]</span>
+<span class="c1"># Hits      Walks      CRuns       CRBI    PutOuts Division.W</span>
+
+<span class="c1"># variable selected by lasso + Gelman standardized input</span>
+<span class="n">var_selection[[2]]</span>
+<span class="c1"># Hits      Walks      CRuns       CRBI    PutOuts Division.W</span>
+
+<span class="c1"># variable selected by lasso + Bring standardized input</span>
+<span class="n">var_selection[[3]]</span>
+<span class="c1"># CHits </span>
+
+<span class="c1"># variable selected by lasso + Minmax standardized input</span>
+<span class="n">var_selection[[4]]</span>
+<span class="c1"># Hits      Walks       CRBI    PutOuts Division.W</span>
+
+</code></pre></div><h4 id="-next-">📣 Next &hellip;</h4>
+<p>We see from the example that different standardization method gives different variable selection though the data is the same, naturally one may wonder which method should I use in practice? What&rsquo;s the pros and cons of each standardization? Those questions are also the motivation for our research paper and I will talk more about them in the next post.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://www.koreascience.or.kr/article/JAKO201510665813828.pdf">A note on standardization in penalized regressions.</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="http://www.stat.columbia.edu/~gelman/research/published/standardizing7.pdf">Scaling regression inputs by dividing by two standard deviations</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://www.tandfonline.com/doi/abs/10.1080/00031305.1994.10476059">How to Standardize Regression Coefficients</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+              
+                <h2></h2>
+                <script src="https://utteranc.es/client.js"
+        repo="xiangli2pro/xiangli2pro.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js"
+        integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ="
+        crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js"
+        integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2&#43;LqU="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> Xiang Li | Some understandings about measure theory </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet"
+          href="https://xiangli2pro.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css"
+          integrity="sha256-DGQ95ACK3KMp96LWFs4wjMqZ1O9F5MyjBzI&#43;eFeRAZQ="
+          crossorigin="anonymous"
+          type="text/css">
+    
+    <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+        
+        
+        <link rel="stylesheet"
+        href="https://xiangli2pro.github.io/css/customer.min.93e48a477ee532b5600ae5e4aff60bfc28ca5236f93908831b3c74f7423080e1.css"
+        integrity="sha256-k&#43;SKR37lMrVgCuXkr/YL/CjKUjb5OQiDGzx090IwgOE="
+        crossorigin="anonymous"
+        media="screen" />
+    
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+
+    
+    
+      
+      
+      
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Titillium&#43;Web&amp;display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://xiangli2pro.github.io/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://xiangli2pro.github.io/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="https://xiangli2pro.github.io/tech/2021_0529_measure/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://xiangli2pro.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
+            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            crossorigin="anonymous"></script>
+
+
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
+
+<meta name="twitter:title" content="Some understandings about measure theory"/>
+<meta name="twitter:description" content="I remember the times when I searched for measure theory lectures online and got frustrated immediately at the sight of the abstract definition of Borel set, and the times that I could not wrap my head around when I studied the outer measure in the probability class."/>
+
+
+    
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://xiangli2pro.github.io/images/dandan.jpeg" alt="profile picture">
+            <h3 title=""><a href="/">Xiang Li</a></h3>
+            <div class="description">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://www.linkedin.com/in/xiang-li-505757129/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://github.com/xiangli2pro" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Xiang Li  2021-2022 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/about/"
+                        
+                   title="">About</a></li>
+        
+            
+            <li><a 
+                   href="/tech/"
+                        
+                   title="">Tech</a></li>
+        
+            
+            <li><a 
+                   href="/life/"
+                        
+                   title="">Life</a></li>
+        
+            
+            <li><a 
+                   href="/resource/"
+                        
+                   title="">Resource</a></li>
+        
+        
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Some understandings about measure theory</h3>
+                
+                    <div class="info">
+                        <em class="fas fa-calendar-day"></em>
+                        <span class="date"> Sat, May 29, 2021
+                                           </span>
+                        <em class="fas fa-stopwatch"></em>
+                        <span class="reading-time">4-minute read</span>
+                        
+                        <span class="separator"><a class="tag" href="/tags/probability/">probability</a></span>
+
+                    </div>
+                
+            </div>
+
+            <p> </p>
+<p>I remember the times when I searched for measure theory lectures online and got frustrated immediately at the sight of the abstract definition of Borel set, and the times that I could not wrap my head around when I studied the outer measure in the probability class. Now I may share some points that have helped me understand the concepts of \(\sigma\)-field, outer measure and Lebesgue measure. Rigorous definitions are omitted as there are abundant resources available online, only general ideas are discussed in the post.</p>
+<h4 id="1-notations">1. Notations</h4>
+<p>Let sample space \(\Omega\) be the unit interval \((0,1]\), a subinterval \(I\) of \(\Omega\) has the form \(I=(a,b]\) where \(0&lt;a\leq b\leq1\), then \(\mu(I)=b-a\) is ordinary length.</p>
+<p>Let \(F\) be the class of sets that are disjoint unions of subintervals of \(\Omega\), then it can be shown that \(F\) is a filed. If a set \(A\in F\) then we call \(A\) a \(F\)-set.  \(\sigma(F)\) is the \(\sigma\)-field generated by \(F\).</p>
+<p>It can be checked that \(\mu\) is a measure on field \(F\).</p>
+<p>Let \(\mu^*(A)=\inf \sum_{n}\mu(A_n)\), where the infimum extends over all finite and countable coverings of \(A\) by \(F\)-sets \(A_n\). \(\mu^*\) is an outer measure.</p>
+<p>The triple \((\Omega, \sigma(F), \mu^*|_{\sigma(F)})\) is a measure space that one would often encounter in the probability problem settings, where \( \mu^{*}|_{\sigma(F)}\) is the outer measure restricted on \(\sigma(F)\). Generally, the measure space is usually written as \((\Omega, \mathcal{F},  P)\), where \(\mathcal{F}\) is a \(\sigma\)-field and \(P\) is a measure on \(\mathcal{F}\).</p>
+<h4 id="2-why--we-need-sigma-field">2. Why  we need \(\sigma\)-field?</h4>
+<p>As indicated by the composition of the measure space, we cannot talk about \(\sigma\)-field without mentioning the sample space or the measure. Here is a great <a href="https://stats.stackexchange.com/questions/199280/why-do-we-need-sigma-algebras-to-define-probability-spaces">post</a> discussing why we need a \(\sigma\)-field other than other class of sets in the measure space. The basic idea is that when the sample space \(\Omega\) is uncountable such as \((0,1]\), it&rsquo;s not possible to assign probability to every one of the \(2^{\Omega}\) subsets of \(\Omega\), for example, the <a href="https://en.wikipedia.org/wiki/Vitali_set">Vitali set</a> (V) which has been shown to have \(\mu(V)=0\) and \(\mu(V)=1\)  at the same time, the contradiction makes it not measurable by \(\mu\). So it&rsquo;s necessary to work within subclasses of the power class (the class of all subsets of a space), and \(\sigma\)-field is an appropriate subclass whose properties (closure under countable unions and complement) filters out those sets with pathological behaviors.</p>
+<p>Besides, probability problem usually starts with the sets of some rather small class \(F\), the finite and countable operations can then lead to sets outside the initial class \(F\). This makes one to consider a class of sets that (i) contains \(F\) and (ii) is a \(\sigma\)-field (which filters out the non-measurable sets), in addition (iii) is as small as possible in a certain sense. As it turns out, this class is the intersection of all the \(\sigma\)-fields containing \(F\), which is \(\sigma(F)\).</p>
+<h4 id="3-what-does-the-outer-measure-do">3. What does the outer measure do?</h4>
+<p>Start from a measure \(\mu\) on a field \(F\), we need to obtain a measure on \(\sigma(F)\) in order to construct the measure space. There are four classes of sets involved in the process: \(F,  \sigma(F),  M(\mu^{*})\) and \(2^{\Omega} \), where \(M(\mu^{*})\) is the class of set \(A\) satisfying \(\mu^{*}(E\cap A) + \mu^{*}(E\cap A^c) = \mu^{*}(E)\) for every set \(E\subset\Omega\), and it&rsquo;s a \(\sigma\)-field. The figure below explains the relationship among those classes is that \(F\subset \sigma(F) \subset M(\mu^{*}) \subset 2^{\Omega} \).</p>
+<p>Once we have the classes, the measure on  \(\sigma(F)\)  can be obtained from the outer measure \(\mu^{*}\). \(\mu^{*}\) is a measure defined on the power set \(2^{\Omega}\), and it can be proved that \(\mu^{*}\) restricted on \(M(\mu^{*})\) is a measure there, and then \(\mu^{*}\) further restricted to \(\sigma(F)\) is clearly a measure on that class as well. Therefore the measure space is obtained as  \((\Omega, \sigma(F), \mu^*|_{\sigma(F)})\).</p>
+<center><img src="/images/measure.png" width="600" height="400"></center>
+<h4 id="4-lebesgue-measure-on-unit-interval">4. Lebesgue measure on unit interval</h4>
+<p>As mentioned in section 1, the space \(\Omega\) is the unit interval \((0,1]\); \(F\) is the class of sets that are disjoint unions of subintervals of \(\Omega\);  \(\sigma(F)\) is the \(\sigma\)-field generated by \(F\), which is also often referred as the Borel sets on unit interval; measure \(\mu\) on \(F\) is the ordinary length. Following the strategy elaborated in section 3, we can obtain the measure space \(((0,1], \sigma(F), \mu^{*}|_{\sigma(F)})\), where \(\mu^{*}|_{\sigma(F)}\) is the Lebesgue measure on unit interval.</p>
+<p> </p>
+<p> </p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        <div id="fb_comments_container">
+              
+                <h2></h2>
+                <script src="https://utteranc.es/client.js"
+        repo="xiangli2pro/xiangli2pro.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        
+        crossorigin="anonymous"
+        async>
+</script>
+
+            </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js"
+        integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ="
+        crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js"
+        integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2&#43;LqU="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+        src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
+        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        crossorigin="anonymous"></script><script defer
+                type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+                integrity="sha384-e/4/LvThKH1gwzXhdbY2AsjR3rm7LHWyhIG5C0jiRfn8AN2eTN5ILeztWw0H9jmN"
+                crossorigin="anonymous"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script></body>
+
+</html>

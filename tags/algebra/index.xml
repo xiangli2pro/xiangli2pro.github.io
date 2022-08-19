@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/algebra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Decompose correlation matrix with block structure</title>
-      <link>https://xiangli2pro.github.io/tech/0401-2021-corr-matrix/</link>
+      <link>https://xiangli2pro.github.io/tech/2021_0401corr-matrix/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0401-2021-corr-matrix/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2021_0401corr-matrix/</guid>
       <description>I recently read an interesting paper1 about how to sample from multivariate normal distribution with less computational complexity, and I really like the part where they make use of the block structure of the correlation matrix to conduct the eigen-decomposition.</description>
     </item>
     

@@ -9,19 +9,19 @@
     <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/standardization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Standardization in sparse penalized regressions (2)</title>
-      <link>https://xiangli2pro.github.io/tech/0620-2022-standardization2/</link>
+      <link>https://xiangli2pro.github.io/tech/2022_0620_standardization2/</link>
       <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0620-2022-standardization2/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2022_0620_standardization2/</guid>
       <description>In the first post of the series, we learnt that it&amp;rsquo;s recommended to standardize the input data before performing sparse penalized regressions and four standardization methods (Z-score, Gelman, Bring, Min-max) have been introduced with example R code.</description>
     </item>
     
     <item>
       <title>Standardization in sparse penalized regressions (1)</title>
-      <link>https://xiangli2pro.github.io/tech/0522-2022-standardization1/</link>
+      <link>https://xiangli2pro.github.io/tech/2022_0522_standardization1/</link>
       <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0522-2022-standardization1/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2022_0522_standardization1/</guid>
       <description>Sparse penalized regressions (e.g. lasso, elastic-net, SCAD) are popular statistical models that can simultaneously conduct variable selection and coefficient estimation.</description>
     </item>
     

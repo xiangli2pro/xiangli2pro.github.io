@@ -9,46 +9,46 @@
     <lastBuildDate>Sat, 12 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/probability/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research Crumbs: Tail Bound</title>
-      <link>https://xiangli2pro.github.io/tech/0612-2021-tail-bound/</link>
+      <link>https://xiangli2pro.github.io/tech/2021_0612_tail-bound/</link>
       <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0612-2021-tail-bound/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2021_0612_tail-bound/</guid>
       <description>The other day I was having the regular meeting with my advisors to discuss a paper, and there were two theorems involving the tail bound that I found very intriguing.</description>
     </item>
     
     <item>
       <title>Some understandings about measure theory</title>
-      <link>https://xiangli2pro.github.io/tech/0529-2021-measure/</link>
+      <link>https://xiangli2pro.github.io/tech/2021_0529_measure/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0529-2021-measure/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2021_0529_measure/</guid>
       <description>I remember the times when I searched for measure theory lectures online and got frustrated immediately at the sight of the abstract definition of Borel set, and the times that I could not wrap my head around when I studied the outer measure in the probability class.</description>
     </item>
     
     <item>
       <title>Why the Central Limit Theorem (CLT) is not working?</title>
-      <link>https://xiangli2pro.github.io/tech/0509-2021-clt/</link>
+      <link>https://xiangli2pro.github.io/tech/2021_0509_clt/</link>
       <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0509-2021-clt/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2021_0509_clt/</guid>
       <description>If you ever take any statistics classes, regardless of the level, the chances are high that you would come across The Central Limit Theorem1 (CLT).</description>
     </item>
     
     <item>
       <title>Interpret limit sets</title>
-      <link>https://xiangli2pro.github.io/tech/0419-2021-limit-sets/</link>
+      <link>https://xiangli2pro.github.io/tech/2021_0419_limit-sets/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0419-2021-limit-sets/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2021_0419_limit-sets/</guid>
       <description>In the statistics textbooks or papers, one would encounter many theorems and problems that are studying the limiting behavior of a series of random variables.</description>
     </item>
     
     <item>
       <title>What happens if toss a fair coin infinite times?</title>
-      <link>https://xiangli2pro.github.io/tech/0318-2021-dyadic/</link>
+      <link>https://xiangli2pro.github.io/tech/2021_0318_dyadic/</link>
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0318-2021-dyadic/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2021_0318_dyadic/</guid>
       <description>Suppose we have a fair coin with two faces Head (H) and Tail (T).</description>
     </item>
     

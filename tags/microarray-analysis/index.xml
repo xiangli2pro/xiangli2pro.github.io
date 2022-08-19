@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 09 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tags/microarray-analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Use Python in R</title>
-      <link>https://xiangli2pro.github.io/tech/0409-2021-python-r/</link>
+      <link>https://xiangli2pro.github.io/tech/2021_0409_python-r/</link>
       <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://xiangli2pro.github.io/tech/0409-2021-python-r/</guid>
+      <guid>https://xiangli2pro.github.io/tech/2021_0409_python-r/</guid>
       <description>As a statistician, I use R a lot in my school works and collaboration projects, since R provides almost all the statistical analysis tools I would need in my research, from data wrangling, statistical modeling, simulation, to data visualization.</description>
     </item>
     
