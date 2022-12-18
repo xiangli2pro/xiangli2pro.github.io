@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme=""><head>
-    <title> Xiang Li | Research Crumbs: Tail Bound </title>
+    <title> Xiang Li | What I have learnt from PhD career </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -44,7 +44,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://xiangli2pro.github.io/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://xiangli2pro.github.io/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="https://xiangli2pro.github.io/tech/2021_0612_tail-bound/">
+    <link rel="canonical" href="https://xiangli2pro.github.io/life/2022_1214_phd/">
 
     
     
@@ -60,8 +60,8 @@
     <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://xiangli2pro.github.io/images/dandan.jpeg"/>
 
-<meta name="twitter:title" content="Research Crumbs: Tail Bound"/>
-<meta name="twitter:description" content="The other day I was having the regular meeting with my advisors to discuss a paper, and there were two theorems involving the tail bound that I found very intriguing."/>
+<meta name="twitter:title" content="What I have learnt from PhD career"/>
+<meta name="twitter:description" content="It has been a few months since I officially graduated from the PhD program in August this year, I didn&rsquo;t write the article immediately after school as I wanted to have a more comprehensive review of the past four-year experience from a distance in terms of time."/>
 
 
     
@@ -140,46 +140,37 @@
     <div class="post  animated fadeInDown ">
         <div class="post-content">
             
+            <img class="post-thumbnail" src="https://xiangli2pro.github.io/images/phd_think.png" alt="Thumbnail image">
+            
             <div class="post-title">
-                <h3>Research Crumbs: Tail Bound</h3>
+                <h3>What I have learnt from PhD career</h3>
                 
                     <div class="info">
                         <em class="fas fa-calendar-day"></em>
-                        <span class="date"> Sat, Jun 12, 2021
+                        <span class="date"> Wed, Dec 14, 2022
                                            </span>
                         <em class="fas fa-stopwatch"></em>
-                        <span class="reading-time">2-minute read</span>
+                        <span class="reading-time">5-minute read</span>
                         
-                        <span class="separator"><a class="tag" href="/tags/crumbs/">crumbs</a><a class="tag" href="/tags/probability/">probability</a><a class="tag" href="/tags/statistics/">statistics</a></span>
+                        <span class="separator"><a class="tag" href="/tags/phd/">PhD</a></span>
 
                     </div>
                 
             </div>
 
             <p> </p>
-<p>The other day I was having the regular meeting with my advisors to discuss a paper, and there were two theorems involving the tail bound that I found very intriguing. What&rsquo;s interesting about them is that it&rsquo;s  likely that one would derive a similar but fallacious conclusions, which I name &lsquo;false friend&rsquo; (<a href="https://en.wikipedia.org/wiki/False_friend">amigo falso</a>, a Spanish word), if the subtle difference is not understood. The context is a bit complicated so I will simplify the notations and just focus on the logics.</p>
-<p> </p>
-<h4 id="-case-1">🔖 Case 1</h4>
-<p>Let \(X\) be a random variable and \(\theta\) is a parameter in the parameter space \(\Theta\). \(f(X,\theta)\) is a function of \(X\) and \(\theta\), and \(\epsilon\) is a value greater than \(0\).</p>
-<p>The question is that if we want to prove \(P(|f(X,\theta)|\geq \epsilon)\rightarrow 0\) for any \(\theta\in\Theta\), which one of the sufficient conditions below should be established?</p>
-<ol>
-<li>\( P(\underset{\theta}{\max}|f(X,\theta)|\geq \epsilon)\rightarrow 0\)</li>
-<li>\(P(|f(X,\theta)|\geq \epsilon)\rightarrow 0\)</li>
-</ol>
-<p>The answer is the first one. The second condition looks reasonable at first glance, however, the notation \(\theta\) is misleading. If we change it to \(\theta_1\), one may notice what the issue is.</p>
-<p>Recall that the objective is to prove \(P(|f(X,\theta)|\geq \epsilon)\rightarrow 0\) for <strong>any</strong> \(\theta\in\Theta\). \(P(|f(X,\theta_1)|\geq \epsilon)\rightarrow 0\) does NOT imply \(P(|f(X,\theta_2)|\geq \epsilon)\rightarrow 0\), therefore the second condition cannot deduce the conclusion of interest.</p>
-<p> </p>
-<h4 id="-case-2">🔖 Case 2</h4>
-<p>Let \(X_{ij}\) be independent random variables with mean \(\mu_{ij}=0\).  Given the condition that \(P(|X_{ij}|\geq\epsilon)\rightarrow 0\), which one of the following conclusions is correct?</p>
-<ol>
-<li>\(P(\underset{0\leq u_{i}, v_{j} \leq 1}{\max}|\sum_{i=1}^m\sum_{j=1}^nX_{ij}u_iv_j|\geq\epsilon)\rightarrow 0\)</li>
-<li>\(P(\underset{0\leq t_{ij} \leq 1}{\max}|\sum_{i=1}^m\sum_{j=1}^nX_{ij}t_{ij}|\geq\epsilon)\rightarrow 0\)</li>
-</ol>
-<p>The answer is the first one.</p>
-<p>Let&rsquo;s first demonstrate the incorrectness of the second conclusion using a counterexample. Assign \(t_{ij}=1\) if \(X_{ij}&gt;0\) and \(t_{ij}=0\) otherwise, then \(|\sum_{i=1}^m\sum_{j=1}^nX_{ij}t_{ij}|\) is always greater than \(0\), therefore the second conclusion does not hold.</p>
-<p>Naturally one may ask that does the first conclusion still hold if we employ the same argument above? The answer is yes, but how come? Well, the key point resides in a concept similar to the &lsquo;degree of freedom&rsquo;.</p>
-<p>In the second statement, the number of \(t_{ij}\) matches the number of \(X_{ij}\), which is \(mn\). Hence each \(X_{ij}\) is controlled by a \(t_{ij}\) and we can take the positive \(X_{ij}\) into the summation while ignoring the the negative \(X_{ij}\), which makes the summation always greater than \(0\).</p>
-<p>However, in the first statement, the \(u_i\) and \(v_j\) can only control \(m+n\) of \(X_{ij}\), and their summation value will be offset by the summation of the rest \(mn-m-n\) of \(X_{ij}\), therefore \(|\sum_{i=1}^m\sum_{j=1}^nX_{ij}u_iv_j|\) will go to zero as \(m,n\) go to infinity, the first conclusion holds.</p>
+<p>It has been a few months since I officially graduated from the PhD program in August this year, I didn&rsquo;t write the article immediately after school as I wanted to have a more comprehensive review of the past four-year experience from a distance in terms of time. Year 2022 is approaching to its end and I think now might be a good time to conclude the chapter of my PhD life with a few words.</p>
+<p>With no doubt, PhD career was a life-changing experience. Not because how much knowledge I had acquired, but how I had become mentally independent, transforming from a person who unconsciously tries to find shortcuts and achieve the maximum with the minimum effort to a person who faces her shortcomings and devotes to diligence. Looking at the present and recalling the past, there are numerous things I have learnt from the PhD career and I would like to share a few of them.</p>
+<h3 id="-challenge-is-rewarding">💌 Challenge is rewarding</h3>
+<p>Throughout PhD program, my biggest challenge was to meet the expectation of being able to constantly learning, quickly understanding and adaptly applying complex theories. It&rsquo;s not uncommon that I would still don&rsquo;t understand a methodology even after reading the materials dozens of times. At the beginning I got really frustrated and started questioning my abilities, I tried to avoid difficult classes and selected courses of familiar and easier topics. As I started taking up more demanding works, I realized that I would not be able to upgrade expertise if I always choose the easy side. Taking challenges is painful but rewarding, only after pushing yourself to the limit would you be amazed at how much potential could be released. Meanwhile, I have prepared myself to accept that not every challenge could be settled as expected, but the process itself is valuable. Challenges are not roadblocks hindering the road forward, they are stairs to an upper level.</p>
+<h3 id="-find-a-role-model">💌 Find a role model</h3>
+<p>There is a popular question, &ldquo;Where do you see yourself in the next 5 five years?&rdquo;, in the interviews. Having a good answer to it might help you get a job, but I doubt how helpful it is in practice, especially when you are new in a position with no clue about what the future looks like. Instead, a more pragmatic question that I think we should ask and be honest with ourselves is, &ldquo;Who is the role model in the school/company/industry that you want to become in the next five years?&rdquo; Do some research on that person&rsquo;s career development and skillsets, and cross-check with your envisions and capabilities. In this way, I found it&rsquo;s easier to locate a relatively clear path to follow, then when the time is coming, departing and establishing your own accomplishment. During the years, I have come across many wonderful people that have inspired me in different ways. For example, I started having the idea of building my own website after I had followed another at-then <a href="https://www.math3ma.com">PhD student&rsquo;s website</a>, which features updates of her research works and accessible explanations of mathematical concepts. I learnt a lot from her website and gained inspirations on how to develop my own. Up till now I have posted 25+ articles on the website and it has helped me become better at organizing and expressing ideas.</p>
+<h3 id="-other-things-matter">💌 Other things matter</h3>
+<p>I used to be a linear thinker and thought everything could be postponed until finishing the PhD program, which might be a side effect of asian culture that often &ldquo;sacrifices&rdquo; earlier life for education instead of enjoying life with education. I skipped interesting events using the excuse that I have to prepare for the exams. I delayed making plans for other adulthood decisions with the pretext that I need to focus on the study. I missed out family responsibilities saying that I am busy with school. Finishing the PhD was a priority but I ended up using it as an excuse to avoid other equally important duties, to disguise the fact that I was not good at time management. In addition, another mindset trap worthing mentioning is that when life is so narrowly focused on a single task, its successes and failures would greatly disturb our judgement to the self-worth, because it has become the only benchmark to evaluate ourselves. Later in my PhD program, I proactively took more diverse tasks and develop more skills other than major-related, at the same time I learnt to be time-efficient to balance the research works and other life tasks. I want to take on all the duties, challenges and opportunities that life would like to offer. Completing PhD is important, but other things matter too.</p>
+<h3 id="-it-takes-time">💌 It takes time</h3>
+<p>Since the beginning of the PhD program I had dreamed of publishing papers as the first author, after four years, near the end of my PhD term I finally had my first paper accepted by an academic journal. It might be the longest project I have had so far, sometime I think I could have done a better job if I had worked harder, but a more precious lesson that I have learnt from this experience is that things take time and no need to be overly worried or anxious. There is a proverb saying &ldquo;Constant dripping wears away the stone&rdquo;, which means that time plus perseverance make success. I believe most people have the tenacity to survive the process, but a bit more patience with time might make the journey more enjoyable and sustainable.</p>
+<hr>
+<p>Of course there are way more things that I would like to share, but it&rsquo;s not possible to enumerate all of them here. I recently started a new career after graduation and those four points mentioned in the post are the ones that I have been practicing a lot in the new position, so I decided to write them down.</p>
 <p> </p>
 <p> </p>
 </div>
