@@ -3,7 +3,7 @@
     <title> Xiang Li | Some tricks I use for data manipulation in R </title>
 
     
-    <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.120.4"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="A lifetime learner. A part of nature.">
     
     <link rel="stylesheet"
@@ -51,8 +51,8 @@
     
     
     <script type="text/javascript"
-            src="https://xiangli2pro.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
-            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            src="https://xiangli2pro.github.io/js/anatole-header.min.df804b63b5bd8474ea0756ea874bc8f1e92552708cc6ea43aa0d76981dc419f9.js"
+            integrity="sha256-34BLY7W9hHTqB1bqh0vI8eklUnCMxupDqg12mB3EGfk="
             crossorigin="anonymous"></script>
 
 
@@ -93,7 +93,7 @@
         
     </ul>
     <div class="footer">
-        <div class="by_farbox">&copy; Xiang Li  2021-2023 </div>
+        <div class="by_farbox">&copy; Xiang Li  2021-2024 </div>
     </div>
 </div>
 <div class="main">
@@ -161,34 +161,33 @@
 <h4 id="1-date">1. Date</h4>
 <p>When mutating on date, <code>case_when()</code> function is better than <code>ifelse()</code> because the former keeps data format consistent.</p>
 <p>The example data has two columns: <code>DATE</code> in date type and <code>LAB</code> in numerical type. If we want to generate a new date variable, as shown in the example,  <code>ifelse()</code> returns numerical values while <code>case_when()</code> returns dates. Of course one can further covert the numerical value to date using function <code>as.Date()</code>,  but it&rsquo;s better to keep the code simple and straightforward.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r">
-<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">DATE</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="nf">as.Date</span><span class="p">(</span><span class="s">&#34;01-03-2021&#34;</span><span class="p">,</span> <span class="n">format</span> <span class="o">=</span> <span class="s">&#34;%d-%m-%Y&#34;</span><span class="p">),</span>
-                                  <span class="nf">as.Date</span><span class="p">(</span><span class="s">&#34;02-03-2021&#34;</span><span class="p">,</span> <span class="n">format</span> <span class="o">=</span> <span class="s">&#34;%d-%m-%Y&#34;</span><span class="p">),</span>
-                                  <span class="n">by</span> <span class="o">=</span> <span class="s">&#34;day&#34;</span><span class="p">),</span>
-                                <span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span>
-                 <span class="n">LAB</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="kc">NA</span><span class="p">))</span>
-
-<span class="c1">#         DATE LAB</span>
-<span class="c1"># 1 2021-03-01   1</span>
-<span class="c1"># 2 2021-03-02   2</span>
-<span class="c1"># 3       &lt;NA&gt;   3</span>
-<span class="c1"># 4       &lt;NA&gt;   NA</span>
-
-<span class="c1"># mutate to generate new Date variable</span>
-<span class="n">df</span> <span class="o">%&gt;%</span> 
-  <span class="nf">mutate</span><span class="p">(</span>
-    <span class="n">DATE_IF</span> <span class="o">=</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">LAB</span> <span class="o">&lt;</span> <span class="m">2</span><span class="p">,</span> <span class="n">DATE</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span>
-    <span class="n">DATE_CASE</span> <span class="o">=</span> <span class="nf">case_when</span><span class="p">(</span><span class="n">LAB</span> <span class="o">&lt;</span> <span class="m">2</span> <span class="o">~</span> <span class="n">DATE</span><span class="p">,</span>
-                          <span class="n">LAB</span> <span class="o">&gt;=</span> <span class="m">2</span> <span class="o">~</span> <span class="kc">NA_real_</span><span class="p">)</span>
-    <span class="p">)</span>
-<span class="c1">#         DATE LAB DATE_IF  DATE_CASE</span>
-<span class="c1"># 1 2021-03-01   1   18687 2021-03-01</span>
-<span class="c1"># 2 2021-03-02   2      NA       &lt;NA&gt;</span>
-<span class="c1"># 3       &lt;NA&gt;   3      NA       &lt;NA&gt;</span>
-<span class="c1"># 4       &lt;NA&gt;  NA      NA       &lt;NA&gt;</span>
-
-</code></pre></div><h4 id="2-missing">2. Missing</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">DATE</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="nf">as.Date</span><span class="p">(</span><span class="s">&#34;01-03-2021&#34;</span><span class="p">,</span> <span class="n">format</span> <span class="o">=</span> <span class="s">&#34;%d-%m-%Y&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                  <span class="nf">as.Date</span><span class="p">(</span><span class="s">&#34;02-03-2021&#34;</span><span class="p">,</span> <span class="n">format</span> <span class="o">=</span> <span class="s">&#34;%d-%m-%Y&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                  <span class="n">by</span> <span class="o">=</span> <span class="s">&#34;day&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                <span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">LAB</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="kc">NA</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#         DATE LAB</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1 2021-03-01   1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2 2021-03-02   2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3       &lt;NA&gt;   3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4       &lt;NA&gt;   NA</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># mutate to generate new Date variable</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">mutate</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DATE_IF</span> <span class="o">=</span> <span class="nf">ifelse</span><span class="p">(</span><span class="n">LAB</span> <span class="o">&lt;</span> <span class="m">2</span><span class="p">,</span> <span class="n">DATE</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DATE_CASE</span> <span class="o">=</span> <span class="nf">case_when</span><span class="p">(</span><span class="n">LAB</span> <span class="o">&lt;</span> <span class="m">2</span> <span class="o">~</span> <span class="n">DATE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                          <span class="n">LAB</span> <span class="o">&gt;=</span> <span class="m">2</span> <span class="o">~</span> <span class="kc">NA_real_</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         DATE LAB DATE_IF  DATE_CASE</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1 2021-03-01   1   18687 2021-03-01</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2 2021-03-02   2      NA       &lt;NA&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3       &lt;NA&gt;   3      NA       &lt;NA&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4       &lt;NA&gt;  NA      NA       &lt;NA&gt;</span>
+</span></span></code></pre></div><h4 id="2-missing">2. Missing</h4>
 <p>Personally I think it&rsquo;s very important to be clear about the definition/use of null values (i.e., NA) before making any change on the data, or even before collecting the data, otherwise it would cause confusion and inaccuracy down the road. Here are some questions worth discussing at the beginning.</p>
 <ul>
 <li>
@@ -198,128 +197,123 @@
 <li>
 <p><code>NA</code> is a logical value in R</p>
 <p>One thing I often prefer <code>case_when()</code> over <code>ifelse()</code> is that the former one allows us to specify all the evaluated logical values explicitly. More specifically, <code>ifelse()</code> only considers two logical values: <code>TRUE</code> or  not <code>TRUE</code>. However, <code>case_when()</code> considers all three logical values: <code>TRUE</code>, <code>FALSE</code>, and <code>NA</code>. In real data, the condition often consists of a chain of conditions that likely leads to <code>NA</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r">  
-<span class="kc">NA</span> <span class="o">|</span> <span class="kc">TRUE</span>
-<span class="c1"># [1] TRUE  </span>
-<span class="c1"># TRUE | TRUE is TRUE and FALSE | TRUE is also TRUE.</span>
-
-<span class="kc">NA</span> <span class="o">|</span> <span class="kc">FALSE</span>
-<span class="c1"># [1] NA  </span>
-<span class="c1"># TRUE | FALSE is TRUE but FALSE | FALSE is FALSE.</span>
-
-<span class="kc">NA</span> <span class="o">&amp;</span> <span class="kc">TRUE</span>
-<span class="c1"># [1] NA  </span>
-<span class="c1"># TRUE &amp; TRUE is TRUE but FALSE &amp; TRUE is FALSE.</span>
-
-<span class="kc">NA</span> <span class="o">&amp;</span> <span class="kc">FALSE</span>
-<span class="c1"># [1] FALSE</span>
-<span class="c1"># TRUE &amp; FALSE is FALSE and FALSE &amp; FALSE is also FALSE.</span>
-  
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kc">NA</span> <span class="o">|</span> <span class="kc">TRUE</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] TRUE  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># TRUE | TRUE is TRUE and FALSE | TRUE is also TRUE.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kc">NA</span> <span class="o">|</span> <span class="kc">FALSE</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] NA  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># TRUE | FALSE is TRUE but FALSE | FALSE is FALSE.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kc">NA</span> <span class="o">&amp;</span> <span class="kc">TRUE</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] NA  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># TRUE &amp; TRUE is TRUE but FALSE &amp; TRUE is FALSE.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kc">NA</span> <span class="o">&amp;</span> <span class="kc">FALSE</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] FALSE</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># TRUE &amp; FALSE is FALSE and FALSE &amp; FALSE is also FALSE.</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>sort()</code> is better than <code>max()</code> or <code>min()</code></p>
 <p>Sometimes I want to find the maximum or minimum values for each group, and some groups contain all missing (<code>NA</code>) values while others contain at least one non-missing value. In this case, <code>sort()</code> is better than <code>max()</code> or <code>min()</code> because the latter two would return error message if the inputs are all <code>NA</code>, while <code>sort()</code> would output <code>NA</code> instead of error.</p>
 <p>If you can be sure that all groups contain at least one non-missing value, go ahead and use <code>max()</code> and <code>min()</code> with the argument <code>na.rm = TRUE</code>. However, it may not be always known in advance.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># find the maximum</span>
-<span class="nf">sort</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span><span class="n">[1]</span>
-<span class="c1"># [1] NA</span>
-<span class="nf">max</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="c1"># Warning message:</span>
-<span class="c1">#   In max(c(NA, NA), na.rm = TRUE) :</span>
-<span class="c1">#   no non-missing arguments to max; returning -Inf</span>
-
-<span class="c1"># find the minimum</span>
-<span class="nf">sort</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span><span class="n">[1]</span>
-<span class="c1"># [1] NA</span>
-<span class="nf">min</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-<span class="c1"># Warning message:</span>
-<span class="c1">#   In max(c(NA, NA), na.rm = TRUE) :</span>
-<span class="c1">#   no non-missing arguments to max; returning -Inf</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># find the maximum</span>
+</span></span><span class="line"><span class="cl"><span class="nf">sort</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span><span class="n">[1]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] NA</span>
+</span></span><span class="line"><span class="cl"><span class="nf">max</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Warning message:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   In max(c(NA, NA), na.rm = TRUE) :</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   no non-missing arguments to max; returning -Inf</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># find the minimum</span>
+</span></span><span class="line"><span class="cl"><span class="nf">sort</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">decreasing</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span><span class="n">[1]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1] NA</span>
+</span></span><span class="line"><span class="cl"><span class="nf">min</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">na.rm</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Warning message:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   In max(c(NA, NA), na.rm = TRUE) :</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   no non-missing arguments to max; returning -Inf</span>
+</span></span></code></pre></div></li>
 </ul>
 <h4 id="3-rowwise-vs-across">3. <code>rowwise()</code> VS <code>across()</code></h4>
 <p>It gave me a headache when I first encountered with <code>rowwise()</code>, because it was not clear when to use it, like the example below. The purpose is to calculate the sum of each row, but if I only apply the function <code>sum()</code>, the summation of the entire data set is returned. However, if I use  operator <code>+</code> or  add <code>rowwise()</code>, we get the desired output. There are two reasons behind this: 1) <code>sum()</code> does not have <a href="https://docs.ycrc.yale.edu/r-novice-gapminder/09-vectorization/">built-in vectorization</a> like operator <code>+</code>, so it does not work as expected in this case; 2) <a href="https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-rowwise/"><code>rowwise()</code> performs</a> operations row-by-row, it works slower than the vectorized functions like <code>+</code> but it works with any function.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r">
-<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">V1</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span> 
-                 <span class="n">V2</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">))</span>
-<span class="c1">#   V1 V2</span>
-<span class="c1"># 1  1  4</span>
-<span class="c1"># 2  2  5</span>
-<span class="c1"># 3  3  6</span>
-
-
-<span class="c1"># use sum() gets the summation of entire data frame</span>
-<span class="c1"># use vectorized operator + gives the summation of each row</span>
-<span class="n">df</span> <span class="o">%&gt;%</span> 
-  <span class="nf">mutate</span><span class="p">(</span><span class="n">V_SUM</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">V1</span><span class="p">,</span> <span class="n">V2</span><span class="p">))</span> <span class="o">%&gt;%</span> 
-  <span class="nf">mutate</span><span class="p">(</span><span class="n">V_SUM2</span> <span class="o">=</span> <span class="n">V1</span> <span class="o">+</span> <span class="n">V2</span><span class="p">)</span>
-<span class="c1">#   V1 V2 V_SUM V_SUM2</span>
-<span class="c1"># 1  1  4    21      5</span>
-<span class="c1"># 2  2  5    21      7</span>
-<span class="c1"># 3  3  6    21      9</span>
-
-<span class="c1"># use rowwise() + sum() gets the summation of each row</span>
-<span class="n">df</span> <span class="o">%&gt;%</span> 
-  <span class="nf">rowwise</span><span class="p">()</span> <span class="o">%&gt;%</span> 
-  <span class="nf">mutate</span><span class="p">(</span><span class="n">V_SUM</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">V1</span><span class="p">,</span> <span class="n">V2</span><span class="p">))</span>
-<span class="c1">#      V1    V2 V_SUM</span>
-<span class="c1"># 1     1     4     5</span>
-<span class="c1"># 2     2     5     7</span>
-<span class="c1"># 3     3     6     9</span>
-
-</code></pre></div><p>Contrary to <code>rowwise()</code> which performs operations row-by-row, <code>across</code> allows us to perform operations column-wise. More examples can be found <a href="https://willhipson.netlify.app/post/dplyr_across/dplyr_across/">here</a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="n">df</span> <span class="o">%&gt;%</span> 
-  <span class="nf">mutate</span><span class="p">(</span><span class="nf">across</span><span class="p">(</span><span class="nf">starts_with</span><span class="p">(</span><span class="s">&#34;V&#34;</span><span class="p">),</span> <span class="o">~</span> <span class="n">.x</span><span class="m">+0.5</span><span class="p">))</span>
-<span class="c1">#    V1  V2</span>
-<span class="c1"># 1 1.5 4.5</span>
-<span class="c1"># 2 2.5 5.5</span>
-<span class="c1"># 3 3.5 6.5</span>
-</code></pre></div><h4 id="4-tidy-evaluation">4. Tidy Evaluation</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">V1</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">                 <span class="n">V2</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   V1 V2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1  1  4</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2  2  5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3  3  6</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># use sum() gets the summation of entire data frame</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># use vectorized operator + gives the summation of each row</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">mutate</span><span class="p">(</span><span class="n">V_SUM</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">V1</span><span class="p">,</span> <span class="n">V2</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">mutate</span><span class="p">(</span><span class="n">V_SUM2</span> <span class="o">=</span> <span class="n">V1</span> <span class="o">+</span> <span class="n">V2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   V1 V2 V_SUM V_SUM2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1  1  4    21      5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2  2  5    21      7</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3  3  6    21      9</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># use rowwise() + sum() gets the summation of each row</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">rowwise</span><span class="p">()</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">mutate</span><span class="p">(</span><span class="n">V_SUM</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">V1</span><span class="p">,</span> <span class="n">V2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#      V1    V2 V_SUM</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1     1     4     5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2     2     5     7</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3     3     6     9</span>
+</span></span></code></pre></div><p>Contrary to <code>rowwise()</code> which performs operations row-by-row, <code>across</code> allows us to perform operations column-wise. More examples can be found <a href="https://willhipson.netlify.app/post/dplyr_across/dplyr_across/">here</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">df</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">mutate</span><span class="p">(</span><span class="nf">across</span><span class="p">(</span><span class="nf">starts_with</span><span class="p">(</span><span class="s">&#34;V&#34;</span><span class="p">),</span> <span class="o">~</span> <span class="n">.x</span><span class="m">+0.5</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#    V1  V2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1 1.5 4.5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2 2.5 5.5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3 3.5 6.5</span>
+</span></span></code></pre></div><h4 id="4-tidy-evaluation">4. Tidy Evaluation</h4>
 <p>I don&rsquo;t think the concept <em>Tidy Evaluation</em> is mentioned as much often as other functions in <code>dplyr</code>, but it&rsquo;s a very important idea that can potentially help you write more concise and compact functions. When I deal with multiple data sets, very often the data sets have the same data types but different column names. In this scenario, it might be very helpful to have one single function that accepts data with different columns names, and tidy evaluation does exactly what we want.</p>
 <p>In the example we have two data sets with the same structure but different column names. We write a function with three arguments: 1) <code>data</code> is the data name; 2) <code>name</code> is the name of the existed variable on which we want to operate; 3) <code>new_name</code> is the name of newly generated variable. The example shows that if we apply the function directly on data set, an error is reported because <code>mutate</code> does not recognize <code>name</code> variable.  Tidy evaluation helps translate the argument value to the variable name by using the &ldquo;curly curly&rdquo; operator <code>{{}}</code>, by which <code>mutate</code> can work properly. More details can be found <a href="https://dcl-prog.stanford.edu/tidy-eval-basics.html">here</a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># two data sets with same data structure but different column names</span>
-<span class="n">df_var</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">var</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
-<span class="n">df_col</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">col</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
-
-<span class="n">df_function</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">){</span>
-  
-  <span class="c1"># data: data set</span>
-  <span class="c1"># name: variable name</span>
-  <span class="c1"># new_name: new variable name</span>
-  
-  <span class="n">data</span> <span class="o">%&gt;%</span> 
-    <span class="nf">mutate</span><span class="p">(</span><span class="n">new_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">*</span><span class="m">2</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="nf">df_function</span><span class="p">(</span><span class="n">df_var</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">var2</span><span class="p">)</span>
-<span class="c1"># Error in `mutate()`:</span>
-<span class="c1">#   ! Problem while computing `new_name = name * 2`.</span>
-
-<span class="c1"># use tidy evaluation {{}} </span>
-<span class="n">df_function</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">){</span>
-  
-  <span class="c1"># data: data set</span>
-  <span class="c1"># name: variable name</span>
-  <span class="c1"># new_name: new variable name</span>
-  
-  <span class="n">data</span> <span class="o">%&gt;%</span> 
-    <span class="nf">mutate</span><span class="p">({{</span><span class="n">new_name</span><span class="p">}}</span><span class="o">:=</span> <span class="p">{{</span><span class="n">name</span><span class="p">}}</span><span class="o">*</span><span class="m">2</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="nf">df_function</span><span class="p">(</span><span class="n">df_var</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">var2</span><span class="p">)</span>
-<span class="c1">#   var var2</span>
-<span class="c1"># 1   1    2</span>
-<span class="c1"># 2   2    4</span>
-<span class="c1"># 3   3    6</span>
-<span class="nf">df_function</span><span class="p">(</span><span class="n">df_col</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">col2</span><span class="p">)</span>
-<span class="c1">#   col col2</span>
-<span class="c1"># 1   1    2</span>
-<span class="c1"># 2   2    4</span>
-<span class="c1"># 3   3    6</span>
-
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># two data sets with same data structure but different column names</span>
+</span></span><span class="line"><span class="cl"><span class="n">df_var</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">var</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">df_col</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">col</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">df_function</span> <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1"># data: data set</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># name: variable name</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># new_name: new variable name</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">data</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">    <span class="nf">mutate</span><span class="p">(</span><span class="n">new_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">*</span><span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">df_function</span><span class="p">(</span><span class="n">df_var</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">var2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Error in `mutate()`:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   ! Problem while computing `new_name = name * 2`.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># use tidy evaluation {{}} </span>
+</span></span><span class="line"><span class="cl"><span class="n">df_function</span> <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">new_name</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="c1"># data: data set</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># name: variable name</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># new_name: new variable name</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">data</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">    <span class="nf">mutate</span><span class="p">({{</span><span class="n">new_name</span><span class="p">}}</span><span class="o">:=</span> <span class="p">{{</span><span class="n">name</span><span class="p">}}</span><span class="o">*</span><span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">df_function</span><span class="p">(</span><span class="n">df_var</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">var2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   var var2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1   1    2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2   2    4</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3   3    6</span>
+</span></span><span class="line"><span class="cl"><span class="nf">df_function</span><span class="p">(</span><span class="n">df_col</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">col2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   col col2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1   1    2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2   2    4</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3   3    6</span>
+</span></span></code></pre></div></div>
         <div class="post-footer">
             <div class="info">
                 
@@ -331,7 +325,7 @@
                     
                     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -358,21 +352,21 @@
 </div>
 
 <script type="text/javascript"
-        src="https://xiangli2pro.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js"
-        integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ="
+        src="https://xiangli2pro.github.io/js/jquery.min.e78de271386e446966fc2452d54e1e814af93cefac7c19b99c545e1a20910ca1.js"
+        integrity="sha256-543icThuRGlm/CRS1U4egUr5PO&#43;sfBm5nFReGiCRDKE="
         crossorigin="anonymous"></script>
 
 
 
 
 <script type="text/javascript"
-        src="https://xiangli2pro.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js"
-        integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2&#43;LqU="
+        src="https://xiangli2pro.github.io/js/bundle.min.3ebad6bf39b2e7c2f899d3ed9bc97e8c0c1ead7a1b57472e3387321f673b8077.js"
+        integrity="sha256-PrrWvzmy58L4mdPtm8l&#43;jAwerXobV0cuM4cyH2c7gHc="
         crossorigin="anonymous"></script>
 
 <script type="text/javascript"
-        src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
-        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        src="https://xiangli2pro.github.io/js/medium-zoom.min.e1c6918cbaa90022a5612f0bd71c7bf3be6d036614c5729cebfe14f7b91fa4bc.js"
+        integrity="sha256-4caRjLqpACKlYS8L1xx7875tA2YUxXKc6/4U97kfpLw="
         crossorigin="anonymous"></script><script defer
                 type="text/javascript"
                 src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"

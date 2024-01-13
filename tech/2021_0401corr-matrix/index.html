@@ -3,7 +3,7 @@
     <title> Xiang Li | Decompose correlation matrix with block structure </title>
 
     
-    <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.120.4"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="A lifetime learner. A part of nature.">
     
     <link rel="stylesheet"
@@ -51,8 +51,8 @@
     
     
     <script type="text/javascript"
-            src="https://xiangli2pro.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
-            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            src="https://xiangli2pro.github.io/js/anatole-header.min.df804b63b5bd8474ea0756ea874bc8f1e92552708cc6ea43aa0d76981dc419f9.js"
+            integrity="sha256-34BLY7W9hHTqB1bqh0vI8eklUnCMxupDqg12mB3EGfk="
             crossorigin="anonymous"></script>
 
 
@@ -93,7 +93,7 @@
         
     </ul>
     <div class="footer">
-        <div class="by_farbox">&copy; Xiang Li  2021-2023 </div>
+        <div class="by_farbox">&copy; Xiang Li  2021-2024 </div>
     </div>
 </div>
 <div class="main">
@@ -161,7 +161,7 @@
 <h4 id="1-background">1. Background</h4>
 <p>Sampling from multivariate normal distribution is very common in simulation studies. Suppose that \(X=(X_1, X_2,&hellip;, X_n)\) is a random vector following a multivariate normal distribution \(N(0, \Sigma)\), where \(\Sigma\) is the covariance matrix of size \(n\times n\). The standard sampling method applies Cholesky factorization on the covariance matrix \(\Sigma\) to get \(\Sigma = LL^T\), where \(L\) is a lower triangular matrix. Then make the sampling by \(\tilde{X}=LZ\), where \(Z\) is a  \(n\times 1\) vector of independent standard normal random variables.</p>
 <p>Correlation matrix with block structure often occurs when the random variables belong to non-overlapping groups and the correlations are solely determined by the group labels. For instance, in finance, a portfolio usually consists of obligators which can be divided into different groups by the industry, region etc; In gene co-expression data, genes can be categorized to different functional groups, where genes in the same group usually are expressed concurrently. In both of the above examples, the correlations between variables is an important component of understanding the overall performance of the variables, and often times it is assumed to depend only on the group level information.</p>
-<h4 id="2--key-idea-">2. 🎈 Key Idea 🎈</h4>
+<h4 id="2-balloon-key-idea-balloon">2. &#x1f388; Key Idea &#x1f388;</h4>
 <p>When random vector \(X\) is of size \(n\), make one sample from the multivariate normal distribution using the Cholesky factorization would take \(O(n^2)\)<cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite> time. The new sampling method proposed in the paper reduces the time to \(O(K^2)+O(n)\), given that correlation matrix is <strong>positive semi-definite</strong> and has a <strong>block structure</strong>, where \(K\) is the number of non-overlapping groups. The strategy is to first eigen-decompose \(\Sigma\) by \(\Sigma=UDU^T\), where \(U\) is the orthogonal<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite> matrix composed of eigenvectors of \(\Sigma\) and \(D\) is a diagonal matrix with corresponding eigenvalues along the diagonal, then make the sample by \(\tilde{X}=U\sqrt{D}Z\). Here comes the key idea &mdash; with the block structure, eigenvectors of \(\Sigma\) can be created from the basis of a set of predefined subspaces spanning \(R^n\). The eigenvalues of those eigenvectors are easily calculated and the eigenvectors form a simple structure in \(U\) which reduces the computational cost of \(U\sqrt{D}Z\). In the next sections, we break down the idea into detailed steps.</p>
 <h4 id="3-notation">3. Notation</h4>
 <p>Let \(X=(X_1, X_2,&hellip;, X_n)\) be a vector of Gaussian random variables, without loss of generality, assume that each \(X_i\) of \(X\) has zero mean and unit variance, so that the covariance matrix is equal to the correlation matrix, i.e \(\Sigma=\text{Cor}\). Suppose we can divide the random variables into \(K\) non-overlapping groups, and write \(X=(X^{(1)}, X^{(2)},&hellip;, X^{(K)} )\), where \(X^{(k)}=(X^{(k)}_1,&hellip;,X^{(k)}_{N_k})\) is the vector of random variables belong to group \(k\), \(1 \leq k \leq K\). Consider the case where the correlation between two non-identical variables only depends on the groups they belong to. That is, correlation \(\text{Cor}(X^{(k)}_i,X^{(l)}_j )=\rho_{kl}\). For two identical variables, the correlation is always \(1\). Therefore, the correlation matrix has a block structure as presented in (1).</p>
@@ -181,7 +181,7 @@ $$ \tag{2}
 \hat{x} = ( \underbrace{x_1,&hellip;,x_1}_{N_1}, \underbrace{x_2,&hellip;,x_2}_{N_2}, \cdots,\underbrace{x_K,&hellip;,x_K}_{N_K})^T
 $$</p>
 <p>Let \(x=(x_1,&hellip;,x_K)\), define a mapping \(P(x)\) from \(R^K\) to \(R^n\): \(P(x) = \frac{\hat{x}}{||\hat{x}||_2}\), where \(\hat{x}\) is in form (2).</p>
-<p>📌 It can be proved that all the subspaces \(V_k, k=0,1,&hellip;,K\) are perpendicular to each other and they span \(R^n\). For each \(k\neq 0\), any element \(v\) of \(V_k\) is an eigenvector of \(\Sigma\) with eigenvalue \(1-\rho_{kk}\), i.e. \(\Sigma v = (1-\rho_{kk})v\).</p>
+<p>&#x1f4cc; It can be proved that all the subspaces \(V_k, k=0,1,&hellip;,K\) are perpendicular to each other and they span \(R^n\). For each \(k\neq 0\), any element \(v\) of \(V_k\) is an eigenvector of \(\Sigma\) with eigenvalue \(1-\rho_{kk}\), i.e. \(\Sigma v = (1-\rho_{kk})v\).</p>
 <h4 id="51-find-orthonormal-basis-of-subspaces-v_k-k-1-k">5.1 Find orthonormal basis of subspaces \(V_k, k =1,&hellip;, K\)</h4>
 <p>Define matrix \(F_m\) of size \(m\times (m-1)\), \(m&gt;1\).
 $$
@@ -196,7 +196,7 @@ U_k = \begin{bmatrix}
 \end{bmatrix}
 $$</p>
 <p>where \(\mathbf{0}_{N_l \times (N_k - 1)}\) is a zero matrix of dimension \(N_l \times (N_k - 1)\).</p>
-<p>📌 It&rsquo;s easy to check that \(F_m^TF_m = I_{(m-1)\cdot(m-1)}\), where \(I\) is identity matrix, and the columns of \(U_k\) are orthonormal, hence the columns of \(U_k\) form a basis of subspace \(V_k\).</p>
+<p>&#x1f4cc; It&rsquo;s easy to check that \(F_m^TF_m = I_{(m-1)\cdot(m-1)}\), where \(I\) is identity matrix, and the columns of \(U_k\) are orthonormal, hence the columns of \(U_k\) form a basis of subspace \(V_k\).</p>
 <h4 id="52-find-orthonormal-basis-of-subspace-v_0">5.2 Find orthonormal basis of subspace \(V_0\)</h4>
 <p>We are actually looking for eigenvectors \(w \in V_0\) such that \(\Sigma w = \lambda w\). Recall the form of \(w\) in (2) and the block structure of \(\Sigma\) in (1), it&rsquo;s straightforward to check that \(\Sigma w = \lambda w\) if and only if \(B\cdot(x_1, x_2,&hellip;, x_K) = \lambda\cdot(x_1, x_2,&hellip;, x_K)  \), where \(B\) is defined below.</p>
 <p>$$
@@ -204,7 +204,7 @@ B = \begin{bmatrix}
 1 + (N_1 - 1)\rho_{11} &amp; N_2 \rho_{12} &amp; N_3\rho_{13} &amp; \cdots &amp; N_K\rho_{1K} \\ N_1 \rho_{21} &amp; 1+(N_2-1) \rho_{22} &amp; N_3\rho_{23} &amp; \cdots &amp; N_K\rho_{2K} \\ \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ N_1\rho_{K1} &amp; N_2\rho_{K2} &amp;N_3\rho_{K3} &amp; \cdots &amp; 1+(N_K-1)\rho_{KK}
 \end{bmatrix}
 $$</p>
-<p>📌 Therefore, \(x\in R^K\) is an eigenvector of \(B\) w.r.t eigenvalue \(\lambda\) if and only if \(P(x)\in R^n\) is an eigenvector of \(\Sigma\) w.r.t  \(\lambda\). The problem has been reduced from \(N-\)dimensional space to \(K-\)dimensional space. Once we have derived the eigenvectors of \(B\), we can apply the mapping function \(P(\cdot)\) to get eigenvectors of \(\Sigma\). If the eigenvectors of \(\Sigma\) are not orthogonal, one can use the Gram-Schmidt process to orthogonalize them.</p>
+<p>&#x1f4cc; Therefore, \(x\in R^K\) is an eigenvector of \(B\) w.r.t eigenvalue \(\lambda\) if and only if \(P(x)\in R^n\) is an eigenvector of \(\Sigma\) w.r.t  \(\lambda\). The problem has been reduced from \(N-\)dimensional space to \(K-\)dimensional space. Once we have derived the eigenvectors of \(B\), we can apply the mapping function \(P(\cdot)\) to get eigenvectors of \(\Sigma\). If the eigenvectors of \(\Sigma\) are not orthogonal, one can use the Gram-Schmidt process to orthogonalize them.</p>
 <h4 id="6-decompose-sigma">6. Decompose \(\Sigma\)</h4>
 <p>Now we can eigen-decompose \(\Sigma\) by \(\Sigma=UDU^T\), where \(U\) is an orthogonal matrix and \(D\) is a diagonal matrix defined below. \(G\) is a \(N\times K\) matrix, each column of which equals \(P(x)\) with \(x\) being an eigenvector of \(B\).
 $$
@@ -217,29 +217,29 @@ $$</p>
 <p>$$
 D = \text{diag}\lbrace \underbrace{\lambda_1, &hellip;, \lambda_K}_{\text{eigenvalues of B}}, \underbrace{1-\rho_{11},&hellip;,1-\rho_{11}}_{N_1-1},\cdots,   \underbrace{1-\rho_{KK},&hellip;,1-\rho_{KK}}_{N_K-1} \rbrace
 $$</p>
-<p>📌 The only calculation required is finding the eigen-pairs of \(B\), which takes \(O(K^3)\) steps, much less than the \(O(n^3)\) steps needed to decompose \(\Sigma\) directly.</p>
+<p>&#x1f4cc; The only calculation required is finding the eigen-pairs of \(B\), which takes \(O(K^3)\) steps, much less than the \(O(n^3)\) steps needed to decompose \(\Sigma\) directly.</p>
 <h4 id="7-sample-x">7. Sample \(X\)</h4>
 <p>Once one has the eigen-decomposition of \(\Sigma\) as in section 6, a sample of \(X\) can be calculated by \(X=U\sqrt{D}Z\).</p>
 <p>The calculation takes \(O(K^2)+O(n)\) steps. Since (1) \(D\) is a diagonal matrix and \(Z\) is a vector, so \(\sqrt{D}Z\) takes \(O(n)\) steps; (2) \(G\) has same rows for each group, so the multiplication of \(G\) with the first \(K\) elements of \(\sqrt{D}Z\) can be carried out by \(O(K^2)\) steps; (3) Let \(e_k\) be the subvector of \(\sqrt{D}Z\) corresponding to the submatrix \(F_{N_k}\), since any adjacent rows of \(F_{N_k}\) are different no more than two elements, once one has calculated the \(i-\)th row of  \(F_{N_k}e_k\), it just takes fixed amount of steps to get the \((i+1)-\)th row of \(F_{N_k}e_k\), so \(O(N_k)\) steps are carried out to compute \(F_{N_k}e_k\). In summary, the total number of steps required is about \(O(K^2)+O(n)\).</p>
 <h4 id="8-close-remark">8. Close Remark</h4>
-<p>It&rsquo;s important to keep in mind that all the above calculations being feasible is because of the two assumptions: (1) \(\Sigma\) is positive semi-definite; (2) \(\Sigma\) has block structure. Sometimes one would first specify the block structure of a correlation matrix based on the data or experience, however, it&rsquo;s possible that such correlation matrix is not positive semi-definite. In regard to this issue, the paper also mentions how to &lsquo;fix&rsquo; the correlation matrix by setting the negative eigenvalues to zero. Interested reader can refer to the paper<cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite>.</p>
+<p>It&rsquo;s important to keep in mind that all the above calculations being feasible is because of the two assumptions: (1) \(\Sigma\) is positive semi-definite; (2) \(\Sigma\) has block structure. Sometimes one would first specify the block structure of a correlation matrix based on the data or experience, however, it&rsquo;s possible that such correlation matrix is not positive semi-definite. In regard to this issue, the paper also mentions how to &lsquo;fix&rsquo; the correlation matrix by setting the negative eigenvalues to zero. Interested reader can refer to the paper<cite><sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite>.</p>
 <p> 
  </p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p><a href="https://www.spratings.com/documents/20184/86990/BlockFinalsp/876fb460-00d2-4baa-8136-3403d84c8ee3">Correlation matrix with block structure and
-efficient sampling methods</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+efficient sampling methods</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
-<p>Note that Cholesky factorization \(\Sigma=LL^T\) takes \(O(n^3)\) time, while sampling using \(LZ\) takes \(O(n^2)\) time. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:2">
+<p>Note that Cholesky factorization \(\Sigma=LL^T\) takes \(O(n^3)\) time, while sampling using \(LZ\) takes \(O(n^2)\) time.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
-<p>Orthogonal matrix is a square matrix with orthonormal columns and orthonormal rows. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:3">
+<p>Orthogonal matrix is a square matrix with orthonormal columns and orthonormal rows.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 </div>
         <div class="post-footer">
             <div class="info">
@@ -252,7 +252,7 @@ efficient sampling methods</a> <a href="#fnref:1" class="footnote-backref" role=
                     
                     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -279,21 +279,21 @@ efficient sampling methods</a> <a href="#fnref:1" class="footnote-backref" role=
 </div>
 
 <script type="text/javascript"
-        src="https://xiangli2pro.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js"
-        integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ="
+        src="https://xiangli2pro.github.io/js/jquery.min.e78de271386e446966fc2452d54e1e814af93cefac7c19b99c545e1a20910ca1.js"
+        integrity="sha256-543icThuRGlm/CRS1U4egUr5PO&#43;sfBm5nFReGiCRDKE="
         crossorigin="anonymous"></script>
 
 
 
 
 <script type="text/javascript"
-        src="https://xiangli2pro.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js"
-        integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2&#43;LqU="
+        src="https://xiangli2pro.github.io/js/bundle.min.3ebad6bf39b2e7c2f899d3ed9bc97e8c0c1ead7a1b57472e3387321f673b8077.js"
+        integrity="sha256-PrrWvzmy58L4mdPtm8l&#43;jAwerXobV0cuM4cyH2c7gHc="
         crossorigin="anonymous"></script>
 
 <script type="text/javascript"
-        src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
-        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        src="https://xiangli2pro.github.io/js/medium-zoom.min.e1c6918cbaa90022a5612f0bd71c7bf3be6d036614c5729cebfe14f7b91fa4bc.js"
+        integrity="sha256-4caRjLqpACKlYS8L1xx7875tA2YUxXKc6/4U97kfpLw="
         crossorigin="anonymous"></script><script defer
                 type="text/javascript"
                 src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"

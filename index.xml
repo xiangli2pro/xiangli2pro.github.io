@@ -6,393 +6,308 @@
     <description>Recent content on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Book Review: &#39;The E-Myth Revisited&#39;</title>
       <link>https://xiangli2pro.github.io/life/2023_0629_emyth/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/2023_0629_emyth/</guid>
       <description>This book aims to help small business owners build an entrepreneur mindset to successfully maintain and develop their businesses.</description>
     </item>
-    
     <item>
       <title>Book Review: &#39;Out of Gobi&#39; &amp; &#39;Money Games&#39; &amp; &#39;Money Machine&#39;</title>
       <link>https://xiangli2pro.github.io/life/2023_0325_out_of_gobi/</link>
       <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/2023_0325_out_of_gobi/</guid>
       <description>All three books are written by the Chinese economist and investor, Weijian Shan.</description>
     </item>
-    
     <item>
       <title>Book Review: &#39;The 7 Habits of Highly Effective People&#39;</title>
       <link>https://xiangli2pro.github.io/life/2023_0225_7habits/</link>
       <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/2023_0225_7habits/</guid>
       <description>Hardly had I ever encountered any book that makes me feel both peaceful and insightful, this book is one of them.</description>
     </item>
-    
     <item>
       <title>Book Review: &#39;The little book of common sense investing&#39;</title>
       <link>https://xiangli2pro.github.io/life/2022_1220_littlebook_investment/</link>
       <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/2022_1220_littlebook_investment/</guid>
       <description>It&amp;rsquo;s a book given by a friend a few years ago when I started dipping my toes into the stock market.</description>
     </item>
-    
     <item>
       <title>What I have learnt from PhD career</title>
       <link>https://xiangli2pro.github.io/life/2022_1214_phd/</link>
       <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/2022_1214_phd/</guid>
       <description>It has been a few months since I officially graduated from the PhD program in August this year, I didn&amp;rsquo;t write the article immediately after school as I wanted to have a more comprehensive review of the past four-year experience from a distance in terms of time.</description>
     </item>
-    
     <item>
       <title>Book Review: &#39;Twice a Quinceañera&#39; </title>
       <link>https://xiangli2pro.github.io/life/2022_1127_treintanera/</link>
       <pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/2022_1127_treintanera/</guid>
       <description>I appreciate the self-love theme that the writer tried to convey, but I don&amp;rsquo;t enjoy reading the book, just read for the sake of finishing and a reading club discussion.</description>
     </item>
-    
     <item>
       <title>Book Review: &#39;Nonviolent Communication&#39; </title>
       <link>https://xiangli2pro.github.io/life/2022_1009_nvc/</link>
       <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/2022_1009_nvc/</guid>
       <description>Out beyond ideas of wrongdoing and rightdoing, there is a field.</description>
     </item>
-    
     <item>
       <title>Book Review: &#39;The Surrender Experiment&#39; </title>
       <link>https://xiangli2pro.github.io/life/2022_0910_surrender/</link>
       <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/2022_0910_surrender/</guid>
       <description>Have you ever thought about is the being you are right now a result of cumulative subjective decisions you have made in the past, or completely determined by the universe?</description>
     </item>
-    
     <item>
       <title>Book Review: &#39;The Courage To be Disliked&#39; </title>
       <link>https://xiangli2pro.github.io/life/2022_0809_couragetobedisliked/</link>
       <pubDate>Tue, 09 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/2022_0809_couragetobedisliked/</guid>
       <description>People always say &amp;ldquo;listen to your heart&amp;rdquo;, but often the voice of heart is blurred by the outside noise and cannot be heard clearly.</description>
     </item>
-    
     <item>
       <title>Standardization in sparse penalized regressions (2)</title>
       <link>https://xiangli2pro.github.io/tech/2022_0620_standardization2/</link>
       <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2022_0620_standardization2/</guid>
       <description>In the first post of the series, we learnt that it&amp;rsquo;s recommended to standardize the input data before performing sparse penalized regressions and four standardization methods (Z-score, Gelman, Bring, Min-max) have been introduced with example R code.</description>
     </item>
-    
     <item>
       <title>Standardization in sparse penalized regressions (1)</title>
       <link>https://xiangli2pro.github.io/tech/2022_0522_standardization1/</link>
       <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2022_0522_standardization1/</guid>
       <description>Sparse penalized regressions (e.g. lasso, elastic-net, SCAD) are popular statistical models that can simultaneously conduct variable selection and coefficient estimation.</description>
     </item>
-    
     <item>
       <title>Some tricks I use for data manipulation in R</title>
       <link>https://xiangli2pro.github.io/tech/2022_0402_r-na/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2022_0402_r-na/</guid>
       <description>Recently I have been working on a project that demands lots of efforts on cleaning and manipulating for a collection of longitudinal data sets.</description>
     </item>
-    
     <item>
       <title>Statistical tests &#43; Dynamic Programming = ?</title>
       <link>https://xiangli2pro.github.io/tech/2022_0212_isotonic/</link>
       <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2022_0212_isotonic/</guid>
       <description>Recently I encountered an interesting research question &amp;ndash; a binary outcome (e.</description>
     </item>
-    
     <item>
       <title>Book Review: &#39;The Price We Pay&#39; </title>
       <link>https://xiangli2pro.github.io/life/2022_0205_pricewepay/</link>
       <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/2022_0205_pricewepay/</guid>
       <description>When I embarked on my journey in the U.S. a few years ago, one of the tips that was repeatedly given was to try not to call the ambulance service in the U.</description>
     </item>
-    
     <item>
       <title>Let&#39;s draw a Pikachu in R!</title>
       <link>https://xiangli2pro.github.io/tech/2022_0125_pikachu/</link>
       <pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2022_0125_pikachu/</guid>
       <description>I have always been trying to do something fun with R not just for work.</description>
     </item>
-    
     <item>
       <title>What emotion makes politician&#39;s tweets get more engagement?</title>
       <link>https://xiangli2pro.github.io/tech/2022_0120_datathon/</link>
       <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2022_0120_datathon/</guid>
       <description>This post is based on my report to a 3-day datathon event (placed the 1st), code and data are available at Github repo here.</description>
     </item>
-    
     <item>
       <title>Dan Dan&#39;s relocation story</title>
       <link>https://xiangli2pro.github.io/life/2021_1224_dandan/</link>
       <pubDate>Fri, 24 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/2021_1224_dandan/</guid>
       <description>Merry Christmas from Dan Dan to everyone!</description>
     </item>
-    
     <item>
       <title>Statistical analysis learnt from vaccine studies</title>
       <link>https://xiangli2pro.github.io/tech/2021_1217_vaccine_study-copy/</link>
       <pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_1217_vaccine_study-copy/</guid>
       <description>Ever since the first covid-19 vaccine1 came out last year and got emergency use approval by FDA, as a statistician, I always felt prompted to learn how the statistical analysis was conducted in the study and helped draw such an important conclusion.</description>
     </item>
-    
     <item>
       <title>What I have learnt  from being a Data Scientist Intern</title>
       <link>https://xiangli2pro.github.io/life/2021_0815_intern/</link>
       <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/2021_0815_intern/</guid>
       <description>Time flies. My ten-weeks summer internship just ended last week, and now may be a good time for me to reflect on the journey and summarize what I have learned from this valuable experience.</description>
     </item>
-    
     <item>
       <title>Coding challenge learning note (2)</title>
       <link>https://xiangli2pro.github.io/tech/2021_0626_summary_part2/</link>
       <pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0626_summary_part2/</guid>
       <description>This post is the continuation of the previous one. Topics covered here are: iterables, date, regex, read files, and other miscellaneous items.</description>
     </item>
-    
     <item>
       <title>Coding challenge learning note (1)</title>
       <link>https://xiangli2pro.github.io/tech/2021_0620_summary_part1/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0620_summary_part1/</guid>
       <description>As I mentioned in the last post, I was doing a 10-days python coding bootcamp at the end of May.</description>
     </item>
-    
     <item>
       <title>Research Crumbs: Tail Bound</title>
       <link>https://xiangli2pro.github.io/tech/2021_0612_tail-bound/</link>
       <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0612_tail-bound/</guid>
       <description>The other day I was having the regular meeting with my advisors to discuss a paper, and there were two theorems involving the tail bound that I found very intriguing.</description>
     </item>
-    
     <item>
       <title>Some understandings about measure theory</title>
       <link>https://xiangli2pro.github.io/tech/2021_0529_measure/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0529_measure/</guid>
       <description>I remember the times when I searched for measure theory lectures online and got frustrated immediately at the sight of the abstract definition of Borel set, and the times that I could not wrap my head around when I studied the outer measure in the probability class.</description>
     </item>
-    
     <item>
       <title>Coding challenge May of 2021</title>
       <link>https://xiangli2pro.github.io/tech/2021_0523_code-challenge/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0523_code-challenge/</guid>
-      <description>This post may not be very informative, but I feel compelled to write something to keep the blog updated regularly, otherwise the guilty feeling of not keeping the commitment would haunt me all the time 😐.</description>
+      <description>This post may not be very informative, but I feel compelled to write something to keep the blog updated regularly, otherwise the guilty feeling of not keeping the commitment would haunt me all the time &amp;#x1f610;.</description>
     </item>
-    
     <item>
       <title>Why the Central Limit Theorem (CLT) is not working?</title>
       <link>https://xiangli2pro.github.io/tech/2021_0509_clt/</link>
       <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0509_clt/</guid>
       <description>If you ever take any statistics classes, regardless of the level, the chances are high that you would come across The Central Limit Theorem1 (CLT).</description>
     </item>
-    
     <item>
       <title>Tensorflow2 learning note (2)</title>
       <link>https://xiangli2pro.github.io/tech/2021_0423_tf-part2/</link>
       <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0423_tf-part2/</guid>
       <description>In the second part of this Tensorflow2 mini-series, I will write about how to make use of the pre-trained and well-established deep learning models to perform new tasks.</description>
     </item>
-    
     <item>
       <title>Tensorflow2 learning note (1)</title>
       <link>https://xiangli2pro.github.io/tech/2021_0423_tf-part1/</link>
       <pubDate>Fri, 23 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0423_tf-part1/</guid>
       <description>Recently I have been taking a series of online courses to learn Tensorflow2, simply out of curiosity to know how it works, especially nowadays when almost everyone is talking about AI, deep learning, etc.</description>
     </item>
-    
     <item>
       <title>Interpret limit sets</title>
       <link>https://xiangli2pro.github.io/tech/2021_0419_limit-sets/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0419_limit-sets/</guid>
       <description>In the statistics textbooks or papers, one would encounter many theorems and problems that are studying the limiting behavior of a series of random variables.</description>
     </item>
-    
     <item>
       <title>Use Python in R</title>
       <link>https://xiangli2pro.github.io/tech/2021_0409_python-r/</link>
       <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0409_python-r/</guid>
       <description>As a statistician, I use R a lot in my school works and collaboration projects, since R provides almost all the statistical analysis tools I would need in my research, from data wrangling, statistical modeling, simulation, to data visualization.</description>
     </item>
-    
     <item>
       <title>Decompose correlation matrix with block structure</title>
       <link>https://xiangli2pro.github.io/tech/2021_0401corr-matrix/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0401corr-matrix/</guid>
       <description>I recently read an interesting paper1 about how to sample from multivariate normal distribution with less computational complexity, and I really like the part where they make use of the block structure of the correlation matrix to conduct the eigen-decomposition.</description>
     </item>
-    
     <item>
       <title>Understand slicing in python 3d-arrays</title>
       <link>https://xiangli2pro.github.io/tech/2021_0325_ndarrays/</link>
       <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0325_ndarrays/</guid>
       <description>I was having a hard time understanding the slicing along different axes of a 3d-array in python.</description>
     </item>
-    
     <item>
       <title>Study Resources</title>
       <link>https://xiangli2pro.github.io/resource/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/resource/</guid>
-      <description> Scientific Reading  Website: FiveThirtyEight Website: Scientific American Website: Data Journalism Website: Pew Research Center Decoded  Statistics/Mathematics  Website: The Book of Statistical Proofs (A good reference for general statistics definitions and proofs) Website: Rice University Supplemental Resources and Data for Statisticians Website: Datamethods Blog: Statistical Modeling, Causal Inference, and Social Science (Andrew Gelman) Blog: Statistical Thinking (Frank Harrell) Blog: Yihui Xie Blog: math3ma (This blog inspired me to start my own blog)  Career  Blog: Wes Kao Blog: Perspectives  Coding  Challenge: TidyTuesday Website: Python Morsels Website: Python Code Example Website: Free Python Game  Spanish  Youtube: Hola Spanish Youtube: Maria Español Youtube: Why not Spanish Youtube: Spanishland School Website: español avanzado  </description>
+      <description> Scientific Reading Website: FiveThirtyEight Website: Scientific American Website: Data Journalism Website: Pew Research Center Decoded Statistics/Mathematics Website: The Book of Statistical Proofs (A good reference for general statistics definitions and proofs) Website: Rice University Supplemental Resources and Data for Statisticians Website: Datamethods Blog: Statistical Modeling, Causal Inference, and Social Science (Andrew Gelman) Blog: Statistical Thinking (Frank Harrell) Blog: Yihui Xie Blog: math3ma (This blog inspired me to start my own blog) Career Blog: Wes Kao Blog: Perspectives Coding Challenge: TidyTuesday Website: Python Morsels Website: Python Code Example Website: Free Python Game Spanish Youtube: Hola Spanish Youtube: Maria Español Youtube: Why not Spanish Youtube: Spanishland School Website: español avanzado </description>
     </item>
-    
     <item>
       <title>What happens if toss a fair coin infinite times?</title>
       <link>https://xiangli2pro.github.io/tech/2021_0318_dyadic/</link>
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0318_dyadic/</guid>
       <description>Suppose we have a fair coin with two faces Head (H) and Tail (T).</description>
     </item>
-    
     <item>
       <title>Website Configuration and Trouble Shooting</title>
       <link>https://xiangli2pro.github.io/tech/2021_0312_website-config/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0312_website-config/</guid>
-      <description>🎏 Website Configuration The website is powered by Hugo, employing the theme Anatole.</description>
+      <description>&amp;#x1f38f; Website Configuration The website is powered by Hugo, employing the theme Anatole.</description>
     </item>
-    
     <item>
       <title></title>
       <link>https://xiangli2pro.github.io/about/</link>
       <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/about/</guid>
-      <description>I am not a dog 🐶. The cutie on the profile picture is my dog bro, DanDan.</description>
+      <description>I am not a dog &amp;#x1f436;. The cutie on the profile picture is my dog bro, DanDan.</description>
     </item>
-    
     <item>
       <title>Hello World!</title>
       <link>https://xiangli2pro.github.io/life/hello/</link>
       <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/life/hello/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Markdown Syntax Guide</title>
       <link>https://xiangli2pro.github.io/template/markdown-syntax/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/template/markdown-syntax/</guid>
       <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Rich Content</title>
       <link>https://xiangli2pro.github.io/template/rich-content/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/template/rich-content/</guid>
       <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Placeholder Text</title>
       <link>https://xiangli2pro.github.io/template/placeholder-text/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/template/placeholder-text/</guid>
       <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Contact</title>
       <link>https://xiangli2pro.github.io/template/contact/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/template/contact/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Math Typesetting</title>
       <link>https://xiangli2pro.github.io/template/math-typesetting/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/template/math-typesetting/</guid>
       <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Emoji Support</title>
       <link>https://xiangli2pro.github.io/template/emoji-support/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/template/emoji-support/</guid>
       <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Guide to Thumbnails in Hugo</title>
       <link>https://xiangli2pro.github.io/template/image-test/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/template/image-test/</guid>
       <description>Thumbnails can be enabled easily by setting the thumbnail parameter in the frontmatter to an image such as &amp;quot;images/landscape.</description>
     </item>
-    
   </channel>
 </rss>

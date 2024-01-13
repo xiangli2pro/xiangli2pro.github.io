@@ -3,7 +3,7 @@
     <title> Xiang Li | Why the Central Limit Theorem (CLT) is not working? </title>
 
     
-    <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.120.4"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="A lifetime learner. A part of nature.">
     
     <link rel="stylesheet"
@@ -51,8 +51,8 @@
     
     
     <script type="text/javascript"
-            src="https://xiangli2pro.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
-            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            src="https://xiangli2pro.github.io/js/anatole-header.min.df804b63b5bd8474ea0756ea874bc8f1e92552708cc6ea43aa0d76981dc419f9.js"
+            integrity="sha256-34BLY7W9hHTqB1bqh0vI8eklUnCMxupDqg12mB3EGfk="
             crossorigin="anonymous"></script>
 
 
@@ -93,7 +93,7 @@
         
     </ul>
     <div class="footer">
-        <div class="by_farbox">&copy; Xiang Li  2021-2023 </div>
+        <div class="by_farbox">&copy; Xiang Li  2021-2024 </div>
     </div>
 </div>
 <div class="main">
@@ -160,11 +160,11 @@
 <p>If you ever take any statistics classes, regardless of the level, the chances are high that you would come across The Central Limit Theorem<cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite> (CLT). It states that the mean of any long sequence of identically and independently (i.i.d.) distributed random variables, no matter what the distribution is, provided it has finite variance, is approximately normal distributed. The statement is powerful because it is distribution-free, and it plays  such a central role in probability theory, for this reason that <a href="https://en.wikipedia.org/wiki/George_P%C3%B3lya">Polya</a> (1920) named it Central Limit Theorem. The CLT is often applied to generate normal distribution approximation for further inference, for instance, the confidence interval. However, we need to be cautious about whether the theorem assumptions are satisfied every time we use it, otherwise, as will be shown in the post, the conclusion of normal approximation will not hold. The content is created based on the book <em><a href="http://pointer.esalq.usp.br/departamentos/lce/arquivos/aulas/2011/LCE5866/Springer_-_E.L.Lehmann_-_Elements_of_Large-sample_Theory.pdf">Elements of Large Sample Theory</a></em>.</p>
 <p> </p>
 <h4 id="1-distribution-variance-needs-to-be-finite">1. Distribution variance needs to be finite</h4>
-<p>🌰 Counterexample: <a href="https://en.wikipedia.org/wiki/Cauchy_distribution">Cauchy distribution</a> \(C(0,1)\)<cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite></p>
-<p>The mean<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite> and variance<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite> of Cauchy distribution are not defined, when variables \(X\)&rsquo;s are i.i.d according to Cauchy distribution, the distribution of sample mean \(\bar{X}\) is the same as that of a single \(X_i\), that is, it is again a Cauchy distribution<cite><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></cite>. Hence, \(\bar{X}\) converges in distribution to Cauchy instead of being asymptotically normal.</p>
+<p>&#x1f330; Counterexample: <a href="https://en.wikipedia.org/wiki/Cauchy_distribution">Cauchy distribution</a> \(C(0,1)\)<cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite></p>
+<p>The mean<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite> and variance<cite><sup id="fnref1:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite> of Cauchy distribution are not defined, when variables \(X\)&rsquo;s are i.i.d according to Cauchy distribution, the distribution of sample mean \(\bar{X}\) is the same as that of a single \(X_i\), that is, it is again a Cauchy distribution<cite><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></cite>. Hence, \(\bar{X}\) converges in distribution to Cauchy instead of being asymptotically normal.</p>
 <p> </p>
 <h4 id="2-distribution-needs-to-be-independent-of-sample-size-n">2. Distribution needs to be independent of sample size \(n\)</h4>
-<p>🌰 Counterexample: Poisson distribution \(Poi(\lambda=\frac{1}{n})\)</p>
+<p>&#x1f330; Counterexample: Poisson distribution \(Poi(\lambda=\frac{1}{n})\)</p>
 <p>Let \(X_1,&hellip;,X_n\) be i.i.d. Poisson distribution \(Poi(\lambda)\) with \(\lambda=\frac{1}{n}\), then mean \(\mu=\frac{1}{n}\) and variance \(\sigma^2=\frac{1}{n}\). Consequently \(\sum_{i=1}^nX_i\) is distributed as \(Poi(1)\). Write
 $$
 \frac{\sqrt{n}(\bar{X}-\mu)}{\sigma} = \frac{\sum_{i=1}^nX_i-n\mu}{\sqrt{n}\sigma} = \sum_{i=1}^nX_i-1.
@@ -172,9 +172,9 @@ $$
 Therefore, \(\bar{X}\) has distribution of \(Y-1\), where \(Y\) is \(Poi(1)\), which is not asymptotically normal.</p>
 <p> </p>
 <h4 id="3-clt--delta-method">3. CLT + Delta Method</h4>
-<p>CLT is often used together with the Delta Method, which states that if \( \sqrt{n}(T_n-\theta) \rightarrow N(0, \tau^2) \), then \(\sqrt{n}(f(T_n)-f(\theta)) \rightarrow N(0, \tau^2 f'(\theta)^2) \), provided that \(f'(\theta)\) exists and is not zero. Still, the assumptions need to be satisfied, otherwise, the limiting distribution of \(f(T_n)\) will not be normal.</p>
-<p>🌰 Counterexample: \(f(\theta)=|\theta|\)</p>
-<p>Suppose \(T_n\) is a sequence of statistics satisfying \( \sqrt{n}(T_n-\theta) \rightarrow N(0, \tau^2) \) and that we are interested in the limiting behavior of \(|T_n|\). Since \(f(\theta)=|\theta|\) is differentiable with derivative \(f'(\theta)=\pm 1\) of all \(\theta \neq 0\). Then by the Delta Method, we have
+<p>CLT is often used together with the Delta Method, which states that if \( \sqrt{n}(T_n-\theta) \rightarrow N(0, \tau^2) \), then \(\sqrt{n}(f(T_n)-f(\theta)) \rightarrow N(0, \tau^2 f&rsquo;(\theta)^2) \), provided that \(f&rsquo;(\theta)\) exists and is not zero. Still, the assumptions need to be satisfied, otherwise, the limiting distribution of \(f(T_n)\) will not be normal.</p>
+<p>&#x1f330; Counterexample: \(f(\theta)=|\theta|\)</p>
+<p>Suppose \(T_n\) is a sequence of statistics satisfying \( \sqrt{n}(T_n-\theta) \rightarrow N(0, \tau^2) \) and that we are interested in the limiting behavior of \(|T_n|\). Since \(f(\theta)=|\theta|\) is differentiable with derivative \(f&rsquo;(\theta)=\pm 1\) of all \(\theta \neq 0\). Then by the Delta Method, we have
 $$
 \sqrt{n}(|T_n|-|\theta|) \rightarrow N(0, \tau^2) \quad \theta \neq 0.
 $$</p>
@@ -185,26 +185,26 @@ $$
 where \(\Phi(\cdot)\) is the cumulative density function of normal distribution, and \(\chi_1=\sqrt{\chi_1^2}\) is the distribution of the absolute value of a standard normal variable.</p>
 <p> </p>
 <p> </p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>Classic CLT: Let \(X_i, i=1,2,&hellip;\) be identically and independent distributed with mean \(E(X_i)=\mu\) and variance \(Var(X_i)=\sigma^2&lt;\infty\). Then \(\frac{\sqrt{n}(\bar{X}-\mu)}{\sigma}\rightarrow N(0,1)\). <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>Classic CLT: Let \(X_i, i=1,2,&hellip;\) be identically and independent distributed with mean \(E(X_i)=\mu\) and variance \(Var(X_i)=\sigma^2&lt;\infty\). Then \(\frac{\sqrt{n}(\bar{X}-\mu)}{\sigma}\rightarrow N(0,1)\).&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
-<p><a href="https://stats.stackexchange.com/questions/375208/is-cauchy-distribution-somehow-an-unpredictable-distribution?rq=1">Cauchy Distribution</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:2">
+<p><a href="https://stats.stackexchange.com/questions/375208/is-cauchy-distribution-somehow-an-unpredictable-distribution?rq=1">Cauchy Distribution</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
-<p><a href="https://stats.stackexchange.com/questions/36027/why-does-the-cauchy-distribution-have-no-mean/36038">Why does Cauchy distribution have no mean</a>. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:3">
+<p><a href="https://stats.stackexchange.com/questions/36027/why-does-the-cauchy-distribution-have-no-mean/36038">Why does Cauchy distribution have no mean</a>.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
-<p><a href="https://stats.stackexchange.com/questions/238246/what-is-the-distribution-of-sample-means-of-a-cauchy-distribution">Sample mean of Cauchy distribution is still Cauchy</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:4">
+<p><a href="https://stats.stackexchange.com/questions/238246/what-is-the-distribution-of-sample-means-of-a-cauchy-distribution">Sample mean of Cauchy distribution is still Cauchy</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
-<p><a href="https://math.stackexchange.com/questions/846961/cauchy-distribution-characteristic-function">Characteristic function of Cauchy distribution</a> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:5">
+<p><a href="https://math.stackexchange.com/questions/846961/cauchy-distribution-characteristic-function">Characteristic function of Cauchy distribution</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 </div>
         <div class="post-footer">
             <div class="info">
@@ -217,7 +217,7 @@ where \(\Phi(\cdot)\) is the cumulative density function of normal distribution,
                     
                     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -244,21 +244,21 @@ where \(\Phi(\cdot)\) is the cumulative density function of normal distribution,
 </div>
 
 <script type="text/javascript"
-        src="https://xiangli2pro.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js"
-        integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ="
+        src="https://xiangli2pro.github.io/js/jquery.min.e78de271386e446966fc2452d54e1e814af93cefac7c19b99c545e1a20910ca1.js"
+        integrity="sha256-543icThuRGlm/CRS1U4egUr5PO&#43;sfBm5nFReGiCRDKE="
         crossorigin="anonymous"></script>
 
 
 
 
 <script type="text/javascript"
-        src="https://xiangli2pro.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js"
-        integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2&#43;LqU="
+        src="https://xiangli2pro.github.io/js/bundle.min.3ebad6bf39b2e7c2f899d3ed9bc97e8c0c1ead7a1b57472e3387321f673b8077.js"
+        integrity="sha256-PrrWvzmy58L4mdPtm8l&#43;jAwerXobV0cuM4cyH2c7gHc="
         crossorigin="anonymous"></script>
 
 <script type="text/javascript"
-        src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
-        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        src="https://xiangli2pro.github.io/js/medium-zoom.min.e1c6918cbaa90022a5612f0bd71c7bf3be6d036614c5729cebfe14f7b91fa4bc.js"
+        integrity="sha256-4caRjLqpACKlYS8L1xx7875tA2YUxXKc6/4U97kfpLw="
         crossorigin="anonymous"></script><script defer
                 type="text/javascript"
                 src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"

@@ -6,195 +6,154 @@
     <description>Recent content in Teches on Xiang Li&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xiangli2pro.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xiangli2pro.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Standardization in sparse penalized regressions (2)</title>
       <link>https://xiangli2pro.github.io/tech/2022_0620_standardization2/</link>
       <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2022_0620_standardization2/</guid>
       <description>In the first post of the series, we learnt that it&amp;rsquo;s recommended to standardize the input data before performing sparse penalized regressions and four standardization methods (Z-score, Gelman, Bring, Min-max) have been introduced with example R code.</description>
     </item>
-    
     <item>
       <title>Standardization in sparse penalized regressions (1)</title>
       <link>https://xiangli2pro.github.io/tech/2022_0522_standardization1/</link>
       <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2022_0522_standardization1/</guid>
       <description>Sparse penalized regressions (e.g. lasso, elastic-net, SCAD) are popular statistical models that can simultaneously conduct variable selection and coefficient estimation.</description>
     </item>
-    
     <item>
       <title>Some tricks I use for data manipulation in R</title>
       <link>https://xiangli2pro.github.io/tech/2022_0402_r-na/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2022_0402_r-na/</guid>
       <description>Recently I have been working on a project that demands lots of efforts on cleaning and manipulating for a collection of longitudinal data sets.</description>
     </item>
-    
     <item>
       <title>Statistical tests &#43; Dynamic Programming = ?</title>
       <link>https://xiangli2pro.github.io/tech/2022_0212_isotonic/</link>
       <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2022_0212_isotonic/</guid>
       <description>Recently I encountered an interesting research question &amp;ndash; a binary outcome (e.</description>
     </item>
-    
     <item>
       <title>Let&#39;s draw a Pikachu in R!</title>
       <link>https://xiangli2pro.github.io/tech/2022_0125_pikachu/</link>
       <pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2022_0125_pikachu/</guid>
       <description>I have always been trying to do something fun with R not just for work.</description>
     </item>
-    
     <item>
       <title>What emotion makes politician&#39;s tweets get more engagement?</title>
       <link>https://xiangli2pro.github.io/tech/2022_0120_datathon/</link>
       <pubDate>Thu, 20 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2022_0120_datathon/</guid>
       <description>This post is based on my report to a 3-day datathon event (placed the 1st), code and data are available at Github repo here.</description>
     </item>
-    
     <item>
       <title>Statistical analysis learnt from vaccine studies</title>
       <link>https://xiangli2pro.github.io/tech/2021_1217_vaccine_study-copy/</link>
       <pubDate>Fri, 17 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_1217_vaccine_study-copy/</guid>
       <description>Ever since the first covid-19 vaccine1 came out last year and got emergency use approval by FDA, as a statistician, I always felt prompted to learn how the statistical analysis was conducted in the study and helped draw such an important conclusion.</description>
     </item>
-    
     <item>
       <title>Coding challenge learning note (2)</title>
       <link>https://xiangli2pro.github.io/tech/2021_0626_summary_part2/</link>
       <pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0626_summary_part2/</guid>
       <description>This post is the continuation of the previous one. Topics covered here are: iterables, date, regex, read files, and other miscellaneous items.</description>
     </item>
-    
     <item>
       <title>Coding challenge learning note (1)</title>
       <link>https://xiangli2pro.github.io/tech/2021_0620_summary_part1/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0620_summary_part1/</guid>
       <description>As I mentioned in the last post, I was doing a 10-days python coding bootcamp at the end of May.</description>
     </item>
-    
     <item>
       <title>Research Crumbs: Tail Bound</title>
       <link>https://xiangli2pro.github.io/tech/2021_0612_tail-bound/</link>
       <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0612_tail-bound/</guid>
       <description>The other day I was having the regular meeting with my advisors to discuss a paper, and there were two theorems involving the tail bound that I found very intriguing.</description>
     </item>
-    
     <item>
       <title>Some understandings about measure theory</title>
       <link>https://xiangli2pro.github.io/tech/2021_0529_measure/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0529_measure/</guid>
       <description>I remember the times when I searched for measure theory lectures online and got frustrated immediately at the sight of the abstract definition of Borel set, and the times that I could not wrap my head around when I studied the outer measure in the probability class.</description>
     </item>
-    
     <item>
       <title>Coding challenge May of 2021</title>
       <link>https://xiangli2pro.github.io/tech/2021_0523_code-challenge/</link>
       <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0523_code-challenge/</guid>
-      <description>This post may not be very informative, but I feel compelled to write something to keep the blog updated regularly, otherwise the guilty feeling of not keeping the commitment would haunt me all the time 😐.</description>
+      <description>This post may not be very informative, but I feel compelled to write something to keep the blog updated regularly, otherwise the guilty feeling of not keeping the commitment would haunt me all the time &amp;#x1f610;.</description>
     </item>
-    
     <item>
       <title>Why the Central Limit Theorem (CLT) is not working?</title>
       <link>https://xiangli2pro.github.io/tech/2021_0509_clt/</link>
       <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0509_clt/</guid>
       <description>If you ever take any statistics classes, regardless of the level, the chances are high that you would come across The Central Limit Theorem1 (CLT).</description>
     </item>
-    
     <item>
       <title>Tensorflow2 learning note (2)</title>
       <link>https://xiangli2pro.github.io/tech/2021_0423_tf-part2/</link>
       <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0423_tf-part2/</guid>
       <description>In the second part of this Tensorflow2 mini-series, I will write about how to make use of the pre-trained and well-established deep learning models to perform new tasks.</description>
     </item>
-    
     <item>
       <title>Tensorflow2 learning note (1)</title>
       <link>https://xiangli2pro.github.io/tech/2021_0423_tf-part1/</link>
       <pubDate>Fri, 23 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0423_tf-part1/</guid>
       <description>Recently I have been taking a series of online courses to learn Tensorflow2, simply out of curiosity to know how it works, especially nowadays when almost everyone is talking about AI, deep learning, etc.</description>
     </item>
-    
     <item>
       <title>Interpret limit sets</title>
       <link>https://xiangli2pro.github.io/tech/2021_0419_limit-sets/</link>
       <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0419_limit-sets/</guid>
       <description>In the statistics textbooks or papers, one would encounter many theorems and problems that are studying the limiting behavior of a series of random variables.</description>
     </item>
-    
     <item>
       <title>Use Python in R</title>
       <link>https://xiangli2pro.github.io/tech/2021_0409_python-r/</link>
       <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0409_python-r/</guid>
       <description>As a statistician, I use R a lot in my school works and collaboration projects, since R provides almost all the statistical analysis tools I would need in my research, from data wrangling, statistical modeling, simulation, to data visualization.</description>
     </item>
-    
     <item>
       <title>Decompose correlation matrix with block structure</title>
       <link>https://xiangli2pro.github.io/tech/2021_0401corr-matrix/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0401corr-matrix/</guid>
       <description>I recently read an interesting paper1 about how to sample from multivariate normal distribution with less computational complexity, and I really like the part where they make use of the block structure of the correlation matrix to conduct the eigen-decomposition.</description>
     </item>
-    
     <item>
       <title>Understand slicing in python 3d-arrays</title>
       <link>https://xiangli2pro.github.io/tech/2021_0325_ndarrays/</link>
       <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0325_ndarrays/</guid>
       <description>I was having a hard time understanding the slicing along different axes of a 3d-array in python.</description>
     </item>
-    
     <item>
       <title>What happens if toss a fair coin infinite times?</title>
       <link>https://xiangli2pro.github.io/tech/2021_0318_dyadic/</link>
       <pubDate>Thu, 18 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0318_dyadic/</guid>
       <description>Suppose we have a fair coin with two faces Head (H) and Tail (T).</description>
     </item>
-    
     <item>
       <title>Website Configuration and Trouble Shooting</title>
       <link>https://xiangli2pro.github.io/tech/2021_0312_website-config/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://xiangli2pro.github.io/tech/2021_0312_website-config/</guid>
-      <description>🎏 Website Configuration The website is powered by Hugo, employing the theme Anatole.</description>
+      <description>&amp;#x1f38f; Website Configuration The website is powered by Hugo, employing the theme Anatole.</description>
     </item>
-    
   </channel>
 </rss>

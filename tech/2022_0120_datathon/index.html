@@ -3,7 +3,7 @@
     <title> Xiang Li | What emotion makes politician&#39;s tweets get more engagement? </title>
 
     
-    <meta charset="utf-8"><meta name="generator" content="Hugo 0.81.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.120.4"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="A lifetime learner. A part of nature.">
     
     <link rel="stylesheet"
@@ -51,8 +51,8 @@
     
     
     <script type="text/javascript"
-            src="https://xiangli2pro.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
-            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
+            src="https://xiangli2pro.github.io/js/anatole-header.min.df804b63b5bd8474ea0756ea874bc8f1e92552708cc6ea43aa0d76981dc419f9.js"
+            integrity="sha256-34BLY7W9hHTqB1bqh0vI8eklUnCMxupDqg12mB3EGfk="
             crossorigin="anonymous"></script>
 
 
@@ -93,7 +93,7 @@
         
     </ul>
     <div class="footer">
-        <div class="by_farbox">&copy; Xiang Li  2021-2023 </div>
+        <div class="by_farbox">&copy; Xiang Li  2021-2024 </div>
     </div>
 </div>
 <div class="main">
@@ -367,8 +367,7 @@ tweet.</p>
 </ol>
 <p>As we can observe from the summary statistics of each emotions, their
 distribution are approximately in the same range.</p>
-<figure class="alignleft">
-    <img src="/images/datathon/table1.png" height="200"/> 
+<figure class="alignleft"><img src="/images/datathon/table1.png" height="200"/>
 </figure>
 
 <h4 id="34-check-collinearity">3.4 Check collinearity</h4>
@@ -381,8 +380,7 @@ features. Table2 shows that variables <code>anger</code>, <code>fear</code>, <co
 high correlations. Therefore, I will remove variables <code>negative</code>,
 <code>positve</code> and <code>fear</code> from the features, which leaves us with 19
 variables in total.</p>
-<figure class="alignleft">
-    <img src="/images/datathon/table2.png" height="400"/> 
+<figure class="alignleft"><img src="/images/datathon/table2.png" height="400"/>
 </figure>
 
 <h3 id="4-model-selection-and-validation">4. Model selection and validation</h3>
@@ -428,8 +426,7 @@ make the most contribution the outcome probability. Among all the 7
 emotions being investigated, the anger contributes more than other
 emotions, and joy is the second largest. In the following analysis, I
 will focus on the two emotions: anger and joy.</p>
-<figure class="alignleft">
-    <img src="/images/datathon/var_importance.png" height="300"/> 
+<figure class="alignleft"><img src="/images/datathon/var_importance.png" height="300"/>
 </figure>
 
 <h4 id="43-logistic-spline-model">4.3 logistic spline model</h4>
@@ -494,8 +491,7 @@ used the angry words like “insurrection” and “mob”, while those words
 didn’t not appear in republican’s tweets as much often. As for the
 joyful events, the inauguration was what politicians mentioned most in
 Jan. 2021.</p>
-<figure class="alignleft">
-    <img src="/images/datathon/top_word.png" height="400"/> 
+<figure class="alignleft"><img src="/images/datathon/top_word.png" height="400"/>
 </figure>
 
 <h4 id="52-network-plots-of-politicians-based-on-angry-and-joyful-tweets">5.2 Network plots of politicians based on angry and joyful tweets</h4>
@@ -511,18 +507,16 @@ the two parties are less divisive when tweeting contents that has joyful
 attitudes, as the nodes of different colors tend to be clustered together, but
 still the correlation between nodes of different colors are weaker than
 the correlations between nodes of the same color.</p>
-<figure class="alignleft">
-    <img src="/images/datathon/network_anger.png" height="400"/> 
+<figure class="alignleft"><img src="/images/datathon/network_anger.png" height="400"/>
 </figure>
 
-<figure class="alignleft">
-    <img src="/images/datathon/network_joy.png" height="400"/> 
+<figure class="alignleft"><img src="/images/datathon/network_joy.png" height="400"/>
 </figure>
 
 <h4 id="6-discussion-and-next-steps">6. Discussion and next steps</h4>
 <p>In this report, I have investigated both quantitatively and
 qualitatively, how the emotions, especially anger and joy, are affecting
-people’s engagement with politicians' tweets from different parties. The major
+people’s engagement with politicians&rsquo; tweets from different parties. The major
 conclusion is that angry tweets make people more likely to engage with
 it than other emotions. However, should we encourage politicians to use more anger words in their tweets to get engagement? Personally, I think the answer depends on two things. Firstly, the conclusion needs to be further examined before adopt it in practice. Due to the fact that in Jan. 2021, the
 whole nation was in shock of the capitol attack, it’s possible that
@@ -544,7 +538,7 @@ if model’s predictive ability is of interest.</p>
                     
                     <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -571,21 +565,21 @@ if model’s predictive ability is of interest.</p>
 </div>
 
 <script type="text/javascript"
-        src="https://xiangli2pro.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js"
-        integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ="
+        src="https://xiangli2pro.github.io/js/jquery.min.e78de271386e446966fc2452d54e1e814af93cefac7c19b99c545e1a20910ca1.js"
+        integrity="sha256-543icThuRGlm/CRS1U4egUr5PO&#43;sfBm5nFReGiCRDKE="
         crossorigin="anonymous"></script>
 
 
 
 
 <script type="text/javascript"
-        src="https://xiangli2pro.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js"
-        integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2&#43;LqU="
+        src="https://xiangli2pro.github.io/js/bundle.min.3ebad6bf39b2e7c2f899d3ed9bc97e8c0c1ead7a1b57472e3387321f673b8077.js"
+        integrity="sha256-PrrWvzmy58L4mdPtm8l&#43;jAwerXobV0cuM4cyH2c7gHc="
         crossorigin="anonymous"></script>
 
 <script type="text/javascript"
-        src="https://xiangli2pro.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
-        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
+        src="https://xiangli2pro.github.io/js/medium-zoom.min.e1c6918cbaa90022a5612f0bd71c7bf3be6d036614c5729cebfe14f7b91fa4bc.js"
+        integrity="sha256-4caRjLqpACKlYS8L1xx7875tA2YUxXKc6/4U97kfpLw="
         crossorigin="anonymous"></script><script defer
                 type="text/javascript"
                 src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
