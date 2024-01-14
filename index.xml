@@ -9,6 +9,13 @@
     <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://xiangli2pro.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title></title>
+      <link>https://xiangli2pro.github.io/about/</link>
+      <pubDate>Sat, 13 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://xiangli2pro.github.io/about/</guid>
+      <description>Hi there👋, this is Xiang, thanks for stopping by my website.</description>
+    </item>
+    <item>
       <title>Book Review: &#39;The E-Myth Revisited&#39;</title>
       <link>https://xiangli2pro.github.io/life/2023_0629_emyth/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
@@ -226,11 +233,11 @@
       <description>I was having a hard time understanding the slicing along different axes of a 3d-array in python.</description>
     </item>
     <item>
-      <title>Study Resources</title>
+      <title></title>
       <link>https://xiangli2pro.github.io/resource/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       <guid>https://xiangli2pro.github.io/resource/</guid>
-      <description> Scientific Reading Website: FiveThirtyEight Website: Scientific American Website: Data Journalism Website: Pew Research Center Decoded Statistics/Mathematics Website: The Book of Statistical Proofs (A good reference for general statistics definitions and proofs) Website: Rice University Supplemental Resources and Data for Statisticians Website: Datamethods Blog: Statistical Modeling, Causal Inference, and Social Science (Andrew Gelman) Blog: Statistical Thinking (Frank Harrell) Blog: Yihui Xie Blog: math3ma (This blog inspired me to start my own blog) Career Blog: Wes Kao Blog: Perspectives Coding Challenge: TidyTuesday Website: Python Morsels Website: Python Code Example Website: Free Python Game Spanish Youtube: Hola Spanish Youtube: Maria Español Youtube: Why not Spanish Youtube: Spanishland School Website: español avanzado </description>
+      <description>Scientific Reading Website: FiveThirtyEight Website: Scientific American Website: Data Journalism Website: Pew Research Center Decoded Statistics/Mathematics Website: The Book of Statistical Proofs (A good reference for general statistics definitions and proofs) Website: Rice University Supplemental Resources and Data for Statisticians Website: Datamethods Blog: Statistical Modeling, Causal Inference, and Social Science (Andrew Gelman) Blog: Statistical Thinking (Frank Harrell) Blog: Yihui Xie Blog: math3ma (This blog inspired me to start my own blog) Career Blog: Wes Kao Blog: Perspectives Coding Challenge: TidyTuesday Website: Python Morsels Website: Python Code Example Website: Free Python Game Spanish Youtube: Hola Spanish Youtube: Maria Español Youtube: Why not Spanish Youtube: Spanishland School Website: español avanzado </description>
     </item>
     <item>
       <title>What happens if toss a fair coin infinite times?</title>
@@ -245,13 +252,6 @@
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       <guid>https://xiangli2pro.github.io/tech/2021_0312_website-config/</guid>
       <description>&amp;#x1f38f; Website Configuration The website is powered by Hugo, employing the theme Anatole.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://xiangli2pro.github.io/about/</link>
-      <pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://xiangli2pro.github.io/about/</guid>
-      <description>I am not a dog &amp;#x1f436;. The cutie on the profile picture is my dog bro, DanDan.</description>
     </item>
     <item>
       <title>Hello World!</title>

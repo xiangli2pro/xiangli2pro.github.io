@@ -21,8 +21,8 @@
         
         
         <link rel="stylesheet"
-        href="https://xiangli2pro.github.io/css/customer.min.93e48a477ee532b5600ae5e4aff60bfc28ca5236f93908831b3c74f7423080e1.css"
-        integrity="sha256-k&#43;SKR37lMrVgCuXkr/YL/CjKUjb5OQiDGzx090IwgOE="
+        href="https://xiangli2pro.github.io/css/customer.min.61fba4cf4b66c3858cb29d5aba791b140d2a644135a76cc224175a4d4e6883ef.css"
+        integrity="sha256-Yfukz0tmw4WMsp1aunkbFA0qZEE1p2zCJBdaTU5og&#43;8="
         crossorigin="anonymous"
         media="screen" />
     
@@ -70,7 +70,7 @@
 <body><div class="sidebar animated fadeInDown ">
     <div class="logo-title">
         <div class="title">
-            <img src="https://xiangli2pro.github.io/images/dandan.jpeg" alt="profile picture">
+            <img src="https://xiangli2pro.github.io/images/Xiang.png" alt="profile picture">
             <h3 title=""><a href="/">Xiang Li</a></h3>
             <div class="description">
                 <p>A lifetime learner. A part of nature.</p>
@@ -124,12 +124,6 @@
                         
                    title="">Life</a></li>
         
-            
-            <li><a 
-                   href="/resource/"
-                        
-                   title="">Resource</a></li>
-        
         
         
     </ul>
@@ -166,10 +160,13 @@ $$X = \{ \underbrace{x_1}_{x_{11},&hellip;,x_{1n_1}} &lt;  \underbrace{x_2}_{x_{
 <p>$$Y = \{y_{kl}; k=1,&hellip;,m; l = 1,&hellip;,n_k\} $$
 where $X$ is arranged in increasing order and assigned into $m$ groups/intervals and each group has $n_k (k=1,&hellip;,m)$ observations, $Y$ is also reordered accordingly. The question is how to partition the $m$ intervals of $X$ into consecutive non-overlapping intervals such that the means/proportions of $Y$ are similar within an interval but significantly different between two adjacent intervals?</p>
 <h4 id="droplet-objective-function">&#x1f4a7; Objective function</h4>
-<p>No matter which model is performed, the solution is always trying to optimize an objective function. In this case, the objective function is the maximum likelihood function. If $Y$ is assumed to follow normal distributions (with a common covariance), then the maximum likelihood estimation is equivalent to the estimations by minimizing the sum of squared errors (SSE). The SSE calculation of observations in the block of $\{x_i,&hellip;,x_j\}$ is
-$$s(i,&hellip;,j) = \sum_{k=i}^j\sum_{l=1}^{n_k}(y_{kl}-\bar{y}<em>{i,&hellip;,j})^2$$
-where $\bar{y}</em>{i,&hellip;,j}$ is the sample mean in the block. If $Y$ follows binomial distribution, then it&rsquo;s equivalent to minimize the negative log-likelihood function
-$$s(i,&hellip;,j) =  -\ln\prod_{k=i}^j\prod_{l=1}^{n_k} \bar{y}<em>{i,&hellip;,j}^{y</em>{kl}}(1-\bar{y}<em>{i,&hellip;,j})^{(1-{y</em>{kl}})}$$</p>
+<p>No matter which model is performed, the solution is always trying to optimize an objective function. In this case, the objective function is the maximum likelihood function. If $Y$ is assumed to follow normal distributions (with a common covariance), then the maximum likelihood estimation is equivalent to the estimations by minimizing the sum of squared errors (SSE). The SSE calculation of observations in the block of $\{x_i,&hellip;,x_j\}$ is</p>
+<p>$$
+s(i,&hellip;,j) = \sum_{k=i}^j\sum_{l=1}^{n_k}(y_{kl}-\bar{y}_{i,&hellip;,j})^2$$</p>
+<p>where $\bar{y}_{i,&hellip;,j}$ is the sample mean in the block. If $Y$ follows binomial distribution, then it&rsquo;s equivalent to minimize the negative log-likelihood function</p>
+<p>$$
+s(i,&hellip;,j) =  -\ln\prod_{k=i}^j\prod_{l=1}^{n_k}\bar{y}_{i,&hellip;,j} ^{y_{kl}} (1-\bar{y}_{i,&hellip;,j})^{(1-{y_{kl}})}
+$$</p>
 <h4 id="droplet-overlapping-subproblems">&#x1f4a7; Overlapping subproblems</h4>
 <p>The key of the dynamic programming being considered here is that solving the subproblem relies on solving smaller subproblems. i.e., the optimal partition of $\{x_1,&hellip;,x_m\}$ depends on the optimal partition of the smaller block $\{x_1,&hellip;,x_k\}(k&lt;m)$. For now, if we ignore the restriction that means/proportions of $Y$ have to be similar within an interval and significantly different between two adjacent intervals, instead, we only ask the optimal partition to give the maximum likelihood value, then the regular dynamic programing as shown in algorithm 1 solves the problem perfectly. In algorithm 1, $link [k] (k=1,&hellip;,m)$ indicates the optimal partition point for block $\{x_1,&hellip;,x_k\}$, and we can use the $link$ vector to retrieve the optimal partition. $score[k]$ gives the corresponding optimal objective function value of partitioning $\{x_1,&hellip;,x_k\}$.</p>
 <figure class="center"><img src="/images/algorithm1.png" height="250"/>
